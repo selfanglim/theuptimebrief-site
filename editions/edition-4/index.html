@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asia Has the Gigawatts. Most Buyers Are Locked Out. — The Uptime Brief, Edition 4</title>
+<meta name="description" content="APAC's green electricity market is not undersupplied. It is under-intermediated. Three structural friction layers explain why corporate buyers can't access the capacity that already exists. By Sel Fang, Lim.">
+<meta property="og:title" content="Asia Has the Gigawatts. Most Buyers Are Locked Out. — The Uptime Brief, Edition 4">
+<meta property="og:description" content="APAC's green electricity market is not undersupplied. It is under-intermediated. Three structural friction layers explain why corporate buyers can't access the capacity that already exists.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theuptimebrief.com/editions/edition-4">
+<meta property="og:site_name" content="The Uptime Brief">
+<meta property="og:image" content="https://theuptimebrief.com/assets/og-edition4.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://theuptimebrief.com/editions/edition-4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1a4a3a;
+  --green-light: #2d7a5f;
+  --green-mid: #4a9a7a;
+  --green-pale: #e8f2ee;
+  --gold: #c9a84c;
+  --gold-light: #d4b96a;
+  --white: #ffffff;
+  --ink: #1c1c1c;
+  --ink-mid: #3a3a3a;
+  --ink-light: #6b6b6b;
+  --border: #ddd8d0;
+  --bg: #f8f6f2;
+}
+body { font-family: 'Source Serif 4', serif; font-size: 17px; line-height: 1.75; color: var(--ink-mid); background: var(--bg); }
+
+/* NAV */
+.nav {
+  background: var(--green);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-subscribe {
+  background: var(--gold);
+  color: #2a1a00 !important;
+  padding: 6px 16px;
+  border-radius: 3px;
+  letter-spacing: 0.08em !important;
+}
+.nav-subscribe:hover { background: var(--gold-light) !important; color: #2a1a00 !important; }
+
+/* HERO */
+.hero {
+  background: var(--green);
+  padding: 64px 40px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+.hero-edition {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-edition::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+.hero-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.hero-sub {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--green-mid);
+  margin-bottom: 28px;
+  line-height: 1.55;
+  max-width: 640px;
+}
+.hero-byline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.04em;
+}
+.hero-byline strong { color: rgba(255,255,255,0.7); font-weight: 600; }
+
+/* LAYOUT */
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 60px;
+  align-items: start;
+  background: var(--bg);
+}
+
+/* MAIN CONTENT */
+.section { margin-bottom: 48px; }
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--green-pale);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--green-pale);
+}
+.section p { margin-bottom: 18px; color: var(--ink-mid); }
+.section p:last-child { margin-bottom: 0; }
+.section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 28px 0 12px;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+/* Friction layer blocks */
+.friction-block {
+  background: var(--green-pale);
+  border-left: 4px solid var(--green);
+  border-radius: 4px;
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+.friction-block h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.friction-block .arrow-row {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink-mid);
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.friction-block .arrow-row::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: var(--green);
+  border-left: 3px solid var(--gold);
+  padding: 16px 24px;
+  margin: 32px 0;
+  line-height: 1.55;
+  background: var(--green-pale);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Practitioner box */
+.practitioner-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--green-mid);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+.prac-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.prac-text {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  font-style: italic;
+}
+
+/* Capital allocation points */
+.cap-point {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  align-items: flex-start;
+  border-left: 2px solid var(--green-pale);
+  padding-left: 16px;
+}
+.cap-num {
+  background: var(--green);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.cap-body {
+  flex: 1;
+  font-family: 'Source Serif 4', serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+}
+.cap-body strong {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 8px;
+}
+.cap-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  color: var(--ink-light);
+  padding-left: 14px;
+  position: relative;
+  margin-top: 6px;
+  line-height: 1.55;
+}
+.cap-sub::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 11px;
+  top: 2px;
+}
+
+/* Closing section */
+.closing-question {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.55;
+  margin: 28px 0 16px;
+}
+.edition-next {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* SOURCES */
+.sources-wrap {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 28px 32px;
+  margin-top: 40px;
+}
+.sources-wrap h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.sources-wrap p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+.source-row {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 5px;
+}
+.source-row::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 11px;
+}
+.verification-block {
+  background: #fdf2f2;
+  border: 1px solid #f5c6c6;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-top: 16px;
+}
+.verification-block .v-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b2020;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.verification-block p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #6b2020;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.verification-block p:last-child { font-style: italic; margin-top: 10px; margin-bottom: 0; }
+
+/* GLOSSARY */
+.glossary-wrap { margin-top: 40px; }
+.glossary-wrap h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.glossary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+}
+.glossary-table th {
+  background: var(--green);
+  color: var(--white);
+  padding: 8px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.glossary-table td {
+  padding: 7px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-mid);
+  vertical-align: top;
+  line-height: 1.45;
+}
+.glossary-table tr:nth-child(even) td { background: var(--green-pale); }
+
+/* SIDEBAR */
+.sidebar { position: sticky; top: 80px; }
+.sidebar-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.sidebar-card h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.sidebar-card p:last-child { margin-bottom: 0; }
+.subscribe-btn {
+  display: block;
+  width: 100%;
+  background: var(--green);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-top: 14px;
+  transition: background 0.15s;
+}
+.subscribe-btn:hover { background: var(--green-light); }
+.edition-thread-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+.thread-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-pale);
+  border-radius: 3px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  letter-spacing: 0.04em;
+}
+.thread-topic {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--ink-mid);
+  line-height: 1.45;
+}
+
+/* SIGN-OFF BAR */
+.signoff-bar {
+  background: var(--green);
+  padding: 28px 40px;
+  text-align: center;
+}
+.signoff-bar p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+}
+
+/* FOOTER */
+.footer {
+  background: #111;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-copy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .sidebar { position: static; }
+}
+@media (max-width: 600px) {
+  .nav { padding: 0 20px; }
+  .hero { padding: 40px 20px; }
+  .page-wrap { padding: 32px 20px 60px; }
+  .signoff-bar { padding: 20px; }
+  .footer { padding: 28px 20px; flex-direction: column; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://theuptimebrief.com" style="text-decoration:none">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="34" role="img" aria-label="The Uptime Brief">
+      <defs><linearGradient id="ecg-g" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs>
+      <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+      <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="#ffffff" letter-spacing="2">THE UPTIME</text>
+      <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="https://theuptimebrief.com/editions">All Editions</a>
+    <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/" target="_blank" class="nav-subscribe">Subscribe</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-edition">Edition 4 · May 2026</div>
+    <h1 class="hero-headline">Asia Has the Gigawatts. Most Buyers Are Locked Out.</h1>
+    <p class="hero-sub">APAC's green electricity market is not undersupplied. It is under-intermediated. Three structural friction layers explain why corporate buyers can't access the capacity that already exists.</p>
+    <p class="hero-byline">By <strong>Sel Fang, Lim</strong> · Data centre and infrastructure finance, APAC</p>
+  </div>
+</section>
+
+<!-- LEDE STRIP -->
+<div style="background:#f8f6f2;border-bottom:1px solid #ddd8d0;padding:32px 40px">
+  <p style="font-family:'Source Serif 4',serif;font-size:19px;font-weight:300;font-style:italic;color:#3a3a3a;line-height:1.75;margin:0 auto;max-width:860px">Asia now accounts for the largest share of installed renewable capacity globally — yet corporate procurement access remains structurally constrained across most of the region. This edition examines why, and what it means for infrastructure investors.</p>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="page-wrap">
+  <main class="main-content">
+
+    <div class="pull-quote">The APAC green electricity market is not undersupplied. It is under-intermediated.</div>
+
+    <hr class="divider">
+
+    <!-- THE DEAL -->
+    <div class="section">
+      <div class="section-label">The Deal</div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px">
+        <div style="background:#e8f2ee;border-left:4px solid #1a4a3a;border-radius:4px;padding:16px 18px">
+          <div style="font-family:'DM Sans',sans-serif;font-size:28px;font-weight:700;color:#1a4a3a;line-height:1.1;margin-bottom:6px">2,382 GW</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#3a3a3a;line-height:1.4;margin-bottom:4px">Asia renewable capacity end-2024 — 53.6% of global total</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-style:italic;color:#6b6b6b">IRENA, 2025</div>
+        </div>
+        <div style="background:#e8f2ee;border-left:4px solid #1a4a3a;border-radius:4px;padding:16px 18px">
+          <div style="font-family:'DM Sans',sans-serif;font-size:28px;font-weight:700;color:#1a4a3a;line-height:1.1;margin-bottom:6px">277 GW</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#3a3a3a;line-height:1.4;margin-bottom:4px">China solar additions in 2024 alone</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-style:italic;color:#6b6b6b">Single-year record</div>
+        </div>
+        <div style="background:#e8f2ee;border-left:4px solid #1a4a3a;border-radius:4px;padding:16px 18px">
+          <div style="font-family:'DM Sans',sans-serif;font-size:28px;font-weight:700;color:#1a4a3a;line-height:1.1;margin-bottom:6px">117%</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#3a3a3a;line-height:1.4;margin-bottom:4px">Growth in PLN's REC platform customer adoption, 2024</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-style:italic;color:#6b6b6b">5.38 TWh sold · PLN GEAS Report 2024</div>
+        </div>
+      </div>
+      <p>Asia now accounts for the largest share of installed renewable capacity globally. IRENA puts the continent at 2,382 GW as of end-2024 — 53.6% of the global total. China alone added 277 GW of solar in 2024. A single year.</p>
+      <p>Yet high costs, limited supply, and a lack of procurement options are consistently ranked as the top barriers to renewables growth by RE100 (Renewable Energy 100) members across Asia-Pacific — the largest corporate clean energy buyers on the planet. The gap is not a supply problem. It is a market structure problem. And market structure problems are, in the language of this newsletter, risk-adjusted return opportunities.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ENGINEERING READ -->
+    <div class="section">
+      <div class="section-label">The Engineering Read — Three Layers of Friction</div>
+
+      <div class="friction-block">
+        <h4>Layer 1 — Physical Access</h4>
+        <div class="arrow-row">A large portion of SEA renewable capacity remains tied to FIT (Feed-in Tariff) era structures — locked to state utility offtake at fixed government rates</div>
+        <div class="arrow-row">Grid wheeling (moving privately contracted power across public transmission infrastructure) remains legally unsettled in Indonesia and restricted across most of the region</div>
+        <div class="arrow-row">Malaysia's CRESS (Corporate Renewable Energy Supply Scheme): launched September 2024</div>
+        <div class="arrow-row">Vietnam's DPPA (Direct Power Purchase Agreement) framework: approved 2024 — covers only consumers above 200,000 kWh/month</div>
+        <div class="arrow-row">Indonesia: no wheeling framework at all</div>
+        <div class="arrow-row">The contracted power cannot legally be wheeled from generator to buyer for most mid-tier operators today</div>
+      </div>
+
+      <div class="friction-block">
+        <h4>Layer 2 — Contract Infrastructure</h4>
+        <div class="arrow-row">SEA has limited broker coverage, thin pricing transparency, and few standardised contracting frameworks at scale</div>
+        <div class="arrow-row">Every deal is a bespoke bilateral negotiation — taking months of specialist legal and energy expertise</div>
+        <div class="arrow-row">No public price benchmark exists in any major SEA power market</div>
+        <div class="arrow-row">Transaction costs are prohibitive for all but the largest buyers</div>
+        <div class="arrow-row">Hyperscaler procurement scale is a structural moat, not just a negotiating advantage — Amazon, Google, and Microsoft can absorb the overhead of one-off bilateral deals; a Tier 2 semiconductor supplier cannot</div>
+      </div>
+
+      <div class="friction-block">
+        <h4>Layer 3 — Attribution Integrity</h4>
+        <div class="arrow-row">PLN's REC (Renewable Energy Certificate) platform saw customer adoption rise 117% in 2024, with 5.38 TWh sold — the demand signal is real</div>
+        <div class="arrow-row">The credibility signal is not keeping pace: a significant share of certificates still originates from legacy subsidised hydro assets that would have generated electricity regardless of certificate demand</div>
+        <div class="arrow-row">RE100 and related buyer frameworks are placing increasing scrutiny on additionality — certificates from legacy assets face growing challenges to their credibility</div>
+        <div class="arrow-row">For buyers relying on these stacks to satisfy Scope 2 (indirect emissions from purchased electricity) commitments, this is a pending compliance cost that hasn't been fully priced</div>
+      </div>
+
+      <div class="practitioner-box">
+        <div class="prac-label">Practitioner signal — renewable energy market</div>
+        <div class="prac-text">Practitioners already tracking this are seeing the early moves: operators anchoring renewable projects directly, large technology companies taking offtake positions through procurement intermediaries, hyperscalers pushing toward 24/7 CFE (Carbon-Free Energy) targets that pull high-quality additionality out of the open aggregation pool. In the view of at least one renewable energy executive with direct experience across 820+ MWp of projects in Asia and Europe, the access layer does not survive in its current form once procurement internalises at scale — but the firming and integration side represents a more economically durable position, precisely because hyperscaler commitments increase demand for it rather than substituting it away.</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- CAPITAL ALLOCATION READ -->
+    <div class="section">
+      <div class="section-label">The Capital Allocation Read</div>
+
+      <div class="cap-point">
+        <div class="cap-num">1</div>
+        <div class="cap-body">
+          <strong>Regulatory risk is mispriced in long-term CPPAs</strong>
+          <div class="cap-sub">CPPA (Corporate Power Purchase Agreement) is the foundational offtake instrument for new renewable project financing — but the regulatory environments underpinning them are demonstrably unstable</div>
+          <div class="cap-sub">Philippines suspended new renewable applications mid-2024, resuming only in late November</div>
+          <div class="cap-sub">Vietnam's FIT reversal caused a near-complete halt in new capacity additions post-2022</div>
+          <div class="cap-sub">Indonesia's wheeling framework remains unresolved</div>
+          <div class="cap-sub">Debt tenors priced against 10–20 year CPPA cashflows in markets with 2–3 year policy visibility windows carry basis risk not fully reflected in current spread pricing</div>
+          <div class="cap-sub">Even seasoned developers with live transactions across four SEA markets describe no single template that works everywhere — that is not a maturity gap, it is a structural feature of the region's regulatory architecture</div>
+        </div>
+      </div>
+
+      <div class="cap-point">
+        <div class="cap-num">2</div>
+        <div class="cap-body">
+          <strong>The certificate market is approaching a credibility cliff</strong>
+          <div class="cap-sub">The REC volume surge is a lagging indicator of compliance pressure — not a leading indicator of energy transition quality</div>
+          <div class="cap-sub">As additionality requirements tighten across RE100, SBTi (Science Based Targets initiative), and GHG Protocol Scope 2 frameworks, the spread between low-quality legacy certificates and high-quality new-build EACs (Energy Attribute Certificates) will widen</div>
+          <div class="cap-sub">New renewable assets with clean additionality profiles — short issuance cycle, verified generation data, auditable chain of custody — are underpriced relative to where the market is going</div>
+          <div class="cap-sub">Certificate quality dispersion is becoming harder to ignore</div>
+        </div>
+      </div>
+
+      <div class="cap-point">
+        <div class="cap-num">3</div>
+        <div class="cap-body">
+          <strong>The SME and mid-market access gap is a product gap</strong>
+          <div class="cap-sub">52% of RE100 members now push renewable energy requirements onto supply chain partners — the downstream demand signal from semiconductor fabs, EMS manufacturers, and component suppliers across SEA is compulsory and growing</div>
+          <div class="cap-sub">But the market has no product for a buyer consuming 80,000–150,000 kWh/month, operating across 2–3 SEA jurisdictions, with no in-house procurement capability and a 6-month compliance deadline</div>
+          <div class="cap-sub">Much of the procurement conversation at REM Asia centred on hyperscaler-scale buyers — the harder question, raised but not answered, is who serves the tier below</div>
+          <div class="cap-sub">This is the specialist lane first raised in Edition 2 and developed in Edition 3 — whoever builds an aggregated, standardised product for this segment captures a structurally underserved demand pool being manufactured by the RE100 supply chain cascade</div>
+        </div>
+      </div>
+
+      <div class="cap-point">
+        <div class="cap-num">4</div>
+        <div class="cap-body">
+          <strong>Grid infrastructure is the hard ceiling</strong>
+          <div class="cap-sub">The IEA estimates annual investment in SEA electricity networks must roughly double by 2035 — without grid and storage upgrades, renewable buildout cannot translate into dispatchable, contractable power for industrial buyers</div>
+          <div class="cap-sub">Storage and grid firming are not just engineering requirements — they are the precondition for a functioning corporate green electricity market in SEA</div>
+          <div class="cap-sub">Projects combining generation, storage, and transmission access in integrated structures are likely to be best positioned to serve the demand that is building</div>
+          <div class="cap-sub">This is the BESS link back to Edition 3: the physical firming layer is where the infrastructure finance opportunity is most durable</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- WHAT THIS MEANS -->
+    <div class="section">
+      <div class="section-label">What This Means for the Broader Market</div>
+      <p>The APAC green electricity market is not undersupplied. It is under-intermediated.</p>
+      <p>The capital gap is not in generation — it is in the market infrastructure that converts gigawatts into contractable, auditable, financeable cashflows. The most differentiated returns may no longer sit primarily in utility-scale solar generation itself. They are in the layers above it:</p>
+      <div class="friction-block" style="margin-top:16px">
+        <div class="arrow-row">Aggregation and retail structuring</div>
+        <div class="arrow-row">Contract standardisation and credit wrapping</div>
+        <div class="arrow-row">Certificate integrity and data infrastructure</div>
+        <div class="arrow-row">Grid access and firming</div>
+      </div>
+      <p style="margin-top:20px">Less capital-intensive, potentially higher-margin, and more defensible than pure generation exposure. Still fragmented and thinly intermediated across most SEA markets today.</p>
+      <p>The specialist lane is real, and the economics increasingly support it.</p>
+
+      <p class="closing-question">What happens when the largest buyers begin adding firm clean baseload on top of their renewable procurement — and start bypassing the fragmented procurement layer entirely?</p>
+      <p class="edition-next">Edition 5 picks that up.</p>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="sources-wrap">
+      <h3>Sources</h3>
+      <div class="source-row">IRENA — Renewable Capacity Statistics 2025</div>
+      <div class="source-row">Ember — ASEAN Clean Power Pathways 2024</div>
+      <div class="source-row">IEA — Southeast Asia Energy Outlook 2024</div>
+      <div class="source-row">RE100 — Annual Disclosure Report 2024 (published May 2025)</div>
+      <div class="source-row">PLN — GEAS REC Report 2024</div>
+      <div class="source-row">KPMG — APAC CPPA Landscape Report</div>
+      <div class="source-row">ScienceDirect — RE100 and the Renewable Energy Divide (2025)</div>
+      <div class="source-row">Peak Energy — post-event commentary, 23 April 2026 (peakenergy.asia)</div>
+      <div class="source-row">REM Asia 2026 — Center for Resource Solutions, Singapore, 21–22 April 2026. Attendee figures consistent with REM Asia published event materials.</div>
+
+      <div class="verification-block">
+        <div class="v-title">Verification notes</div>
+        <p>[DIRECTIONAL] — 2,382 GW Asia renewable capacity: IRENA Renewable Capacity Statistics 2025; directionally credible, cited as published</p>
+        <p>[DIRECTIONAL] — 117% PLN REC platform customer growth: PLN GEAS Report 2024; figure refers to PLN's platform specifically, not the national I-REC market</p>
+        <p>[DIRECTIONAL] — 52% RE100 supply chain push: RE100 Annual Disclosure Report 2024; directionally credible, cited as published</p>
+        <p>[DIRECTIONAL] — IEA SEA grid investment doubling requirement: IEA Southeast Asia Energy Outlook 2024; directionally credible</p>
+        <p>No investment advice intended or implied.</p>
+      </div>
+    </div>
+
+    <!-- GLOSSARY -->
+    <div class="glossary-wrap">
+      <h3>Glossary — Terms used in this edition</h3>
+      <table class="glossary-table">
+        <thead><tr><th>Term</th><th>Full name</th><th>Plain English</th></tr></thead>
+        <tbody>
+          <tr><td>APAC</td><td>Asia-Pacific</td><td>The Asia-Pacific region</td></tr>
+          <tr><td>CPPA</td><td>Corporate Power Purchase Agreement</td><td>A direct long-term electricity contract between a corporate buyer and a renewable energy generator, bypassing the utility</td></tr>
+          <tr><td>CRESS</td><td>Corporate Renewable Energy Supply Scheme</td><td>Malaysia's direct corporate green electricity access scheme, launched September 2024</td></tr>
+          <tr><td>DPPA</td><td>Direct Power Purchase Agreement</td><td>Vietnam's framework allowing large consumers to buy renewable electricity directly from generators</td></tr>
+          <tr><td>EAC</td><td>Energy Attribute Certificate</td><td>A certificate carrying the environmental attributes of renewable electricity — the umbrella term for RECs, I-RECs, and T-RECs</td></tr>
+          <tr><td>FIT</td><td>Feed-in Tariff</td><td>A government-set guaranteed price paid to renewable energy generators — locks them into selling to the national utility, not to corporates directly</td></tr>
+          <tr><td>GHG Protocol</td><td>Greenhouse Gas Protocol</td><td>The global standard framework for measuring and managing greenhouse gas emissions</td></tr>
+          <tr><td>IEA</td><td>International Energy Agency</td><td>Intergovernmental organisation that provides energy data, analysis, and policy guidance</td></tr>
+          <tr><td>IRENA</td><td>International Renewable Energy Agency</td><td>Intergovernmental organisation for renewable energy data and policy support</td></tr>
+          <tr><td>REC</td><td>Renewable Energy Certificate</td><td>A certificate proving that one MWh of electricity was generated from a renewable source</td></tr>
+          <tr><td>RE100</td><td>Renewable Energy 100</td><td>A global corporate initiative where member companies commit to 100% renewable electricity</td></tr>
+          <tr><td>SBTi</td><td>Science Based Targets initiative</td><td>A framework setting corporate GHG reduction targets aligned with Paris Agreement climate science</td></tr>
+          <tr><td>Scope 2</td><td>Scope 2 emissions</td><td>Indirect greenhouse gas emissions from purchased electricity — the primary category affected by green energy procurement</td></tr>
+          <tr><td>SEA</td><td>Southeast Asia</td><td>The Southeast Asian subregion</td></tr>
+          <tr><td>24/7 CFE</td><td>24/7 Carbon-Free Energy</td><td>An advanced procurement standard matching electricity consumption with carbon-free generation on an hourly basis — more demanding than annual REC matching</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h4>About The Uptime Brief</h4>
+      <p>A weekly newsletter covering data centre and infrastructure finance in APAC. Analytical and investment-focused — for engineers, investors, and market operators.</p>
+      <p>By <strong>Sel Fang, Lim</strong> · Data centre and infrastructure finance, APAC.</p>
+      <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Edition Thread</h4>
+      <div class="edition-thread-item">
+        <span class="thread-num">E4</span>
+        <span class="thread-topic" style="font-weight:600;color:var(--green)">APAC power crunch — the under-intermediation thesis (this edition)</span>
+      </div>
+      <div class="edition-thread-item">
+        <span class="thread-num">E3</span>
+        <span class="thread-topic">BESS capital allocation — PPA pricing mechanics and hyperscaler procurement comparisons</span>
+      </div>
+      <div class="edition-thread-item">
+        <span class="thread-num">E2</span>
+        <span class="thread-topic">Amazon's AU$2.8B renewable deal — storage-backed PPAs as infrastructure finance signal</span>
+      </div>
+      <div class="edition-thread-item">
+        <span class="thread-num">E1</span>
+        <span class="thread-topic">Geopolitical data chokepoints — undersea cables, cloud infrastructure, and IRR implications</span>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Key Framework</h4>
+      <p style="font-style:italic;color:var(--green);font-family:'Source Serif 4',serif;font-size:14px;line-height:1.6">&ldquo;The APAC green electricity market is not undersupplied. It is under-intermediated.&rdquo;</p>
+      <p>The capital gap is in the market infrastructure that converts gigawatts into contractable, auditable, financeable cashflows — not in generation capacity itself.</p>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Read on LinkedIn</h4>
+      <p>The full newsletter with sources and analysis is published on LinkedIn.</p>
+      <a href="https://www.linkedin.com/pulse/asia-has-gigawatts-most-buyers-locked-out-sel-fang-lim-rjplc" target="_blank" class="subscribe-btn" style="background:var(--gold);color:#2a1a00">Read on LinkedIn</a>
+    </div>
+  </aside>
+</div>
+
+<!-- SIGN-OFF BAR -->
+<div class="signoff-bar">
+  <p>The Uptime Brief · Where uptime meets capital allocation · Published fortnightly</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="30" role="img" aria-label="The Uptime Brief">
+    <defs><linearGradient id="ecg-g2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs>
+    <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-g2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+    <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+    <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="rgba(255,255,255,0.75)" letter-spacing="2">THE UPTIME</text>
+    <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+  </svg>
+  <span class="footer-copy">© 2026 The Uptime Brief. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="https://theuptimebrief.com/editions">All Editions</a>
+    <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/" target="_blank">Subscribe</a>
+  </div>
+</footer>
+
+</body>
+</html>
