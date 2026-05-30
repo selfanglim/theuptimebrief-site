@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Access Is the Moat — The Uptime Brief, Edition 7</title>
+<meta name="description" content="Transmission congestion is only part of the APAC renewable bankability problem. The real constraint is grid access architecture: physical capacity, commercial contracts, and dispatch rules. By Sel Fang, Lim.">
+<meta name="author" content="Sel Fang, Lim">
+<meta property="og:title" content="Grid Access Is the Moat — The Uptime Brief, Edition 7">
+<meta property="og:description" content="Transmission congestion is only part of the APAC renewable bankability problem. The real constraint is grid access architecture: physical capacity, commercial contracts, and dispatch rules.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theuptimebrief.com/editions/edition-7">
+<meta property="og:site_name" content="The Uptime Brief">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grid Access Is the Moat — The Uptime Brief, Edition 7">
+<meta name="twitter:description" content="Transmission congestion is only part of the APAC renewable bankability problem. The real constraint is grid access architecture: physical capacity, commercial contracts, and dispatch rules.">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:#1a4a3a;--green-mid:#2d6b55;--green-light:#4a9478;
+  --green-pale:#e8f2ee;--green-border:#c5ddd5;
+  --gold:#c9a84c;--gold-pale:#fdf6e3;
+  --off-white:#f8f6f2;--text:#1a1a1a;--text-soft:#4a4a4a;--text-muted:#888;
+  --divider:#e0dbd4;--serif:'Source Serif 4',Georgia,serif;
+  --display:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--off-white);color:var(--text);line-height:1.78;font-size:16px}
+nav{background:var(--green);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:880px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav-logo{display:flex;align-items:center;text-decoration:none;padding:4px 0}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-link{font-family:var(--sans);font-size:12px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;padding:6px 14px;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,0.1)}
+.nav-link.sub{color:var(--green);background:var(--gold)}
+.nav-link.sub:hover{background:#b8962e}
+.hero{background:var(--green);padding:52px 24px 44px;border-bottom:1px solid rgba(201,168,76,0.3)}
+.hero-inner{max-width:880px;margin:0 auto}
+.ed-label{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:14px;display:block}
+.hero h1{font-family:var(--display);font-size:clamp(26px,5vw,42px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px;max-width:700px}
+.hero-tag{font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(255,255,255,0.6);margin-bottom:10px}.hero-subtitle{font-family:var(--serif);font-size:16px;color:rgba(255,255,255,0.75);line-height:1.65;margin-bottom:26px;max-width:640px}
+.byline{display:flex;align-items:center;gap:14px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.12);flex-wrap:wrap;gap:8px}
+.byline span{font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.6)}
+.byline strong{color:rgba(255,255,255,0.9);font-weight:500}
+.byline-dot{color:rgba(255,255,255,0.25)}
+.stat-strip{background:#fff;border-bottom:1px solid var(--divider);padding:26px 24px}
+.stat-inner{max-width:880px;margin:0 auto}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat-card{background:var(--green-pale);border:1px solid var(--green-border);border-radius:8px;padding:16px;text-align:center}
+.stat-num{font-family:var(--display);font-size:26px;font-weight:700;color:var(--green);line-height:1.1;margin-bottom:5px}
+.stat-lbl{font-family:var(--sans);font-size:11px;color:var(--green-mid);text-transform:uppercase;letter-spacing:0.07em;line-height:1.4}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.article-grid{display:grid;grid-template-columns:1fr 220px;gap:48px;padding:48px 0;align-items:start}
+.main{min-width:0}
+.section-lbl{font-family:var(--sans);font-size:10px;font-weight:500;color:var(--green);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:5px;display:block}
+.section-title{font-family:var(--display);font-size:21px;font-weight:600;color:var(--green);margin-bottom:15px;padding-bottom:9px;border-bottom:1px solid var(--green-pale)}
+.main p{font-size:15.5px;line-height:1.8;margin-bottom:16px}
+.section-block{margin-bottom:42px}
+hr.div{border:none;border-top:1px solid var(--divider);margin:32px 0}
+.pull{border-left:3px solid var(--gold);background:var(--gold-pale);padding:15px 20px;margin:22px 0;border-radius:0 5px 5px 0;font-family:var(--display);font-style:italic;font-size:15.5px;color:var(--green);line-height:1.65}
+.sub-hdr{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--green-mid);text-transform:uppercase;letter-spacing:0.1em;margin:22px 0 10px}
+.layer-box{background:var(--off-white);border:1px solid var(--divider);border-radius:6px;padding:18px 20px;margin:18px 0}
+.layer-item{display:flex;gap:12px;margin-bottom:12px;font-size:14.5px;line-height:1.65}
+.layer-item:last-child{margin-bottom:0}
+.l-badge{flex-shrink:0;color:#fff;font-family:var(--sans);font-size:10px;font-weight:600;padding:3px 8px;border-radius:3px;letter-spacing:0.06em;height:fit-content;margin-top:3px;white-space:nowrap}
+.l1{background:var(--green)}
+.l2{background:var(--green-mid)}
+.l3{background:#c0392b}
+.case-grid,.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.case-card,.market-card{border:1px solid var(--divider);border-radius:7px;padding:16px;background:#fff}
+.card-hdr{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.09em;margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid var(--green-pale)}
+.card-badge{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:500;border-radius:3px;padding:2px 7px;margin-bottom:7px}
+.case-badge{background:#fde8e8;color:#c0392b}
+.mkt-badge{background:var(--green-pale);color:var(--green)}
+.case-card p,.market-card p{font-size:13px;line-height:1.65;color:var(--text-soft)}
+.cap-list{list-style:none;margin:0;padding:0}
+.cap-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
+.cap-n{flex-shrink:0;width:26px;height:26px;background:var(--green);color:#fff;border-radius:50%;font-family:var(--sans);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.cap-body{flex:1;font-size:14.5px;line-height:1.75}
+.cap-body strong{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--green);display:block;margin-bottom:6px}
+.cap-sub{font-family:var(--sans);font-size:13px;color:var(--text-soft);padding-left:16px;position:relative;margin-top:5px;line-height:1.55}
+.cap-sub::before{content:'→';position:absolute;left:0;color:var(--green-mid);font-size:11px;top:1px}
+.sources-wrap{margin-top:36px;background:var(--off-white);border:1px solid var(--divider);border-radius:7px;padding:20px 24px}
+.sources-wrap h4{font-family:var(--sans);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--green);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--divider)}
+.src-cat{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--green-mid);text-transform:uppercase;letter-spacing:0.08em;margin:14px 0 7px}
+.src-line{font-family:var(--sans);font-size:12.5px;color:var(--text-soft);line-height:1.6;padding:4px 0 4px 14px;position:relative;border-bottom:1px solid var(--divider)}
+.src-line:last-of-type{border-bottom:none}
+.src-line::before{content:'→';position:absolute;left:0;color:var(--green-mid);font-size:10px;top:5px}
+.v-block{margin-top:14px;background:#fdf2f2;border:1px solid #f5c6c6;border-radius:4px;padding:12px 16px}
+.v-title{font-family:var(--sans);font-size:10px;font-weight:700;color:#6b2020;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+.v-line{font-family:var(--sans);font-size:12px;color:#6b2020;line-height:1.55;margin-bottom:5px}
+.v-line:last-child{margin-bottom:0;font-style:italic}
+.glos-section{background:#fff;border:1px solid var(--divider);border-radius:8px;overflow:hidden;margin-top:32px}
+.glos-header{background:var(--green-pale);padding:13px 20px;border-bottom:1px solid var(--green-border)}
+.glos-header span{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--green);text-transform:uppercase;letter-spacing:0.1em}
+.glos-table{width:100%;border-collapse:collapse}
+.glos-table th{font-family:var(--sans);font-size:10px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;padding:7px 16px;text-align:left;border-bottom:1px solid var(--divider);background:var(--off-white)}
+.glos-table td{font-size:13px;padding:9px 16px;border-bottom:1px solid var(--divider);vertical-align:top;line-height:1.5}
+.glos-table tr:last-child td{border-bottom:none}
+.glos-table td:first-child{font-family:var(--sans);font-weight:500;color:var(--green);white-space:nowrap;width:90px}
+.glos-table td:nth-child(2){color:var(--text);width:200px}
+.glos-table td:nth-child(3){color:var(--text-soft)}
+.sidebar{position:sticky;top:78px}
+.sb-card{background:#fff;border:1px solid var(--divider);border-radius:8px;padding:18px;margin-bottom:14px}
+.sb-label{font-family:var(--sans);font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-bottom:10px;display:block}
+.sb-card p{font-size:13px;line-height:1.65;color:var(--text-soft)}
+.sb-sub-btn{display:block;width:100%;background:var(--green);color:#fff;font-family:var(--sans);font-size:13px;font-weight:500;text-align:center;text-decoration:none;padding:10px 16px;border-radius:6px;margin-top:12px;transition:background 0.2s}
+.sb-sub-btn:hover{background:var(--green-mid)}
+.thread-item{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--divider);font-size:12px;color:var(--text-soft)}
+.thread-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.thread-ed{font-family:var(--sans);font-size:10px;color:var(--green);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2px}
+.sign-off-bar{background:var(--green);border-top:2px solid var(--gold);padding:28px 24px;text-align:center}
+.sign-off-bar p{font-family:var(--sans);font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase}
+.sign-off-bar strong{color:rgba(255,255,255,0.9)}
+footer{background:#111;padding:28px 24px;text-align:center}
+.foot-inner{max-width:880px;margin:0 auto}
+footer p{font-family:var(--sans);font-size:11px;color:rgba(255,255,255,0.35);line-height:1.7}
+footer a{color:rgba(255,255,255,0.5);text-decoration:none}
+footer a:hover{color:rgba(255,255,255,0.8)}
+@media(max-width:700px){
+  .article-grid{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .stat-grid,.case-grid,.market-grid{grid-template-columns:1fr}
+  .nav-link:not(.sub){display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://theuptimebrief.com" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="38" role="img" aria-label="The Uptime Brief"><defs><linearGradient id="ecg-n" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs><polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-n)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="98" cy="28" r="4" fill="#3dbf8a"/><line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/><text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="#ffffff" letter-spacing="2">THE UPTIME</text><text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text></svg></a>
+    <div class="nav-links">
+      <a href="https://theuptimebrief.com/editions" class="nav-link">All Editions</a>
+      <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/" class="nav-link sub" target="_blank" rel="noopener">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="ed-label">Edition 7 · May 2026</span>
+    <h1>Grid Access Is the Moat</h1>
+    <p class="hero-subtitle">Why APAC's renewable bottleneck is no longer just transmission — but physical capacity, commercial architecture and dispatch rules.</p>
+    <p class="hero-tag">Where uptime meets capital allocation</p>
+    <div class="byline">
+      <span>By <strong>Sel Fang, Lim</strong></span>
+      <span class="byline-dot">·</span>
+      <span>Data centre and infrastructure finance, APAC</span>
+      <span class="byline-dot">·</span>
+      <span>The Uptime Brief</span>
+    </div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-inner">
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">1,650 GW</div><div class="stat-lbl">Solar &amp; wind awaiting grid connection — IEA 2024</div></div>
+      <div class="stat-card"><div class="stat-num">7+ TWh</div><div class="stat-lbl">Record NEM curtailment 2025, +60% YoY</div></div>
+      <div class="stat-card"><div class="stat-num">51.5%</div><div class="stat-lbl">Peak-hour curtailment, Rajasthan — 2025</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="article-grid">
+<main class="main">
+
+<div class="section-block">
+  <span class="section-lbl">The deal</span>
+  <div class="section-title">Generation exists. It cannot get to load.</div>
+  <p>Last edition, we asked: what happens when the binding constraint shifts from firming at the generation layer to deliverability at the transmission layer? Deliverability is not one problem. It is three layers that must simultaneously align — and the layer most invisible to capital allocators is the one that fails most quietly and most expensively.</p>
+  <p>In 2024, the IEA tracked 1,650 GW of solar and wind projects in advanced development globally that were waiting for grid connection. That figure is not a planning horizon estimate. It is capacity in advanced development that cannot yet dispatch at scale — because the infrastructure between the asset and the load is the binding constraint. But "infrastructure" is doing too much work. The constraint is not only wires. It is wires, contracts and rules — and they fail independently.</p>
+  <p>Generation capacity is being built faster than the transmission system can absorb it. This is not a technology problem. It is a sequencing failure — across three distinct layers.</p>
+  <div class="pull">"Projects are curtailed not because the sun stopped shining — but because the path between asset and load is the binding constraint."</div>
+</div>
+
+<hr class="div">
+
+<div class="section-block">
+  <span class="section-lbl">The engineering read</span>
+  <div class="section-title">Three layers, not one bottleneck</div>
+  <div class="layer-box">
+    <div class="layer-item"><span class="l-badge l1">Layer 1</span><div><strong>Physical capacity</strong> — can the wires carry the power? Receives almost all infrastructure capital. Most visible, most measurable, most cited as the constraint.</div></div>
+    <div class="layer-item"><span class="l-badge l2">Layer 2</span><div><strong>Commercial architecture</strong> — are the contracts, offtake structures and financing terms designed to use that capacity? Failures look like project finance problems: mismatched tenors, uncompensated curtailment, no deemed dispatch clause.</div></div>
+    <div class="layer-item"><span class="l-badge l3">Layer 3</span><div><strong>Dispatch rules</strong> — do the regulatory rules permit the right parties to send power at the right time? Least visible to capital allocators. Failures are governance failures: access protocols, dispatch priority, load-allocation rules, direct contracting rights.</div></div>
+  </div>
+  <p>Most infrastructure investment addresses Layer 1. Most project finance addresses Layer 2. <strong>Layer 3 is where the gap lives.</strong></p>
+
+  <div class="sub-hdr">Two governance failure case studies</div>
+  <div class="case-grid">
+    <div class="case-card">
+      <div class="card-hdr">🇻🇳 Vietnam 2020 — Layer 1 congestion exposed a Layer 3 failure</div>
+      <div class="card-badge case-badge">Not only a Layer 1 problem</div>
+      <p>Vietnam wasted 364 GWh of solar energy in 2020. Grid congestion in southern provinces was real — but the framing understates the failure. The dispatch framework had not yet evolved enough to dynamically accommodate solar output at that scale. The bottleneck was not only physical; it was also the governance of how power was dispatched. Reform took until Decree 57 in 2025 to begin materialising.</p>
+    </div>
+    <div class="case-card">
+      <div class="card-hdr">🇺🇸 Lake Tahoe 2026 — points to a load-allocation failure mode</div>
+      <div class="card-badge case-badge">Contested but structurally instructive</div>
+      <p>Fortune reported Liberty Utilities disclosed NV Energy would no longer provide a major portion of its power supply after May 2027, raising concern for ~49,000 Lake Tahoe customers — in the context of rising data centre demand (Google, Apple, Microsoft at Tahoe-Reno Industrial Center). NV Energy disputes that residents will lose service. The structural signal holds: where data centres can offer a scale and load profile that residential customers cannot match, and load-allocation rules offer no protected access, small-scale users have limited leverage.</p>
+    </div>
+  </div>
+
+  <div class="sub-hdr">Four markets, three layers</div>
+  <div class="market-grid">
+    <div class="market-card">
+      <div class="card-hdr">🇦🇺 Australia</div>
+      <div class="card-badge mkt-badge">64 GW NEM pipeline · 7+ TWh curtailed</div>
+      <p>NEM connections pipeline hit 64 GW (Dec 2025) against a transmission system expanding materially slower than generation deployment. SA curtailed 38% of utility-scale solar in 2025. REZ projects (HumeLink, EnergyConnect, QNI Connect) are the structural response — lead times 2028–2032.</p>
+    </div>
+    <div class="market-card">
+      <div class="card-hdr">🇻🇳 Vietnam</div>
+      <div class="card-badge mkt-badge">220 plants curtailed · $14.9B gap</div>
+      <p>FiT-driven solar concentrated in the south while load sits in the north. 220 renewable plants cut production by end-2023; 20 overloaded points on 220/110 kV lines. Quang Tri wind curtailment reached exceptionally high levels in late 2025. Decree 57 DPPA reform is a structural improvement — not yet a physical grid fix.</p>
+    </div>
+    <div class="market-card">
+      <div class="card-hdr">🇮🇳 India</div>
+      <div class="card-badge mkt-badge">51.5% peak curtailment · 18-month delays</div>
+      <p>Rajasthan (~34 GW operational base) saw peak-hour solar curtailment reach 51.5% in 2025 amid 18–20 month transmission delays. Of 340 GW planned ISTS network, only 48 GW is complete and 112 GW remains in planning.</p>
+    </div>
+    <div class="market-card">
+      <div class="card-hdr">🇲🇾 Malaysia</div>
+      <div class="card-badge mkt-badge">RM45B investment · CRESS access</div>
+      <p>TNB investing RM45B in grid 2025–2027. CRESS improves the third-party access pathway, but grid-access charges (SAC) and implementation rules remain material bankability variables. From the project-delivery side: grid connection is slower than equipment supply — the bottleneck is the queue, not the generation side.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<div class="section-block">
+  <span class="section-lbl">The capital allocation read</span>
+  <div class="section-title">What this changes for project finance</div>
+  <ol class="cap-list">
+    <li class="cap-item"><span class="cap-n">1</span><div class="cap-body"><strong>Curtailment is non-linear on IRR.</strong><div class="cap-sub">For projects with market-price exposure, curtailment during peak solar hours creates a non-linear revenue drag — lost generation volume at peak disproportionately reduces revenue because peak hours carry the highest spot prices.</div><div class="cap-sub">Curtailment assumptions must be stress-tested at state or sub-state level, not national averages. India's national figure of 0.12% masks Rajasthan's 51.5% peak-hour reality.</div></div></li>
+    <li class="cap-item"><span class="cap-n">2</span><div class="cap-body"><strong>Transmission delay risk is now a first-order bankability risk.</strong><div class="cap-sub">Think about what an 18-to-24 month construction-to-revenue gap actually means in a project finance stack: extended interest-only periods, reserve accounts eaten before the asset earns a dollar, or sponsor equity bridges that were never in the original model.</div><div class="cap-sub">Lenders who don't stress-test this explicitly may be mispricing risk. Most aren't stress-testing it explicitly.</div></div></li>
+    <li class="cap-item"><span class="cap-n">3</span><div class="cap-body"><strong>Co-located structures change the debt structure.</strong><div class="cap-sub">A co-located generation + BESS + grid access project is a single infrastructure asset with multiple revenue streams: capacity payments, energy arbitrage, grid services, non-curtailable delivery value.</div><div class="cap-sub">The appropriate structure is a unitised project with blended debt tenor — longer on generation and storage, shorter on grid access if it carries regulatory risk.</div></div></li>
+    <li class="cap-item"><span class="cap-n">4</span><div class="cap-body"><strong>The aggregator lane requires capital across all three layers.</strong><div class="cap-sub">Generation alone is commoditised. Firming alone does not solve the delivery problem. Grid access alone is a toll road without traffic.</div><div class="cap-sub">The capital structure of a genuine aggregator looks less like a renewable energy fund and more like a vertically integrated utility with a project finance wrapper.</div></div></li>
+    <li class="cap-item"><span class="cap-n">5</span><div class="cap-body"><strong>Vietnam's DPPA mechanism opens a new revenue architecture, with caveats.</strong><div class="cap-sub">Decree 57 (March 2025) allows direct sales to large industrial consumers outside EVN offtake. Projects with BESS or flexible dispatch may receive priority grid access.</div><div class="cap-sub">Curtailment risk remains under Virtual DPPA structures and compensation terms are not yet clear. Structural improvement — not yet a physical grid fix.</div></div></li>
+    <li class="cap-item"><span class="cap-n">6</span><div class="cap-body"><strong>RE support mechanisms in SEA carry policy interruption risk.</strong><div class="cap-sub">Philippines ERC temporarily suspended GEA-AII collection (₱0.0371/kWh) for May–June 2026 citing consumer affordability pressure. Fund balance ~₱466.49M as of 5 May was sufficient to cover RE facility payments.</div><div class="cap-sub">Government-administered RE levies are politically exposed to consumer price pressure — a revenue risk standard bankability models rarely stress-test explicitly.</div></div></li>
+    <li class="cap-item"><span class="cap-n">7</span><div class="cap-body"><strong>Layer 3 risk is now a front-of-model bankability condition.</strong><div class="cap-sub">I've heard this framed as a documentation issue — just add a curtailment clause and move on. It isn't. In practice, lenders in SEA increasingly look for either a buyer who contractually pays through curtailment events, or an explicit curtailment compensation mechanism from day one — not as a fallback, but as a pre-condition for debt sizing.</div><div class="cap-sub">Mid-market APAC data centre operators competing against hyperscalers for grid access face the same structural dynamic as Lake Tahoe's customers: scale confers governance-access advantage, not just procurement advantage.</div><div class="cap-sub">The entity that navigates Layer 3 on behalf of mid-market operators — securing dispatch priority, curtailment compensation and direct contracting rights — is not just an energy intermediary. It is a governance intermediary. That is the aggregator lane, properly defined.</div></div></li>
+  </ol>
+</div>
+
+<hr class="div">
+
+<div class="section-block">
+  <span class="section-lbl">What this means for the broader market</span>
+  <div class="section-title">Grid access is the moat</div>
+  <p>The aggregator thesis running through this newsletter since Edition 2 has arrived at its structural answer. It is not a PPA aggregation play. It is a grid access architecture play — built on three stacked layers, each requiring separate capital allocation, but collectively creating something that individual project finance cannot replicate: a non-curtailable, firmable, clean energy delivery path to load.</p>
+  <p>Vietnam's DPPA reform is the most advanced policy signal. Australia's REZ framework is the most structured procurement architecture. India's scale creates the largest addressable market. Malaysia is the cross-border logistics layer. No single market has all three conditions simultaneously — which is why the aggregator entity, if it emerges, will likely be regional rather than country-specific.</p>
+  <div class="pull">If all three layers — physical capacity, commercial architecture and dispatch rules — must simultaneously align for firmed renewable delivery to be bankable, which layer is multilateral development finance actually equipped to fix? And does blended finance change the answer?</div>
+  <p>That is where multilateral development finance institutions, green bonds and blended finance structures come in. And that is where Edition 8 goes.</p>
+</div>
+
+<div class="sources-wrap">
+  <h4>Sources</h4>
+  <div class="src-cat">Policy and multilateral</div>
+  <div class="src-line">IEA, Building the Future Transmission Grid (2024) — 1,650 GW solar and wind in advanced development awaiting grid connection</div>
+  <div class="src-line">IRENA, Global Landscape of Energy Transition Finance 2025 — $671B/year annual grid investment need 2025–2030</div>
+  <div class="src-line">Vietnam PDP8, Decision No. 768/QD-TTg (Apr 2025) — $14.9B grid investment required 2021–2030</div>
+  <div class="src-line">Norton Rose Fulbright, Vietnam Power Sector Snapshot (2025) — Decree 57 DPPA mechanism; priority access for BESS projects</div>
+  <div class="src-line">India MoS Power (2025) — 0.12% national curtailment FY2024-25; 340 GW ISTS network planned</div>
+  <div class="src-line">World Bank / ESMAP (Feb 2020) — Vietnam solar curtailment strategy; substation-based bidding recommended</div>
+  <div class="src-line">Energy Transition Partnership / ESP Vietnam (2020) — ~364 GWh solar curtailed; linked to grid congestion, inadequate dispatch systems, and renewable concentration in Central/Southern Vietnam</div>
+  <div class="src-line">Malaysia Energy Commission / Single Buyer CRESS Guidelines (2025) — SAC framework and grid-access charge methodology</div>
+  <div class="src-line">Philippine Energy Regulatory Commission / PNA (May 2026) — GEA-AII suspension ₱0.0371/kWh for May–June 2026; fund balance ~₱466.49M as of 5 May</div>
+  <div class="src-cat">Utilities and capital structures</div>
+  <div class="src-line">AEMO Connections Scorecard Q4 2025 — 64 GW NEM connections pipeline</div>
+  <div class="src-line">AEMO Enhanced Locational Information Report 2025 — 4.5% average NEM solar curtailment 2024; individual plants above 25%</div>
+  <div class="src-line">AEMO Quarterly Energy Dynamics Q4 2025 — South Australia 38% utility-scale solar offloading</div>
+  <div class="src-line">TNB / The Malaysian Reserve (Sep 2024) — RM45B grid investment 2025–2027</div>
+  <div class="src-line">Bernama (Oct 2025) — TNB APG pipeline, 6,000 MW RE transmission projects</div>
+  <div class="src-cat">Market data and access analysis</div>
+  <div class="src-line">Rystad Energy via PV Tech (Feb 2026) — NEM curtailment exceeded 7 TWh in 2025, up 60%+ YoY</div>
+  <div class="src-line">EVN / NLDC via REGlobal (2026) — 220 renewable plants curtailed by end-2023; 20 overloaded transmission points</div>
+  <div class="src-line">VietnamNet (Nov 2025) — Quang Tri wind curtailment at exceptionally high levels during peak wind season</div>
+  <div class="src-line">Mercom India (Oct 2025) — Rajasthan 51.5% peak-hour solar curtailment; 18–20 month transmission delays</div>
+  <div class="src-line">Fortune (12 May 2026) — Liberty Utilities disclosed NV Energy ending major supply after May 2027; concern for ~49,000 Lake Tahoe customers</div>
+  <div class="src-line">Desert Research Institute / NV Energy 2024 IRP — 12 Northern Nevada data centre projects; 5,900 MW demand by 2033</div>
+  <div class="src-line">Cushman Wakefield APAC DC Update H2 2024 — Equinix Mumbai ~33 MW co-located solar + wind</div>
+  <div class="src-line">Ember (Aug 2024) — Malaysia wheeling fee uncertainty; 5.7 GWh storage need by 2035</div>
+  <div class="src-line">Practitioner market evidence (SEA utility-scale solar, 19 May 2026, anonymous) — Malaysia grid queue, Philippines regulatory access, Vietnam Layer 3 governance, BESS load-profile sizing</div>
+  <div class="src-line">Clifford Chance, Energy Transition in Southeast Asia: Solving the Storage Problem (Sep 2025) — SEA BESS revenue model; ancillary services and arbitrage market maturity; price-arbitrage not yet primary revenue driver pending market reform</div>
+  <div class="v-block">
+    <div class="v-title">Verification notes</div>
+    <div class="v-line">[DIRECTIONAL] Equinix Mumbai 33 MW — Cushman Wakefield secondary source; not verified against primary Equinix disclosure</div>
+    <div class="v-line">[DIRECTIONAL] Lake Tahoe — NV Energy disputes residents will lose service; commercial supply arrangement change confirmed, downstream impact contested</div>
+    <div class="v-line">[DIRECTIONAL] SEA BESS economics (narrow day-night spread) — market participant observation supported by SEA regulated tariff structure; price-arbitrage revenue model not yet viable per Clifford Chance, Energy Transition in Southeast Asia (Sep 2025); retained as directional market observation</div>
+    <div class="v-line">No investment advice intended or implied.</div>
+  </div>
+</div>
+
+<div class="glos-section">
+  <div class="glos-header"><span>Glossary — Terms used in this edition</span></div>
+  <table class="glos-table">
+    <thead><tr><th>Term</th><th>Full name</th><th>Plain English</th></tr></thead>
+    <tbody>
+      <tr><td>AEMO</td><td>Australian Energy Market Operator</td><td>Manages Australia's NEM; oversees grid connections and dispatch</td></tr>
+      <tr><td>APG</td><td>ASEAN Power Grid</td><td>Regional electricity interconnection initiative across Southeast Asia</td></tr>
+      <tr><td>BESS</td><td>Battery Energy Storage System</td><td>Large-scale batteries that store and release electricity to firm up renewable generation</td></tr>
+      <tr><td>CRESS</td><td>Corporate Renewable Energy Supply Scheme</td><td>Malaysia's framework for corporate clean energy procurement from the grid</td></tr>
+      <tr><td>DPPA</td><td>Direct Power Purchase Agreement</td><td>Allows renewable generators to sell power directly to large consumers, bypassing the state utility</td></tr>
+      <tr><td>ERC</td><td>Energy Regulatory Commission</td><td>Philippines' independent electricity sector regulator</td></tr>
+      <tr><td>EVN</td><td>Electricity of Vietnam</td><td>Vietnam's state-owned electricity utility and primary grid operator</td></tr>
+      <tr><td>FiT</td><td>Feed-in Tariff</td><td>Government-set price paid to renewable energy generators per unit of electricity produced</td></tr>
+      <tr><td>GEA-AII</td><td>Green Energy Auction Allowance</td><td>Per-kWh levy in the Philippines that funds payments to renewable energy facilities</td></tr>
+      <tr><td>IEA</td><td>International Energy Agency</td><td>Paris-based intergovernmental body tracking global energy data and policy</td></tr>
+      <tr><td>IRENA</td><td>International Renewable Energy Agency</td><td>Intergovernmental body supporting the global renewable energy transition</td></tr>
+      <tr><td>IRR</td><td>Internal Rate of Return</td><td>Annualised return on an investment — primary metric for infrastructure project viability</td></tr>
+      <tr><td>ISTS</td><td>Inter-State Transmission System</td><td>India's high-voltage national transmission network evacuating large-scale renewable generation</td></tr>
+      <tr><td>NEM</td><td>National Electricity Market</td><td>Australia's main electricity grid covering eastern and south-eastern states</td></tr>
+      <tr><td>NLDC</td><td>National Load Dispatch Centre</td><td>Vietnam's national grid dispatch authority managing real-time power system operations</td></tr>
+      <tr><td>PDP8</td><td>Power Development Plan 8</td><td>Vietnam's national energy master plan for 2021–2030 with vision to 2045</td></tr>
+      <tr><td>PPA</td><td>Power Purchase Agreement</td><td>Long-term contract fixing the price and volume of electricity between a generator and a buyer</td></tr>
+      <tr><td>REZ</td><td>Renewable Energy Zone</td><td>Designated areas in Australia with strong renewable resources, supported by coordinated transmission investment</td></tr>
+      <tr><td>SAC</td><td>System Access Charge</td><td>Fee developers pay TNB to transport power across Malaysia's grid under the CRESS scheme</td></tr>
+      <tr><td>TNB</td><td>Tenaga Nasional Berhad</td><td>Malaysia's national electricity utility and grid operator</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</main>
+
+<aside class="sidebar">
+  <div class="sb-card">
+    <span class="sb-label">About this newsletter</span>
+    <p>The Uptime Brief covers data centre and infrastructure finance in APAC — written for investors, engineers, and market operators at the intersection of engineering and capital allocation.</p>
+    <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/" class="sb-sub-btn" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
+  </div>
+  <div class="sb-card">
+    <span class="sb-label">Edition thread</span>
+    <div class="thread-item"><div class="thread-ed">Edition 6</div>The nuclear wildcard — hyperscaler SMR deals and the reliability premium</div>
+    <div class="thread-item"><div class="thread-ed">Edition 5</div>Blue Owl / Stack Infrastructure — $30B+ Asia sale as a capital allocation signal</div>
+    <div class="thread-item"><div class="thread-ed">Edition 4</div>APAC power crunch — the under-intermediation thesis</div>
+    <div class="thread-item"><div class="thread-ed">Edition 3</div>BESS capital allocation deep-dive</div>
+  </div>
+</aside>
+
+</div>
+</div>
+
+<div class="sign-off-bar">
+  <p><strong>The Uptime Brief</strong> &nbsp;·&nbsp; Where uptime meets capital allocation &nbsp;·&nbsp; Published weekly</p>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="30" role="img" aria-label="The Uptime Brief"><defs><linearGradient id="ecg-f" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs><polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-f)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="98" cy="28" r="4" fill="#3dbf8a"/><line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/><text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="rgba(255,255,255,0.75)" letter-spacing="2">THE UPTIME</text><text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text></svg>
+    <p style="margin-top:12px;">
+      &copy; 2026 The Uptime Brief &nbsp;·&nbsp; By <a href="https://www.linkedin.com/in/selfanglim">Sel Fang, Lim</a><br>
+      <a href="https://theuptimebrief.com/editions">All Editions</a> &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe on LinkedIn</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
