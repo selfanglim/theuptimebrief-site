@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Asset-Life Question — The Uptime Brief, Edition 11</title>
+<meta name="description" content="GPU rental prices are rising, but the real signal is in the financing underneath: technical and economic obsolescence are diverging, and the asset-life question is now an underwriting question. By Sel Fang, Lim.">
+<meta property="og:title" content="The Asset-Life Question — The Uptime Brief, Edition 11">
+<meta property="og:description" content="GPU rental prices are rising, but the real signal is in the financing underneath: technical and economic obsolescence are diverging, and the asset-life question is now an underwriting question. By Sel Fang, Lim.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theuptimebrief.com/editions/edition-11">
+<meta property="og:site_name" content="The Uptime Brief">
+<meta property="og:image" content="https://theuptimebrief.com/assets/og-edition11.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://theuptimebrief.com/editions/edition-11">
+<link rel="icon" type="image/png" href="data:image/png;base64,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/ql/H+dHQXUkooooGFFFFABRRRQA1e/1p1NXv9adQwCiiigAooooAKKKKACmn7w/GnU0/eH40AOooooAKKKKACiiigAooooAQ9DQOgoPQ0DoKAFooooAKKKKACiiigAooooAaPvH8KdTR94/hTqACiiigAooooAKKKKAEpruq43MBn1OKdWJ4n1AaXpMl5jd5akgHoSSAAfxIpomclGLkzX8+If8tE/OlEsbHAdTntmvA7rWdRvLgzS3k24nICuQF9gAcCu58Ca/c6hM1jduZJIwHSQ9SuQCD64JHPvTcdLnnUszhUqclj0eiiipPTCiiigCOb/VN+H86kqOb/VN+H86koF1CiiigYVHD/ql/H+dSVHD/ql/H+dHQXUkooooGFFFFABRRRQA1e/1p1NXv9adQwCiiigAooooAKKKKACmn7w/GnU0/eH40AOooooAKKKKACiiigAooooAQ9DQOgoPQ0DoKAFooooAKKKKACiiigAooooAaPvH8KdTR94/hTqACiiigAooooAKKKKAErE8T6eNU0mSzzt8xSAT0BBBBP4gVt010VsblBx6jNNETipxcX1PArrRtRs7gwy2c24HAKoSG9wQMGu58CaBc6fM19doY5JAESM9QuQST6ZIHHtXoXkRH/lmn5UoijU5CKMd8U3LSx5lHK1TqKd9iSiiipPWCiiigCOb/VN+H86kqOb/AFTfh/OpKBdQooooGFRQjMQ5Pf8AnUtRw/6pf896Ogh+Pc/nRj3P50tFAxMe5/OjHufzpaKAEx7n86Me5/OlooAaB15NLj3P50i9/rTqBCY9z+dGPc/nS0UDEx7n86Me5/OlooATHufzox7n86WigBMe5/OkI+YcmnU0/eH40ALj3P50Y9z+dLRQAmPc/nRj3P50tFACY9z+dGPc/nS0UAJj3P50Y9z+dLRQA0jg8n86AOByfzpT0NA6CgAx7n86Me5/OlooATHufzox7n86WigBMe5/OjHufzpaKAEx7n86Me5/OlooAaB8x5Palx7n86QfeP4U6gQmPc/nRj3P50tFAxMe5/OjHufzpaKAEx7n86Me5/OlooATHufzpCOnJp1Nbt9aBBj3P50Y9z+dOooGJj3P50Y9z+dLRQAmPc/nRj3P50tFAEUwxEeT2/nUlMm/1Tf570+gXUWiiigYVHD/AKpfx/nUlRw/6pfx/nR0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">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1a4a3a;
+  --green-light: #2d6b55;
+  --green-pale: #e8f2ee;
+  --green-mid: #c2d8cc;
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --cream: #f8f6f2;
+  --ink: #1c1c1c;
+  --ink-mid: #3a3a3a;
+  --ink-light: #6b6b6b;
+  --border: #ddd8d0;
+  --white: #ffffff;
+  --red: #c0392b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.nav {
+  background: var(--green);
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-subscribe {
+  background: var(--gold);
+  color: #2a1a00 !important;
+  padding: 6px 16px;
+  border-radius: 3px;
+  letter-spacing: 0.08em !important;
+}
+.nav-subscribe:hover { background: var(--gold-light) !important; color: #2a1a00 !important; }
+
+/* HERO */
+.hero {
+  background: var(--green);
+  padding: 64px 40px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+.hero-edition {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-edition::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+.hero-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.hero-sub {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--green-mid);
+  margin-bottom: 28px;
+  line-height: 1.55;
+  max-width: 640px;
+}
+.hero-byline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.04em;
+}
+.hero-byline strong { color: rgba(255,255,255,0.7); font-weight: 600; }
+
+/* STAT STRIP */
+.stat-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+}
+.stat-strip-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.stat-item {
+  padding: 24px 20px;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-val {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--ink-light);
+  line-height: 1.4;
+}
+.stat-flag {
+  background: #fdf2f2;
+  border-left: 3px solid #c0392b;
+  padding: 10px 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #6b2020;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+/* LAYOUT */
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 60px;
+  align-items: start;
+}
+
+/* MAIN CONTENT */
+.main-content {}
+
+.section { margin-bottom: 48px; }
+
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--green-pale);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--green-pale);
+}
+
+.section p {
+  margin-bottom: 18px;
+  color: var(--ink-mid);
+}
+.section p:last-child { margin-bottom: 0; }
+
+.section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 28px 0 12px;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+/* Market sub-sections */
+.market-block {
+  background: var(--green-pale);
+  border-left: 3px solid var(--green);
+  border-radius: 0 4px 4px 0;
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+.market-block h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.market-block .arrow-row {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink-mid);
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.market-block .arrow-row::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: var(--green);
+  border-left: 3px solid var(--gold);
+  padding: 16px 24px;
+  margin: 32px 0;
+  line-height: 1.55;
+  background: var(--green-pale);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Practitioner box */
+.practitioner-box {
+  background: var(--white);
+  border: 1px solid var(--green-mid);
+  border-left: 4px solid var(--green-light);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+.prac-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.prac-text {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  font-style: italic;
+}
+
+/* Capital allocation points */
+.cap-point {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  align-items: flex-start;
+}
+.cap-num {
+  background: var(--green);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.cap-body {
+  flex: 1;
+  font-family: 'Source Serif 4', serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+}
+.cap-body strong {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 8px;
+}
+.cap-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  color: var(--ink-light);
+  padding-left: 14px;
+  position: relative;
+  margin-top: 6px;
+  line-height: 1.55;
+}
+.cap-sub::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 11px;
+  top: 2px;
+}
+
+/* Closing section */
+.closing-question {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.55;
+  margin: 28px 0 16px;
+}
+.edition-next {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* SOURCES */
+.sources-wrap {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 32px;
+  margin-top: 40px;
+}
+.sources-wrap h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.sources-cat {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  margin: 16px 0 8px;
+  letter-spacing: 0.06em;
+}
+.sources-wrap p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+.verification-block {
+  background: #fdf2f2;
+  border: 1px solid #f5c6c6;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-top: 16px;
+}
+.verification-block .v-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b2020;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.verification-block p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #6b2020;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.verification-block p:last-child { font-style: italic; margin-top: 10px; margin-bottom: 0; }
+
+/* GLOSSARY */
+.glossary-wrap {
+  margin-top: 40px;
+}
+.glossary-wrap h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.glossary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+}
+.glossary-table th {
+  background: var(--green);
+  color: var(--white);
+  padding: 8px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.glossary-table td {
+  padding: 7px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-mid);
+  vertical-align: top;
+  line-height: 1.45;
+}
+.glossary-table tr:nth-child(even) td { background: var(--green-pale); }
+
+/* SIDEBAR */
+.sidebar { position: sticky; top: 80px; }
+
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.sidebar-card h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.sidebar-card p:last-child { margin-bottom: 0; }
+.subscribe-btn {
+  display: block;
+  width: 100%;
+  background: var(--green);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-top: 14px;
+  transition: background 0.15s;
+}
+.subscribe-btn:hover { background: var(--green-light); }
+
+.edition-thread-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+.thread-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-pale);
+  border-radius: 3px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  letter-spacing: 0.04em;
+}
+.thread-topic {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--ink-mid);
+  line-height: 1.45;
+}
+
+/* SIGN-OFF BAR */
+.signoff-bar {
+  background: var(--green);
+  padding: 28px 40px;
+  text-align: center;
+}
+.signoff-bar p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+}
+
+/* FOOTER */
+.footer {
+  background: #111;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-copy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+.footer-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .sidebar { position: static; }
+  .stat-strip-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .nav { padding: 0 20px; }
+  .hero { padding: 40px 20px; }
+  .stat-strip { padding: 0 20px; }
+  .stat-strip-inner { grid-template-columns: 1fr 1fr; }
+  .page-wrap { padding: 32px 20px 60px; }
+  .signoff-bar { padding: 20px; }
+  .footer { padding: 28px 20px; flex-direction: column; gap: 12px; }
+}
+</style>
+
+<style>
+.cap-point { display:flex; gap:16px; margin:22px 0; }
+.cap-num { flex:0 0 34px; height:34px; border-radius:50%; background:var(--green); color:#fff; font-family:'DM Sans',sans-serif; font-weight:700; font-size:16px; display:flex; align-items:center; justify-content:center; }
+.cap-body { flex:1; }
+.cap-body > p { margin:0 0 8px; }
+.lens-box { background:var(--green-pale); border-left:4px solid var(--green); border-radius:4px; padding:20px 22px; margin:26px 0; }
+.lens-title { font-family:'DM Sans',sans-serif; font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:14px; }
+.lens-row { padding:12px 0; border-bottom:1px solid rgba(26,74,58,0.12); }
+.lens-row:last-child { border-bottom:none; }
+.lens-cell { font-family:'DM Sans',sans-serif; font-size:13.5px; line-height:1.5; color:var(--ink); margin:3px 0; }
+.lens-k { font-weight:700; color:var(--green); margin-right:6px; }
+.src-line { font-family:'DM Sans',sans-serif; font-size:13.5px; line-height:1.6; color:var(--ink-light); margin:3px 0; }
+.closing-q { font-family:'Playfair Display',serif; font-style:italic; font-size:19px; line-height:1.55; color:var(--green); border-left:3px solid var(--gold); padding:6px 0 6px 20px; margin:20px 0; }
+.signoff-bar { text-align:center; font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:1.5px; color:var(--ink-light); padding:24px 20px; border-top:1px solid rgba(26,74,58,0.1); }
+</style>
+
+</head>
+<nav class="nav">
+  <a href="https://theuptimebrief.com" style="text-decoration:none">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="34" role="img" aria-label="The Uptime Brief">
+      <defs><linearGradient id="ecg-g" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs>
+      <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+      <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="#ffffff" letter-spacing="2">THE UPTIME</text>
+      <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="https://theuptimebrief.com/editions">All Editions</a>
+    <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/" target="_blank" class="nav-subscribe">Subscribe</a>
+  </div>
+</nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-edition">Edition 11 · June 2026</div>
+    <h1 class="hero-headline">The asset-life question: when the depreciation clock and the cash-flow clock stop moving together</h1>
+    <p class="hero-sub">GPU rental prices are rising. The real signal is in the financing structure underneath — and the risk has migrated from demand to asset life.</p>
+    <p class="hero-byline">By <strong>Sel Fang, Lim</strong> · Data centre and infrastructure finance, APAC</p>
+  </div>
+</section>
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-item">
+      <div class="stat-val">~40%</div>
+      <div class="stat-label">H100 1-year contract rental rise since October 2025 — SemiAnalysis GPU Rental Price Index [OBSERVED]</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">US$21.6B</div>
+      <div class="stat-label">CoreWeave total indebtedness as of Dec 2025, plus an $8.5B delayed-draw term loan (March 2026) [REPORTED]</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">2026–2028</div>
+      <div class="stat-label">Clustered neocloud refinancing window — same vintage, same debt structures, same window</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">US$35B</div>
+      <div class="stat-label">Apollo–Blackstone TPU financing for Anthropic, closed 5 June 2026 — institutional capital testing the asset-life thesis [REPORTED]</div>
+    </div>
+  </div>
+</div>
+<div class="stat-flag">⚠️ Figures are flagged by verification level: [REPORTED] / [OBSERVED] / [DIRECTIONAL] / [HYPOTHESIS]. Rental indices are observed market data, not independently verified against operator reporting. No investment advice intended or implied.</div>
+<!-- MAIN PAGE -->
+<div class="page-wrap">
+  <main class="main-content">
+
+    <!-- INTRO -->
+    <div class="section">
+      <p>H100 rental rates are up roughly 40% since October 2025. A100s — 2020-generation hardware — are up around 14% year-to-date. Forward GPU capacity through mid-2026 is reportedly booked.</p>
+      <p>Most people read that as proof AI demand is real. Read for capital, it is an incomplete signal. The rental price chart shows demand. It does not show the financing structure sitting underneath it — and that structure is where the risk now lives.</p>
+      <p>Edition 10 closed by asking what kind of asset you are actually buying in the intermediation layer — a standalone business, or a captive feature. This edition takes the same standalone-versus-captive lens one layer down, to the compute asset itself.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- THE SIGNAL -->
+    <div class="section">
+      <div class="section-label">The Signal</div>
+      <p>Rising rental rates are not, by themselves, evidence that the hardware is appreciating. They are evidence that deployable, powered capacity is scarce. Blackwell availability is reportedly constrained into mid-2026, leaving H100 as the practical option for many operators, and older GPUs are retaining monetisable utility longer than the standard depreciation curve assumed — A100 and H100 indices are both trending higher year-to-date.</p>
+      <p>The scarcity runs deeper than GPU supply alone. One clear market signal of how scarce pre-energised grid connections have become is that AI cloud operators are acquiring or partnering with former Bitcoin mining infrastructure partly to accelerate access to power capacity and reduce interconnection and development bottlenecks. CoreWeave's acquisition of Core Scientific — giving it approximately 1.3GW of gross power capacity across an existing data centre footprint [REPORTED — CoreWeave / Core Scientific Form 8-K] — underscores how decisively the binding constraint has shifted toward power access. The GPU rental price chart does not capture the power access constraint sitting underneath it.</p>
+      <div class="pull-quote">The rental price chart shows demand. It does not show the financing structure underneath it.</div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ENGINEERING READ -->
+    <div class="section">
+      <div class="section-label">The Engineering Read — Technical vs Economic Obsolescence</div>
+      <p>The core distinction this edition turns on is that technical obsolescence and economic obsolescence are not the same thing. Technical obsolescence is hardware-driven: a newer GPU generation arrives with superior performance characteristics, making the prior generation less competitive for frontier workloads. Economic obsolescence is demand-driven: the prior generation loses its ability to generate rental income at rates sufficient to service the debt underwritten against it.</p>
+      <p>A GPU generation can lose frontier-performance relevance while still retaining substantial cash-flow utility if compute scarcity persists. The depreciation clock lenders use and the cash-flow clock operators experience are running at different speeds. When they converge at refinancing time, the gap becomes the equity problem.</p>
+
+      <div class="market-block">
+        <h4>Agentic load · a utilisation extender, not just a demand story</h4>
+        <div class="arrow-row">Agentic AI may be extending compute utilisation by making workloads more persistent and infrastructure-like, rather than bursty and episodic</div>
+        <div class="arrow-row">Agentic pipelines push CPU-to-GPU ratios from 1:8 toward 1:1 or 1:2 [DIRECTIONAL — TrendForce]</div>
+        <div class="arrow-row">Every gigawatt of agentic capacity is estimated to require approximately four times the CPU cores of a traditional AI training cluster [DIRECTIONAL — Tom's Hardware / CreditSights]</div>
+        <div class="arrow-row">Implication: if economic life exceeds technical life, infrastructure investors and lenders conflating the two are applying the wrong depreciation clock to their underwriting [HYPOTHESIS]</div>
+      </div>
+
+      <div class="market-block">
+        <h4>Neocloud leverage · the risk layer below the demand signal</h4>
+        <div class="arrow-row">CoreWeave reported US$21.6B in total indebtedness as of December 2025, with an additional $8.5B delayed-draw term loan executed in March 2026 [REPORTED]</div>
+        <div class="arrow-row">The critical refinancing variable is not GPU age alone — it is whether contracted cash flows remain sufficient to support debt-service coverage after collateral marks reset lower [HYPOTHESIS]</div>
+        <div class="arrow-row">Implication: elevated rental rates tell you demand is real; they do not tell you whether DSCR holds at the point collateral is remarked and the loan comes up for renewal</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- CAPITAL ALLOCATION READ -->
+    <div class="section">
+      <div class="section-label">The Capital Allocation Read</div>
+
+      <div class="cap-point">
+        <div class="cap-num">1</div>
+        <div class="cap-body">
+          <p><strong>The underwriting question has shifted — but it has not been resolved.</strong></p>
+          <div class="arrow-row">The rental market is currently answering the asset-life question favourably — older hardware retaining monetisable utility longer than the standard depreciation curve assumed</div>
+          <div class="arrow-row">But the question has not been resolved. It has been deferred by an unusually strong demand environment and a supply constraint that may not persist</div>
+          <div class="arrow-row">The correct underwriting frame is now: how long can each generation of compute remain monetisable — and is demand durable enough to service the debt sitting underneath it?</div>
+          <div class="arrow-row">The market is already beginning to test this frame. The reported Apollo–Blackstone financing supporting Google's TPUs leased to Anthropic separates ownership of the compute assets from their use, with institutional lenders underwriting lease cash flows rather than hardware resale value alone — but the senior debt reportedly required a vendor residual-value backstop to price, and the unbacked tranche cleared at a materially higher coupon. That spread is the tell: institutional capital is testing whether long-duration compute cash flows are durable, not yet asserting that they are [REPORTED]</div>
+        </div>
+      </div>
+
+      <div class="cap-point">
+        <div class="cap-num">2</div>
+        <div class="cap-body">
+          <p><strong>Technical obsolescence and economic obsolescence are not the same thing.</strong></p>
+          <div class="arrow-row">Technical obsolescence is hardware-driven: a newer GPU generation arrives with superior performance, making the prior generation less competitive for frontier workloads</div>
+          <div class="arrow-row">Economic obsolescence is demand-driven: the prior generation loses its ability to generate rental income at rates sufficient to service the debt underwritten against it</div>
+          <div class="arrow-row">The market may increasingly bifurcate between these two timelines — a GPU generation can lose frontier-performance relevance while still retaining substantial cash-flow utility if compute scarcity persists</div>
+          <div class="arrow-row">Implication: infrastructure investors and lenders who conflate technical and economic obsolescence are applying the wrong depreciation clock to their underwriting [HYPOTHESIS]</div>
+        </div>
+      </div>
+
+      <div class="cap-point">
+        <div class="cap-num">3</div>
+        <div class="cap-body">
+          <p><strong>The GPU debt cliff is a synchronisation risk, not a single-event risk.</strong></p>
+          <div class="arrow-row">A large cohort of neocloud operators entered the market in the same 2023–2024 window, on similar debt structures, underwritten by lenders sharing the same AI demand thesis</div>
+          <div class="arrow-row">Their refinancing windows cluster in the same 2026–2028 period — at the same moment Blackwell and Vera Rubin are compressing H100 and A100 collateral values</div>
+          <div class="arrow-row">Implication: synchronised refinancing pressure across an entire asset class — a structural feature of how the build-out was financed [HYPOTHESIS]</div>
+        </div>
+      </div>
+
+      <div class="cap-point">
+        <div class="cap-num">4</div>
+        <div class="cap-body">
+          <p><strong>For APAC data centre operators, the neocloud credit question is a tenant risk question.</strong></p>
+          <div class="arrow-row">APAC colocation operators increasingly count neocloud operators among their anchor tenants</div>
+          <div class="arrow-row">The occupancy assumptions embedded in APAC data centre underwriting inherit the neocloud financing risk whether or not the operator has direct visibility</div>
+          <div class="arrow-row">Implication: APAC data centre underwriting now requires a view on tenant capital structure, not just tenant demand outlook — confusing them is a material underwriting gap</div>
+        </div>
+      </div>
+
+      <!-- INVESTMENT LENS -->
+      <div class="lens-box">
+        <div class="lens-title">Investment Lens</div>
+
+        <div class="lens-row">
+          <div class="lens-cell"><span class="lens-k">Constraint</span> Technical vs economic obsolescence mismatch</div>
+          <div class="lens-cell"><span class="lens-k">Impact</span> Lenders applying technical depreciation schedules may mark collateral down before cash flows deteriorate — or hold too long if scarcity masks economic decline</div>
+          <div class="lens-cell"><span class="lens-k">Capital response</span> Underwriting frameworks separating technical useful life from contracted cash-flow duration</div>
+          <div class="lens-cell"><span class="lens-k">Winning asset</span> Long-tenor offtake agreements with creditworthy counterparties that outlast the hardware generation cycle</div>
+        </div>
+
+        <div class="lens-row">
+          <div class="lens-cell"><span class="lens-k">Constraint</span> DSCR compression at refinancing</div>
+          <div class="lens-cell"><span class="lens-k">Impact</span> Collateral remarking compresses advance rates even when rental cash flows remain intact</div>
+          <div class="lens-cell"><span class="lens-k">Capital response</span> Equity buffers sized against collateral compression; staggered debt maturities; contracted backlog as cash-flow security</div>
+          <div class="lens-cell"><span class="lens-k">Winning asset</span> Operators with balance sheet strength to absorb fleet refresh without forced refinancing</div>
+        </div>
+
+        <div class="lens-row">
+          <div class="lens-cell"><span class="lens-k">Constraint</span> Synchronised refinancing window (2026–2028)</div>
+          <div class="lens-cell"><span class="lens-k">Impact</span> Neocloud cohort hits debt maturity simultaneously, amplifying any credit tightening or collateral repricing</div>
+          <div class="lens-cell"><span class="lens-k">Capital response</span> Lenders likely to differentiate between operators with contracted hyperscaler offtake vs spot rental market dependence</div>
+          <div class="lens-cell"><span class="lens-k">Winning asset</span> Platforms that entered earlier, locked in longer-tenor contracts, carry lower leverage relative to contracted cash flows</div>
+        </div>
+
+        <div class="lens-row">
+          <div class="lens-cell"><span class="lens-k">Constraint</span> Tenant credit opacity (APAC)</div>
+          <div class="lens-cell"><span class="lens-k">Impact</span> Colocation occupancy assumptions inherit neocloud refinancing risk without direct visibility</div>
+          <div class="lens-cell"><span class="lens-k">Capital response</span> Tenant capital-structure diligence as a condition of underwriting occupancy, not just demand</div>
+          <div class="lens-cell"><span class="lens-k">Winning asset</span> Operators with diversified, creditworthy tenant books rather than concentrated neocloud exposure</div>
+        </div>
+      </div>
+
+      <div class="cap-point">
+        <div class="cap-num">5</div>
+        <div class="cap-body">
+          <p><strong>AI infrastructure risk has migrated — from demand risk to power access, supply allocation, and asset-life underwriting risk.</strong></p>
+          <div class="arrow-row">Current rental pricing and forward booking signals suggest demand is real — for now. But that answer is contingent on scarcity conditions that may not persist</div>
+          <div class="arrow-row">Implication: capital allocated using a demand-risk framework may now be misaligned with where the actual structural risk lives [HYPOTHESIS]</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- BROADER MARKET -->
+    <div class="section">
+      <div class="section-label">What This Means for the Broader Market</div>
+      <p>Elevated rental rates are a necessary condition for the asset-life thesis. They are not sufficient proof of it. The scarcity signal is real. The hoarding risk is real. The refinancing window is real. But capital allocated on a demand-risk framework may now be misaligned with where the structural risk actually lives.</p>
+      <p>The discipline this edition argues for is to stop underwriting AI infrastructure on demand alone and start underwriting the asset-life assumption directly — how long each generation of compute remains monetisable, and whether the cash flows last long enough to clear the debt sitting underneath them. Compute scarcity is the signal. Capital structure is the risk.</p>
+      <div class="closing-q">If the depreciation clock and the cash-flow clock are diverging — if a compute asset can keep generating contracted cash flows well past its frontier-performance life — then the next question is not technical but financial: how does capital respond when an asset it once treated as fast-depreciating hardware starts to behave like something with durable, contractable cash flows? Recent financing structures suggest the market may already be testing an answer.</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-light);margin-top:18px">Edition 12 picks that up.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SOURCES -->
+    <div class="section">
+      <div class="section-label">Key Sources</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-light);margin-bottom:6px"><strong>Market data and indices</strong></p>
+      <div class="src-line">→ SemiAnalysis GPU Rental Price Index — H100 1-year contract pricing, October 2025 to March 2026 [OBSERVED]</div>
+      <div class="src-line">→ Silicon Data SDA100RT / SDH100RT Index — A100 and H100 rental price indices, YTD May 2026 [OBSERVED]</div>
+      <div class="src-line">→ TrendForce — CPU-to-GPU ratio projections for agentic AI deployments [DIRECTIONAL]</div>
+      <div class="src-line">→ Tom's Hardware / CreditSights — agentic capacity CPU core requirements per gigawatt [DIRECTIONAL]</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-light);margin:14px 0 6px"><strong>Compute and capital structures</strong></p>
+      <div class="src-line">→ CoreWeave Form 10-K (2025) — total indebtedness US$21.6B as of 31 December 2025 [REPORTED]</div>
+      <div class="src-line">→ Reuters — CoreWeave $8.5B delayed-draw term loan, March 2026 [REPORTED]</div>
+      <div class="src-line">→ CoreWeave / Core Scientific Form 8-K — approximately 1.3GW gross power capacity [REPORTED]</div>
+      <div class="src-line">→ Apollo / Blackstone Anthropic TPU financing — SPV lease structure and Broadcom residual-value support, finalised 5 June 2026 (FT / Bloomberg / Investing.com, as reported) [REPORTED]</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-light);margin:14px 0 6px"><strong>Verification notes</strong></p>
+      <div class="src-line"><strong>[REPORTED]</strong> CoreWeave debt figures and Core Scientific acquisition sourced from public SEC filings.</div>
+      <div class="src-line"><strong>[REPORTED]</strong> Apollo / Blackstone Anthropic TPU financing terms sourced from press coverage; not independently verified against transaction documents; cited as early evidence of an underwriting shift, not a settled structure.</div>
+      <div class="src-line"><strong>[OBSERVED]</strong> GPU rental index movements (SemiAnalysis, Silicon Data); market data, not independently verified against primary operator reporting.</div>
+      <div class="src-line"><strong>[DIRECTIONAL]</strong> Agentic compute multipliers and CPU-to-GPU ratio projections; directionally credible but not settled benchmarks.</div>
+      <div class="src-line"><strong>[HYPOTHESIS]</strong> Refinancing synchronisation thesis and the technical-vs-economic obsolescence distinction; analytical inference based on publicly available capital-structure data.</div></div>
+      <div class="src-line" style="margin-top:8px">No investment advice intended or implied.</div>
+    </div>
+
+    <!-- GLOSSARY -->
+    <div class="glossary-wrap">
+      <h3>Glossary — Terms used in this edition</h3>
+      <table class="glossary-table">
+        <thead><tr><th>Term</th><th>Full name</th><th>Plain English</th></tr></thead>
+        <tbody>
+          <tr><td>A100</td><td>NVIDIA A100 — Ampere architecture GPU (2020)</td><td>A prior-generation AI accelerator chip, still widely rented</td></tr>
+          <tr><td>APAC</td><td>Asia-Pacific</td><td>The Asia-Pacific region</td></tr>
+          <tr><td>CPU</td><td>Central processing unit</td><td>The general-purpose chip that manages orchestration and logic alongside GPUs</td></tr>
+          <tr><td>DSCR</td><td>Debt-service coverage ratio</td><td>Whether an asset's cash flows are enough to cover the debt payments owed against it</td></tr>
+          <tr><td>GPU</td><td>Graphics processing unit</td><td>The chip that does the heavy compute for AI training and inference</td></tr>
+          <tr><td>H100</td><td>NVIDIA H100 — Hopper architecture GPU (2022)</td><td>The current workhorse AI accelerator for most operators</td></tr>
+          <tr><td>Neocloud</td><td>—</td><td>A new class of cloud provider built specifically to rent out GPU compute</td></tr>
+          <tr><td>SPV</td><td>Special purpose vehicle</td><td>A separate legal entity created to hold and finance a single asset or deal</td></tr>
+          <tr><td>TPU</td><td>Tensor processing unit</td><td>Google's custom AI accelerator chip, an alternative to GPUs</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h4>About The Uptime Brief</h4>
+      <p>A newsletter covering data centre and infrastructure finance in APAC. Analytical and investment-focused — for engineers, investors, and market operators.</p>
+      <p>By <strong>Sel Fang, Lim</strong> · Data centre and infrastructure finance, APAC.</p>
+      <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/" target="_blank" class="sidebar-sub">Subscribe on LinkedIn</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Edition Thread</h4>
+      <p><strong>E10</strong> You can't exit a feature — standalone vs moat in the APAC intermediation layer</p>
+      <p><strong>E9</strong> The intermediation layer — who sits between DFI-financed grid capacity and the buyers who can't reach it</p>
+      <p><strong>E8</strong> Follow the money into the wires — DFI and blended finance building grid capacity ahead of access</p>
+      <p><strong>E7</strong> Grid access is the moat — queued capacity, co-located gen+storage, and the three-layer framework</p>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Key Framework</h4>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:17px;color:var(--green)">"Compute scarcity is the signal. Capital structure is the risk."</p>
+      <p>Technical obsolescence and economic obsolescence are diverging. A GPU can lose frontier relevance while still paying — until the depreciation clock and the cash-flow clock converge at refinancing.</p>
+    </div>
+  </aside>
+</div>
+<div class="signoff-bar">The Uptime Brief · Where uptime meets capital allocation · Published biweekly</div>
+
+<footer class="footer">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="30" role="img" aria-label="The Uptime Brief">
+    <defs><linearGradient id="ecg-gf" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs>
+    <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-gf)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+    <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+    <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="rgba(255,255,255,0.75)" letter-spacing="2">THE UPTIME</text>
+    <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+  </svg>
+  <span class="footer-copy">© 2026 The Uptime Brief. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="https://theuptimebrief.com/editions">Editions</a>
+    <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+</body>
+</html>
