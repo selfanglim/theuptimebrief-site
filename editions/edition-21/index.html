@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Returns Inversion — The Uptime Brief, Edition 21</title>
+<meta name="description" content="Why the cheapest megawatt to build may not be the most valuable megawatt to own: a location's cost advantage is not automatically an owner's return advantage. By Sel Fang, Lim.">
+<link rel="canonical" href="https://theuptimebrief.com/editions/edition-21">
+<meta property="og:title" content="The Returns Inversion — The Uptime Brief, Edition 21">
+<meta property="og:description" content="Why the cheapest megawatt to build may not be the most valuable megawatt to own. By Sel Fang, Lim.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theuptimebrief.com/editions/edition-21">
+<meta property="og:site_name" content="The Uptime Brief">
+<meta property="og:image" content="https://theuptimebrief.com/assets/og-edition21.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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/ql/H+dHQXUkooooGFFFFABRRRQA1e/1p1NXv9adQwCiiigAooooAKKKKACmn7w/GnU0/eH40AOooooAKKKKACiiigAooooAQ9DQOgoPQ0DoKAFooooAKKKKACiiigAooooAaPvH8KdTR94/hTqACiiigAooooAKKKKAEpruq43MBn1OKdWJ4n1AaXpMl5jd5akgHoSSAAfxIpomclGLkzX8+If8tE/OlEsbHAdTntmvA7rWdRvLgzS3k24nICuQF9gAcCu58Ca/c6hM1jduZJIwHSQ9SuQCD64JHPvTcdLnnUszhUqclj0eiiipPTCiiigCOb/VN+H86kqOb/VN+H86koF1CiiigYVHD/ql/H+dSVHD/ql/H+dHQXUkooooGFFFFABRRRQA1e/1p1NXv9adQwCiiigAooooAKKKKACmn7w/GnU0/eH40AOooooAKKKKACiiigAooooAQ9DQOgoPQ0DoKAFooooAKKKKACiiigAooooAaPvH8KdTR94/hTqACiiigAooooAKKKKAErE8T6eNU0mSzzt8xSAT0BBBBP4gVt010VsblBx6jNNETipxcX1PArrRtRs7gwy2c24HAKoSG9wQMGu58CaBc6fM19doY5JAESM9QuQST6ZIHHtXoXkRH/lmn5UoijU5CKMd8U3LSx5lHK1TqKd9iSiiipPWCiiigCOb/VN+H86kqOb/AFTfh/OpKBdQooooGFRQjMQ5Pf8AnUtRw/6pf896Ogh+Pc/nRj3P50tFAxMe5/OjHufzpaKAEx7n86Me5/OlooAaB15NLj3P50i9/rTqBCY9z+dGPc/nS0UDEx7n86Me5/OlooATHufzox7n86WigBMe5/OkI+YcmnU0/eH40ALj3P50Y9z+dLRQAmPc/nRj3P50tFACY9z+dGPc/nS0UAJj3P50Y9z+dLRQA0jg8n86AOByfzpT0NA6CgAx7n86Me5/OlooATHufzox7n86WigBMe5/OjHufzpaKAEx7n86Me5/OlooAaB8x5Palx7n86QfeP4U6gQmPc/nRj3P50tFAxMe5/OjHufzpaKAEx7n86Me5/OlooATHufzpCOnJp1Nbt9aBBj3P50Y9z+dOooGJj3P50Y9z+dLRQAmPc/nRj3P50tFAEUwxEeT2/nUlMm/1Tf570+gXUWiiigYVHD/AKpfx/nUlRw/6pfx/nR0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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#1a4a3a;--green-mid:#2f6b54;--green-pale:#e8f2ee;--gold:#c9a84c;--teal:#3dbf8a;--blue:#4ab8d4;--cream:#f8f6f2;--ink:#1c2420;--muted:#5a6b63;--border:#d7e0da;--dark:#111;}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;font-size:17px;}
+  a{color:var(--green-mid);}
+  /* Nav */
+  nav{position:sticky;top:0;z-index:50;background:var(--green);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;transition:box-shadow .2s;}
+  nav.scrolled{box-shadow:0 2px 14px rgba(0,0,0,.18);}
+  nav .navlinks{display:flex;gap:22px;align-items:center;}
+  nav .navlinks a{color:#fff;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;}
+  nav .navlinks a.cta{background:var(--gold);color:var(--green);padding:8px 16px;border-radius:6px;font-weight:700;}
+  /* Hero */
+  .hero{background:var(--green);color:#fff;text-align:center;padding:40px 24px 54px;}
+  .hero .kicker{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
+  .hero .edlabel{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px;}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:44px;line-height:1.1;margin:6px auto 12px;max-width:760px;}
+  .hero .tagline{font-style:italic;font-size:19px;color:rgba(255,255,255,.85);max-width:620px;margin:0 auto 20px;}
+  .hero .byline{font-family:'DM Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,.7);letter-spacing:.02em;}
+  .hero .ctas{margin-top:24px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .hero .ctas a{font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;}
+  .hero .ctas .primary{background:var(--gold);color:var(--green);padding:11px 22px;border-radius:7px;}
+  .hero .ctas .ghost{color:#fff;padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.4);}
+  /* Stat strip */
+  .stats{display:flex;gap:16px;max-width:1000px;margin:-28px auto 0;padding:0 24px;flex-wrap:wrap;position:relative;z-index:5;}
+  .stat{flex:1;min-width:210px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;box-shadow:0 4px 18px rgba(26,74,58,.08);}
+  .stat .fig{font-family:'Playfair Display',serif;font-size:27px;color:var(--green);font-weight:700;}
+  .stat .rule{width:40px;height:2px;background:var(--gold);margin:8px auto;}
+  .stat .lab{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.03em;color:var(--muted);text-transform:uppercase;}
+  /* Layout */
+  .container{max-width:1060px;margin:40px auto 0;padding:0 24px;display:grid;grid-template-columns:1fr 300px;gap:44px;}
+  article h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--green);font-weight:700;margin:36px 0 8px;display:flex;align-items:center;gap:12px;}
+  article h2 .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;}
+  article h3{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--green-mid);margin:22px 0 4px;}
+  article p{margin:0 0 15px;}
+  article .lead{font-size:19px;color:var(--ink);}
+  .chain{background:var(--green-pale);border-radius:10px;padding:16px 18px;margin:18px 0;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--green);font-weight:500;line-height:1.9;}
+  .chain b{color:var(--green-mid);font-weight:700;}
+  .numblock{margin:18px 0;padding-left:18px;border-left:3px solid var(--gold);}
+  .numblock .nh{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:15.5px;margin-bottom:6px;}
+  .numblock p{margin:6px 0;font-size:15.5px;}
+  .lens{background:var(--green-pale);border:1px solid var(--green-mid);border-radius:12px;padding:22px;margin:28px 0;}
+  .lens h3{font-family:'Playfair Display',serif;color:var(--green);font-size:19px;margin:0 0 14px;}
+  .lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .lens-card{background:#fff;border:1px solid var(--border);border-radius:9px;padding:14px;}
+  .lens-card .ll{font-family:'DM Sans',sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-mid);font-weight:700;margin-bottom:2px;}
+  .lens-card .lv{font-size:14px;margin-bottom:9px;}
+  .lens-card .lv:last-child{margin-bottom:0;}
+  .testbox{background:#fff;border:2px solid var(--gold);border-radius:12px;padding:20px;margin:28px 0;}
+  .testbox h3{font-family:'Playfair Display',serif;color:var(--green);font-size:18px;margin:0 0 12px;}
+  .testbox ol{margin:0;padding-left:22px;}
+  .testbox li{margin:7px 0;font-size:15.5px;}
+  .callout{background:#fff;border:1px solid var(--green-mid);border-radius:12px;padding:18px 20px;margin:24px 0;}
+  .callout h4{font-family:'Playfair Display',serif;color:var(--green);font-size:18px;margin:0 0 8px;}
+  .callout .cav{font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--muted);font-style:italic;margin-top:8px;}
+  .closing{font-size:20px;color:var(--green);font-weight:600;font-family:'Source Serif 4',serif;margin:26px 0 8px;line-height:1.5;}
+  .threadfwd{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:16px;}
+  /* Sidebar */
+  aside{align-self:start;position:sticky;top:82px;}
+  .side-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;}
+  .side-card h4{font-family:'Playfair Display',serif;color:var(--green);font-size:17px;margin:0 0 8px;}
+  .side-card p{font-size:14px;margin:0 0 10px;color:var(--muted);}
+  .side-card .sub-btn{display:block;text-align:center;background:var(--gold);color:var(--green);font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;padding:11px;border-radius:7px;}
+  .thread-list{list-style:none;margin:0;padding:0;}
+  .thread-list li{padding:9px 0;border-bottom:1px solid var(--border);font-size:13.5px;}
+  .thread-list li:last-child{border-bottom:none;}
+  .thread-list a{text-decoration:none;color:var(--ink);display:block;}
+  .thread-list .te{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
+  .thread-list .tt{color:var(--green);font-weight:600;}
+  /* Sources / glossary */
+  .fullwidth{max-width:1060px;margin:20px auto 0;padding:0 24px;}
+  .srcblock{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:30px;}
+  .srcblock h2{font-family:'Playfair Display',serif;color:var(--green);font-size:22px;margin:0 0 14px;}
+  .srcline{padding:7px 0;border-bottom:1px dotted var(--border);font-size:14px;}
+  .srcline b{color:var(--green);}
+  .verif{background:#fbf9f4;border:1px solid var(--border);border-radius:9px;padding:16px;margin-top:18px;}
+  .verif .vh{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:13.5px;margin-bottom:8px;}
+  .flag{font-family:'DM Sans',sans-serif;font-size:13px;margin-top:7px;}
+  .flag .tag{font-weight:700;color:var(--green-mid);}
+  table.gloss{width:100%;border-collapse:collapse;margin-top:12px;font-size:13.5px;}
+  table.gloss th{background:var(--green);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;text-align:left;padding:9px 11px;font-size:12.5px;}
+  table.gloss td{padding:8px 11px;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.gloss tr:nth-child(even) td{background:var(--green-pale);}
+  table.gloss td:first-child{font-family:'DM Sans',sans-serif;font-weight:600;color:var(--green);white-space:nowrap;}
+  .signoff-bar{text-align:center;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--muted);margin:34px auto 0;max-width:1060px;padding:20px 24px;border-top:2px solid var(--gold);}
+  .editorial-note{font-size:12.5px;color:var(--muted);font-style:italic;max-width:1060px;margin:16px auto 0;padding:0 24px;line-height:1.6;}
+  /* Footer */
+  footer{background:var(--dark);color:rgba(255,255,255,.7);margin-top:40px;padding:32px 24px;}
+  footer .fwrap{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer .flinks{display:flex;gap:20px;font-family:'DM Sans',sans-serif;font-size:13px;}
+  footer .flinks a{color:rgba(255,255,255,.7);text-decoration:none;}
+  footer .copy{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.45);width:100%;text-align:center;margin-top:10px;}
+  @media(max-width:700px){
+    .container{grid-template-columns:1fr;gap:28px;}
+    aside{position:static;}
+    .lens-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:32px;}
+    nav .navlinks a:not(.cta){display:none;}
+    .stats{margin-top:20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" aria-label="The Uptime Brief home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="38" role="img" aria-label="The Uptime Brief">
+  <defs><linearGradient id="ecg-g" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/>
+  </linearGradient></defs>
+  <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+  <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+  <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="#ffffff" letter-spacing="2">THE UPTIME</text>
+  <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+</svg></a>
+  <div class="navlinks">
+    <a href="/#editions">All Editions</a>
+    <a class="cta" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="edlabel">Edition 21 · Weekly · APAC · Infrastructure Finance</div>
+  <h1>The Returns Inversion</h1>
+  <p class="tagline">Why the cheapest megawatt to build may not be the most valuable megawatt to own.</p>
+  <div class="byline">By Sel Fang, Lim · Data centre and infrastructure finance, APAC</div>
+  <div class="ctas">
+    <a class="primary" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe on LinkedIn</a>
+    <a class="ghost" href="/#editions">Read the editions →</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="fig">$14.4m vs $9.6m</div><div class="rule"></div><div class="lab">SG vs MY build cost /MW (mid-spec)</div></div>
+  <div class="stat"><div class="fig">~$123m / ~$42m</div><div class="rule"></div><div class="lab">SG vs ID hyperscale power / yr</div></div>
+  <div class="stat"><div class="fig">200 MW</div><div class="rule"></div><div class="lab">DC-CFA2 award, Jurong Island</div></div>
+</div>
+
+<div class="container">
+  <article>
+    <p class="lead">Edition 20 asked us to look past the contracted rent and into the structure underneath it. Edition 21 takes the same underwriting instinct somewhere else: if the cheaper asset to build is not automatically the better asset to own, where does the saving actually go?</p>
+    <p>There is a market shorthand for this in APAC right now. JPMorgan's Malaysia research frames it in a line &mdash; Singapore optimises every MW; Malaysia captures the next MW. Read it as framing, not proof: a neat description of the split, not a measured claim that one market's owners out-earn the other's.</p>
+    <p>Because the split it describes captures a real market tension &mdash; and it hides the whole problem. Capturing the next MW is a capacity outcome. Capturing the economics on that MW &mdash; the pricing, the margin, the return &mdash; is an investment outcome. They are not the same thing, and this edition is about the gap between them. Not where capacity goes next. Who keeps the economics after the cost advantage has passed through the stack.</p>
+
+    <h2><span class="n">1</span> The deal</h2>
+    <p>Start with the number that makes the cheaper market look obvious. Cushman &amp; Wakefield's 2026 APAC construction guide shows how wide the dispersion runs. On a like-for-like mid-specification basis, Singapore is around US$14.4m/MW against roughly US$9.6m/MW in Malaysia. At the high end of each market's specification range, the comparison is about US$17.9m/MW versus US$12.0m/MW. Across APAC as a whole, costs range from roughly US$7.9m/MW in Taiwan to US$19.2m/MW in Japan &mdash; about a 2.4-times spread. JPMorgan later used the shorthand of roughly US$12m/MW for Singapore against US$7m/MW for Malaysia. These are reference points within broader cost ranges, not directly comparable project quotes. The dispersion is the finding, not the ratio.</p>
+    <p>Power costs show similarly wide dispersion. Wood Mackenzie put the annual electricity bill for a typical hyperscale facility at roughly US$123m a year in Singapore against about US$42m in Indonesia &mdash; a threefold difference on a major operating input.</p>
+    <p>Then Singapore did something that complicates the simple cost story. On 21 August 2026, EDB and IMDA provisionally allocated another 200 MW of data-centre capacity &mdash; 50 MW each to Digital Realty, Equinix, Keppel and STT GDC &mdash; with the supported facilities to be located on Jurong Island. The four proposals were selected from more than twenty submissions. EDB and IMDA have also said they will review the need for another data-centre call in eighteen to twenty-four months.</p>
+    <p>But this is not simply 200 MW of conventional capacity entering an expensive market. DC-CFA2 sets a programme-wide technical and sustainability baseline, including Green Mark for Data Centres 2024 Platinum and PUE of 1.25 or better, while the four winning proposals committed to power more than half their capacity through eligible green-energy pathways and to deploy advanced efficiency technologies such as liquid cooling. So comparing those megawatts with cheaper regional capacity purely on construction cost may already be asking the wrong question.</p>
+    <p>Which is the puzzle the rest of this edition addresses. If the cost gap between an expensive market and a cheaper one is this large, why doesn't the owner of the cheaper asset simply keep the difference? And why is capital still competing to build the expensive one? A cost advantage sitting at a location is not the same as a cost advantage sitting in an owner's cash flow. Almost everything between the two is contestable.</p>
+
+    <h2><span class="n">2</span> The engineering read</h2>
+    <p>A cost saving is not free money waiting in the P&amp;L. It is a number that has to survive a contract, a competitor and a customer before any of it reaches equity. But before tracing who captures the saving, there is an earlier question: are the megawatts being compared actually economically equivalent?</p>
+    <p>The MW itself is not a standard unit. A megawatt that can be energised reliably, cooled at higher rack densities and delivered to customer specification is economically different from one that exists only as nominal capacity. The owner is not simply delivering electrical capacity: power architecture, redundancy, cooling design, efficiency and the operator's commissioning capability help determine what workloads a facility can support, and how reliably. There is another layer: energy and carbon qualification. For customers carrying their own renewable-energy or decarbonisation requirements, a technically capable MW may still be commercially unsuitable if the operator cannot offer an acceptable energy pathway. So the transmission chain is broader than engineering alone:</p>
+    <div class="chain">Nominal MW &rarr; <b>technically usable MW</b> &rarr; <b>energy/carbon-qualified MW</b> &rarr; <b>customer-eligible MW</b> &rarr; contracted and utilised MW &rarr; <b>owner cash flow</b></div>
+    <p>Higher specification can therefore be economically rational even when it raises upfront capital &mdash; but different investments solve different problems, and none creates value merely by being installed. Liquid cooling can support higher-density compute. Power-system design and storage can affect resilience, grid interaction and operating flexibility. Green-energy procurement can affect the carbon characteristics and customer eligibility of the delivered capacity. A battery system matters to the owner only to the extent its incremental cost produces something economically useful. Greener power becomes an advantage only if it broadens the addressable customer pool, strengthens utilisation or contract durability, or protects pricing sufficiently to justify its cost. Engineering and sustainability capability are not automatically a return premium. They have to transmit into a cash-flow advantage. The relevant issue is not which technology or label sounds most advanced &mdash; it is what the capability allows the MW to do, which customers it allows the MW to serve, what it costs, and who captures the resulting economics.</p>
+
+    <h3>Who the saving legally belongs to</h3>
+    <p>The first commercial fork is contractual, and it decides much of the outcome. S&amp;P Global describes wholesale and hyperscale data-centre contracts as typically triple-net or modified-gross structures in which tenants reimburse electricity and other operating costs, so electricity-price fluctuations are generally passed through to customers. Retail colocation more often leaves those fluctuations with the operator, subject to whatever escalation rights the contract provides. Same tariff advantage, different economic owner. The contract decides who captures it.</p>
+    <h3>What competition does to what's left</h3>
+    <p>Whatever the contract leaves with the owner, the market gets a second vote. A cheaper cost base in a market racing to fill capacity is an invitation to compete on price. The saving that survives the lease can still be handed to the customer through lower pricing to win the lease-up &mdash; not because the operator is generous, but because the next operator with a similar cost base can compete for the same customer. And the advantage itself can move: CBRE notes that after rapid expansion in Johor, power infrastructure has struggled to keep pace with investment, and expects completion delays over the next 24&ndash;36 months, with operators beginning to explore nearby markets such as Thailand. Capital does not simply exploit a location advantage; at sufficient scale, it can begin to compress it. A cost advantage everyone in a market shares is not an advantage; it is the new baseline.</p>
+    <h3>Why the expensive market can still hold price</h3>
+    <p>If low cost were enough to create an owner moat, cheaper markets should dominate not just capacity growth but pricing. The evidence is more complicated. Wood Mackenzie notes that despite carrying very high electricity costs, Singapore remains a favoured data-centre market, with grid reliability one reason operators and customers continue to value the location. CBRE has Singapore holding the highest colocation pricing in Asia-Pacific, roughly US$330&ndash;475 per kW per month, with vacancy around 2%, while Johor and Batam gain traction through scalable land and near-term power availability. The emerging pattern is that lower-cost expansion markets can gain capacity traction while constrained hubs such as Singapore retain stronger pricing &mdash; but whether that pricing premium ultimately produces the better owner return is precisely what the public evidence does not settle.</p>
+
+    <div class="callout">
+      <h4>What Jurong Island is &mdash; and isn't</h4>
+      <p>The new Singapore capacity makes the comparability problem concrete. DC-CFA2 sets a programme-wide baseline &mdash; Green Mark DC 2024 Platinum and PUE of 1.25 or better, with the four winners committing to more than half their capacity from eligible green-energy pathways and to advanced efficiency technologies. Keppel's 50 MW DC SGP 11 goes further on disclosed project targets, with PUE below 1.2 and WUE around 1.6 across liquid, district and seawater cooling. (Those PUE and WUE figures are Keppel's own project disclosures and should not be attributed to all four awards.) Jurong Island adds a broader energy-system option set &mdash; JTC, Keppel and EMA are studying a microgrid testbed integrating renewables, battery storage and smart-grid technologies, while JTC and NUS are separately studying a sustainable tropical data-centre testbed and microgrid, and the island hosts utility-scale battery storage and hydrogen-compatible generation.</p>
+      <p class="cav">None of these should be read as the disclosed dedicated supply architecture of any DC-CFA2 facility; they describe the surrounding ecosystem. "Not equivalent" is a comparability warning, not the answer: a more expensive, more differentiated megawatt is not automatically a better-returning one. The additional expenditure has to earn its way through the economics &mdash; denser workloads, a broader customer set, faster commissioning, better reliability, faster fill or sustained pricing. Differentiation can explain why two MW should not be compared on construction cost alone. It cannot, by itself, prove which MW is the better investment.</p>
+    </div>
+
+    <p><strong>The seam worth marking.</strong> The evidence supports a narrower conclusion than "Singapore beats Johor." Lower-cost expansion markets are gaining capacity traction, while constrained hubs such as Singapore sustain stronger pricing. That this reliably produces higher owner IRRs in Singapore than in Johor is not something the public disclosures establish &mdash; and this edition does not claim it. The argument is non-equivalence at three levels: a MW of nominal capacity is not necessarily equivalent to a MW of technically usable, reliable capacity; a technically usable MW is not necessarily equally eligible for every customer's energy and carbon requirements; and a location's cost advantage is not automatically an owner's return advantage. Which one you are buying &mdash; and what you are actually paying for &mdash; is the underwriting question.</p>
+
+    <h2><span class="n">3</span> The capital allocation read</h2>
+    <div class="numblock"><div class="nh">1. Underwrite who captures the cost advantage, not just how large it is.</div>
+      <p>A location-level saving reaches equity only through a chain: cost base &rarr; contract &rarr; competition &rarr; utilisation and customer mix &rarr; operating margin &rarr; sustaining capital &rarr; equity cash flow. The lease structure can be decisive &mdash; wholesale/hyperscale pass-through may hand the power saving to the tenant; retail colocation can leave more of that exposure with the operator. A useful reference frame, not a formula: owner value capture depends on the size of the cost advantage, the share retained after contractual and competitive pass-through, and whether the resulting proposition drives enough utilisation and pricing to create cash flow. "Cheaper market" is a statement about cost; "better-owned asset" is a statement about retained cash flow. Do not read the first as the second.</p>
+    </div>
+    <div class="numblock"><div class="nh">2. The business model can outweigh the cost base in setting the return.</div>
+      <p>Return profiles differ by operating model before location is even considered. Retail colocation tends to command higher unit economics in exchange for service complexity, smaller commitments and greater operating responsibility; wholesale/hyperscale accepts lower unit pricing for scale, duration and different risk characteristics. McKinsey-modelled ranges put retail-colocation equity IRRs around 20&ndash;25% against roughly 13&ndash;18% for wholesale &mdash; modelled, largely global ranges, not realised APAC returns, reflecting both weaker-bargaining fragmented demand and higher lease-up risk. Treat it as mechanism, not scoreboard. Two owners in the same cheap market, running different models, do not necessarily earn the same return.</p>
+    </div>
+    <div class="numblock"><div class="nh">3. Do not turn a lower tariff &mdash; or a higher one &mdash; into an assumed margin.</div>
+      <p>Malaysia's July 2025 tariff redesign is a useful example. Wood Mackenzie estimates that qualified Peninsular Malaysia hyperscalers under the ultra-high-voltage time-of-use structure pay around 8% more than a typical industrial user. Reported estimates of the impact on large data-centre users have been around 10&ndash;14%, based on industry and government figures rather than a single regulator-stated figure. The sharper point is not "power became more expensive, therefore owner returns fell." It is who bore the change under the contract &mdash; where power was passed through, the tenant absorbs the exposure; where the operator carries it, the owner does. A cheap tariff is not automatically retained margin, and a tariff increase is not automatically an owner loss.</p>
+    </div>
+    <div class="numblock"><div class="nh">4. When capital chooses the expensive market, underwrite what it is actually buying.</div>
+      <p>Here is the DC-CFA2 puzzle made concrete. Keppel and its co-investors expect to commit more than S$1 billion to the 50 MW DC SGP 11 development on Jurong Island &mdash; expensive capacity deliberately pursued while lower-cost regional capacity exists across the strait. Treat that &gt;S$1 billion number as project investment, not a construction cost per MW: it carries project-specific energy, cooling, sustainability and development scope, and does not share a denominator with an ordinary benchmark. Then ask, in order: what kind of MW does the additional capital create; which customers can that MW serve, if power, cooling, density and carbon characteristics affect who can place workloads there; and which of those attributes actually changes pricing, utilisation, customer access, operating cost or revenue certainty enough to compensate for the capital. Capability must show up somewhere measurable &mdash; faster delivery, broader eligibility, higher utilisation, lower operating cost, stronger pricing or greater revenue reliability &mdash; before it deserves value in the underwriting. The same discipline applies to storage, microgrids and generation in the surrounding ecosystem: presence is not a premium. Competition for the expensive MW is evidence operators see value worth pursuing. It is not proof the eventual owner return will justify the capital. That is what has to be underwritten, attribute by attribute.</p>
+    </div>
+
+    <div class="testbox">
+      <h3>The Returns Inversion Test</h3>
+      <ol>
+        <li>What kind of MW is actually being delivered &mdash; nominal, or reliably energised, cooled and commercially usable?</li>
+        <li>Which customers is that MW eligible to serve &mdash; do its density, cooling, power and energy/carbon characteristics meet the target customer's requirements?</li>
+        <li>Where is the cost advantage &mdash; construction, land, electricity, cooling, financing or another input?</li>
+        <li>Who contractually captures it &mdash; owner, operator or tenant?</li>
+        <li>How much does competition pass through &mdash; does the saving stay margin, or become lower customer pricing?</li>
+        <li>What does it do to pricing and utilisation &mdash; does cheaper capacity fill faster, or does differentiated capacity sustain stronger economics?</li>
+        <li>How much survives into owner cash flow &mdash; the question that turns any advantage into an investment argument.</li>
+      </ol>
+    </div>
+
+    <div class="lens">
+      <h3>Investment Lens</h3>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <div class="ll">Constraint</div><div class="lv">Technical &amp; customer usability &mdash; not every nominal MW is the same</div>
+          <div class="ll">Impact</div><div class="lv">Decides what workloads it supports and which customers can use it</div>
+          <div class="ll">Capital response</div><div class="lv">Decompose the incremental spec capex; name the cash-flow outcome</div>
+          <div class="ll">Winning asset</div><div class="lv">The MW whose attributes convert into eligibility, utilisation or pricing &mdash; not the highest spec</div>
+        </div>
+        <div class="lens-card">
+          <div class="ll">Constraint</div><div class="lv">Contractual capture &mdash; who the lease gives the saving to</div>
+          <div class="ll">Impact</div><div class="lv">Pass-through hands cheap power to the tenant; owner margin may not move</div>
+          <div class="ll">Capital response</div><div class="lv">Read the lease before crediting any cost advantage to equity</div>
+          <div class="ll">Winning asset</div><div class="lv">The model that retains the spread it creates, not the lowest input</div>
+        </div>
+        <div class="lens-card">
+          <div class="ll">Constraint</div><div class="lv">Competitive pass-through &mdash; a shared base is a baseline, not a moat</div>
+          <div class="ll">Impact</div><div class="lv">In a market racing to fill, part of the saving is competed into pricing</div>
+          <div class="ll">Capital response</div><div class="lv">Price the advantage only to the extent it is scarce, not merely present</div>
+          <div class="ll">Winning asset</div><div class="lv">The owner with a cost or capability position competitors can't readily match</div>
+        </div>
+        <div class="lens-card">
+          <div class="ll">Constraint</div><div class="lv">Business model &amp; deliverability &mdash; how the MW is monetised and delivered</div>
+          <div class="ll">Impact</div><div class="lv">Model sets the return band before location; weak deliverability shifts risk to the owner</div>
+          <div class="ll">Capital response</div><div class="lv">Compare like models; underwrite lease-up speed and pricing durability</div>
+          <div class="ll">Winning asset</div><div class="lv">Capital that buys revenue-producing capability, not a lower headline number</div>
+        </div>
+      </div>
+    </div>
+
+    <h2><span class="n">4</span> What this means for the broader market</h2>
+    <p>Cheaper to build is a fact about a location. Better to own is a fact about a cash flow. The second does not automatically follow from the first. A cost advantage becomes an ownership advantage only for the part of it the owner can technically convert into usable capacity, qualify for the target customer, contractually hold, competitively defend and actually turn into filled, priced capacity.</p>
+    <p>The winner is not necessarily the operator with the cheapest concrete, land or electricity. It is the owner who can retain an advantage others cannot easily take back &mdash; engineering capability customers value, an energy pathway customers can use, a contract that preserves the economics, a business model that monetises them, or a position competitors cannot readily replicate. The loser is the one who underwrites the build-cost line as though it were the return line &mdash; or assumes a sophisticated engineering or sustainability specification must automatically earn a premium. Both shortcuts make the same mistake: they skip the transmission mechanism. The broken assumption is the reflex that the cheapest market is automatically the best market to own in. Sometimes it may be. But that has to be underwritten at the level of usable, customer-eligible capacity and retained cash flow &mdash; not assumed from the cost of concrete and power, and not assumed away by a more impressive technical or sustainability specification either.</p>
+    <p class="closing">The returns inversion in one line: the cheapest megawatt to build and the most valuable megawatt to own need not be the same megawatt. And it raises the next question &mdash; if a cost advantage only matters where the owner can capture it, what happens when the cheapest place to build is no longer the same place the workload has to run, when AI starts to change what "location" even means?</p>
+    <p class="threadfwd">That is the question I'm taking forward next.</p>
+  </article>
+
+  <aside>
+    <div class="side-card">
+      <h4>The Uptime Brief</h4>
+      <p>Where uptime meets capital allocation. Data centre and infrastructure finance, with an APAC focus &mdash; for institutional investors, infrastructure finance professionals, and market operators.</p>
+      <a class="sub-btn" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe on LinkedIn</a>
+    </div>
+    <div class="side-card">
+      <h4>Edition thread</h4>
+      <ul class="thread-list">
+        <li><a href="/editions/edition-20/"><span class="te">Edition 20</span><span class="tt">Whose Credit Sits Behind the Rent?</span></a></li>
+        <li><a href="/editions/edition-19/"><span class="te">Edition 19</span><span class="tt">Scarcity Doesn't Equal Return</span></a></li>
+        <li><a href="/editions/edition-18/"><span class="te">Edition 18</span><span class="tt">Premiums Don't Raise Capital. Sponsors Do.</span></a></li>
+        <li><a href="/editions/edition-17/"><span class="te">Edition 17</span><span class="tt">Can Scarcity Fund the Second Asset?</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<div class="fullwidth">
+  <div class="srcblock">
+    <h2>Sources &amp; research notes</h2>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:12px;">Published market data, regulatory announcements and analyst commentary as of the publication date. APAC construction-cost, tariff, power-cost, pricing and return figures come from different research methodologies and should not be treated as a single comparable dataset.</p>
+    <div class="srcline"><b>Construction cost</b> &mdash; Cushman &amp; Wakefield, APAC Data Centre Construction Cost Guide 2026. Singapore low/mid/high ~US$12.0m / 14.4m / 17.9m per MW; Malaysia ~US$6.9m / 9.6m / 12.0m; regional range ~US$7.9m&ndash;19.2m/MW (~2.4&times;). Ranking on a mid-specification basis.</div>
+    <div class="srcline"><b>Build-cost shorthand / market framing</b> &mdash; JPMorgan Malaysia research (Yen Voo), via Mingtiandi. ~US$12m vs ~US$7m/MW; "Singapore optimises every MW; Malaysia captures the next MW." Market framing, not proof of relative owner returns.</div>
+    <div class="srcline"><b>Power cost and reliability</b> &mdash; Wood Mackenzie, "Feeding the Cloud." ~US$123m vs ~US$42m annual power for representative Singapore/Indonesia hyperscale examples; grid reliability cited in Singapore's continued attractiveness; Malaysia UHV hyperscaler tariff ~8% above a typical industrial user.</div>
+    <div class="srcline"><b>Pricing, vacancy and regional capacity migration</b> &mdash; CBRE, 2026 Asia-Pacific Data Centre Trends &amp; Outlook. Singapore colocation ~US$330&ndash;475/kW/month, vacancy ~2%; Johor and Batam gaining traction on scalable land and power. CBRE also notes power infrastructure in Johor struggling to keep pace with investment, with expected completion delays over 24&ndash;36 months prompting operators to explore nearby markets such as Thailand.</div>
+    <div class="srcline"><b>Singapore DC-CFA2</b> &mdash; EDB / IMDA. 200 MW provisionally allocated 21 Aug 2026, 50 MW each to Digital Realty, Equinix, Keppel and STT GDC on Jurong Island; &gt;20 proposals. Programme baseline: Green Mark for Data Centres 2024 Platinum and PUE ≤1.25 at 100% IT load; the four winners committed to &gt;50% green-energy pathways (e.g. biomethane, low-carbon ammonia, hydrogen, building-integrated PV), liquid cooling and 100% energy-efficient IT. Review of a further call in 18&ndash;24 months.</div>
+    <div class="srcline"><b>Keppel DC SGP 11</b> &mdash; Keppel. 50 MW provisional allocation; expected investment &gt;S$1 billion (~US$790m). Project targets PUE below 1.2 and WUE around 1.6, with liquid, district and seawater cooling. Project-specific disclosures; not attributed to all four DC-CFA2 awards.</div>
+    <div class="srcline"><b>Jurong Island energy ecosystem</b> &mdash; JTC / EMA. JTC, Keppel and EMA studying a microgrid testbed (renewables, battery storage, smart-grid); JTC and NUS studying a Sustainable Tropical Data Centre Testbed and microgrid; island hosts utility-scale battery storage and hydrogen-compatible generation. Surrounding ecosystem &mdash; not confirmed dedicated supply for any DC-CFA2 facility.</div>
+    <div class="srcline"><b>Carbon policy</b> &mdash; Singapore NCCS / MTI. Carbon tax S$45/tCO&#8322;e for 2026&ndash;27 (S$50&ndash;80 by 2030); applies to facilities emitting &ge;25,000 tCO&#8322;e/yr; eligible International Carbon Credits may offset up to 5% of taxable emissions. National compliance mechanism &mdash; not a hyperscaler-specific carbon-credit requirement.</div>
+    <div class="srcline"><b>Lease / pass-through mechanics</b> &mdash; S&amp;P Global. Wholesale/hyperscale commonly triple-net or modified-gross with electricity reimbursed/passed through; retail colocation more often leaves electricity exposure with the operator, subject to escalation.</div>
+    <div class="srcline"><b>Tariff reform</b> &mdash; Malaysia RP4 framework and market reporting. Reported ~10&ndash;14% impact estimates for large DC users treated as reported estimates, not a regulator-stated universal figure.</div>
+    <div class="srcline"><b>Business-model returns</b> &mdash; McKinsey. Modelled retail-colocation equity IRR ~20&ndash;25%; wholesale ~13&ndash;18%. Modelled, largely global &mdash; mechanism, not observed Singapore-versus-Malaysia returns.</div>
+
+    <div class="verif">
+      <div class="vh">Verification notes</div>
+      <div class="flag"><span class="tag">[REPORTED]</span> &mdash; Malaysia ~10&ndash;14% tariff impact is an industry/government estimate via Reuters, not a regulator figure.</div>
+      <div class="flag"><span class="tag">[REPORTED]</span> &mdash; JPMorgan build-cost shorthand and "optimises/captures" line are analyst framing (via Mingtiandi), not proof of an owner-return ranking.</div>
+      <div class="flag"><span class="tag">[DIRECTIONAL]</span> &mdash; McKinsey retail/wholesale IRR ranges are modelled and largely global; mechanism, not APAC scoreboard.</div>
+      <div class="flag"><span class="tag">[HOUSE VIEW]</span> &mdash; "Singapore allocating capacity toward strategic/technical/sustainability intensity" is the author's inference from published DC-CFA2 criteria, not an official statement of return intent.</div>
+      <div class="flag"><span class="tag">[SCOPE]</span> &mdash; Keppel PUE/WUE are project-specific; &gt;50% green / PUE ≤1.25 / liquid cooling are the DC-CFA2 programme baseline. Jurong ecosystem assets are not confirmed dedicated supply for any awarded facility.</div>
+    </div>
+  </div>
+
+  <div class="srcblock">
+    <h2>Glossary</h2>
+    <table class="gloss">
+      <thead><tr><th>Term</th><th>Full name</th><th>Plain English</th></tr></thead>
+      <tbody>
+        <tr><td>APAC</td><td>Asia-Pacific</td><td>The region this newsletter tracks.</td></tr>
+        <tr><td>BESS</td><td>Battery energy storage system</td><td>Stores power for flexibility, peak management or renewable integration.</td></tr>
+        <tr><td>BIPV</td><td>Building-integrated photovoltaics</td><td>Solar generation built into a structure.</td></tr>
+        <tr><td>DC-CFA2</td><td>Data Centre &mdash; Call for Application (2nd exercise)</td><td>Singapore's second capacity-allocation round, awarding new MW against sustainability and economic criteria.</td></tr>
+        <tr><td>EDB</td><td>Economic Development Board</td><td>Singapore's investment-promotion agency.</td></tr>
+        <tr><td>EMA</td><td>Energy Market Authority</td><td>Singapore's power-sector regulator.</td></tr>
+        <tr><td>ICC</td><td>International Carbon Credits</td><td>Credits that may offset up to 5% of a Singapore taxable facility's emissions.</td></tr>
+        <tr><td>IMDA</td><td>Infocomm Media Development Authority</td><td>Singapore's digital-infrastructure regulator.</td></tr>
+        <tr><td>IRR</td><td>Internal rate of return</td><td>The annualised return on equity capital committed.</td></tr>
+        <tr><td>JTC</td><td>Jurong Town Corporation</td><td>Develops Singapore's industrial estates, including the Jurong Island low-carbon DC park.</td></tr>
+        <tr><td>MW</td><td>Megawatt</td><td>The standard unit of data-centre power capacity.</td></tr>
+        <tr><td>Pass-through</td><td>&mdash;</td><td>A term where the tenant reimburses a cost (e.g. electricity), so the owner's margin doesn't move with it.</td></tr>
+        <tr><td>PUE</td><td>Power usage effectiveness</td><td>Total facility energy &divide; IT energy. Lower is better.</td></tr>
+        <tr><td>Retail colocation</td><td>&mdash;</td><td>Selling capacity in smaller units to many customers &mdash; higher unit pricing, more services.</td></tr>
+        <tr><td>RP4</td><td>Regulatory Period 4</td><td>Malaysia's electricity tariff schedule effective 1 July 2025.</td></tr>
+        <tr><td>Triple-net lease</td><td>&mdash;</td><td>Tenant pays operating costs &mdash; utilities, maintenance, tax &mdash; on top of rent.</td></tr>
+        <tr><td>UHV</td><td>Ultra-high voltage</td><td>The supply tier for Malaysia's largest data-centre users under the new time-of-use treatment.</td></tr>
+        <tr><td>Wholesale / hyperscale</td><td>&mdash;</td><td>Leasing large, dedicated capacity blocks to a single major customer &mdash; lower unit pricing for scale.</td></tr>
+        <tr><td>WUE</td><td>Water usage effectiveness</td><td>Litres of water per kWh of IT energy. Lower is better.</td></tr>
+        <tr><td>Yield-on-cost</td><td>&mdash;</td><td>Stabilised annual income &divide; total development cost; a first read on whether a build's economics justify the capital.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="signoff-bar">The Uptime Brief &middot; Where uptime meets capital allocation &middot; By Sel Fang, Lim &middot; Published weekly</div>
+<p class="editorial-note"><strong>Editorial note:</strong> This publication is provided for informational and educational purposes only. It reflects the author's analysis of publicly available information as of the publication date and should not be construed as investment, legal, accounting, or financial advice. Opinions are the author's own and may change as further disclosures become available. No investment advice intended or implied.</p>
+
+<footer>
+  <div class="fwrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="30" role="img" aria-label="The Uptime Brief">
+  <defs><linearGradient id="ecg-gf" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/>
+  </linearGradient></defs>
+  <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-gf)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+  <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+  <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="rgba(255,255,255,0.75)" letter-spacing="2">THE UPTIME</text>
+  <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+</svg>
+    <div class="flinks">
+      <a href="/#editions">All Editions</a>
+      <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe</a>
+      <a href="/">Home</a>
+    </div>
+    <div class="copy">&copy; 2026 The Uptime Brief. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>8);});
+</script>
+</body>
+</html>
