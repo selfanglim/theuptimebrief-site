@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Who Captures the Control Point? — The Uptime Brief, Edition 25</title>
+<meta content="The Financeable MW: when physical scarcity becomes underwritable cash flow. By Sel Fang, Lim." name="description"/>
+<link href="https://theuptimebrief.com/editions/edition-25" rel="canonical"/>
+<meta content="Who Captures the Control Point? — The Financeable MW" property="og:title"/>
+<meta content="Nominal, Controlled, Deliverable, Revenue, Financeable. A five-state underwriting framework for AI data-centre capacity." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://theuptimebrief.com/editions/edition-25" property="og:url"/>
+<meta content="The Uptime Brief" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="data:image/png;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/wAARCAHAAcADACIAAREBAhEB/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMAAAERAhEAPwD3+iiigAoqNpApwBub0FG2RurhR6KM/qf8KAJKKj8r/po/50eV/tv+dAiSio/K/wBt/wA6PK/23/OgB9FRiPr87/nS+V/tv+dAElFR+V/tv+dHlf7b/nQBJRUflf7b/nR5X+2/50ASUVH5X+2/50eV/tv+dAD6KZ5X+2/50nl8j53/ADoAloqPyv8Abf8AOjyv9t/zoAkoqPyv9t/zo8r/AG3/ADoAkoqPyv8Abf8AOjyv9t/zoAkoqPyv9t/zo8r/AG3/ADoAfRUZjwD87/nQI8gfO/50AS0VH5X+2/50eV/tv+dAElFR+V/tv+dHlf7b/nQBJRUflf7b/nR5X+2/50ASUVH5X+2/50eV/tv+dAD6Kj8vk/O/50vlf7b/AJ0ASUVH5X+2/wCdHlf7b/nQBJRUflf7b/nR5X+2/wCdAElFR+V/tv8AnR5X+2/50APopnlf7b/nSGPp87/nQBLRUflf7b/nR5X+2/50ASUVH5X+2/50eV/00f8AOgCSio9sq9HDD0YY/Uf4ULIGOCNrehoGSUUUUAFFFFABUchIAVfvHpT6jT5pHc+u0fh/9fNAg+SGMszBQOWZjj86i+32f/P3B/38H+NZ/iv/AJFbUf8Arka57QvBmkX+h2l3OkxlljDMRIQM1rGCceaTsYVKsozUIq52P2+z/wCfuD/v4KfFdQTMVimjdgM4Vga5z/hAdD/55zf9/TV/SvDGnaNdNcWiSCRk2Hc5IxkH+gqGktmOM6rdnG3zNuiiipNxq9/rTqavf606hgFFFFABRRRQAUUUUAFNP3h+NOpp+8PxoAdRRRQAUUUUAFFFFABRRRQAh6GgdBQehoHQUALRRRQAUUUUAFFFFABRRRQA0feP4U6mj7x/CnUAFFFFABRRRQAUUUUAFNbt9adTW7fWhAOooooAgkureFgss8aMRnDMBTPt9n/z9Qf9/BWbq3hfTdaulubtJDKqBAVcgYyT/U1R/wCEB0P/AJ5zf9/TVqMLaswnOqn7sb/M6H7fZ/8AP1D/AN/BUg2TxhlYEHlWU5/I1xeueDdIsNEu7qBJRLEhZcyEjNdB4V/5FjT/APrkKTVtmTCrN1OScbadzVjJIKtjcvWpKif5ZEceu0/j/wDXxUlSdAtFFFAwqOH/AFQ+p/nUlRw/6pfx/nR0F1MnxX/yK2of9cjR4U/5FbT/APrkKl8Q2s19oN5bW6b5pIyEXIGT9TxR4etZrLQbO2uE2TRxhXXIOD9RWt17K19bmLT9unboatFFFZG4UUUUANXv9adTV7/WnUMAooooAKKKKACiiigApp+8Pxp1NP3h+NADqKKKACiiigAooooAKKKKAEPQ0DoKD0NA6CgBaKKKACiiigAooooAKKKKAGj7x/CnU0feP4U6gAooooAKKKKACiiigAprdvrTqa3b60IB1FFFABRRRQBjeKv+RYv/APrkaPCv/IsWH/XIVLr9rNe6Fd21um+WSMqq5AyfqaNAtZrLQrS2uE2SxxhWXIOD9RT6HO4v26duhoTf6on3H86kqOb/AFTfh/OpKRv1CiiigYVHD/ql/H+dSVHD/ql/H+dHQXUkooooGFFFFABRRRQA1e/1p1NXv9adQwCiiigAooooAKKKKACmn7w/GnU0/eH40AOooooAKKKKACiiigAooooAQ9DQOgoPQ0DoKAFooooAKKKKACiiigAooooAaPvH8KdTR94/hTqACiiigAooooAKKKKAEpruq43MBn1OKdWJ4n1AaXpMl5jd5akgHoSSAAfxIpomclGLkzX8+If8tE/OlEsbHAdTntmvA7rWdRvLgzS3k24nICuQF9gAcCu58Ca/c6hM1jduZJIwHSQ9SuQCD64JHPvTcdLnnUszhUqclj0eiiipPTCiiigCOb/VN+H86kqOb/VN+H86koF1CiiigYVHD/AKpfx/nUlRw/6pfx/nR0F1JKKKKBhRRRQAUUUUANXv8AWnU1e/1p1DAKKKKACiiigAooooAKafvD8adTT94fjQA6iiigAooooAKKKKACiiigBD0NA6Cg9DQOgoAWiiigAooooAKKKKACiiigBo+8fwp1NH3j+FOoAKKKKACiiigAooooAKa3b606mt2+tCAdRRRQAUUUUAFFFFAEc3+qb8P51JUc3+qb8P51JQLqFFFFAwqOH/VL+P8AOpKjh/1S/j/OjoLqSUUUUDCiiigAooooAavf606mr3+tOoYBRRRQAUUUUANJFIJATiqt5OIYyc1w+g+L7nUfE97ZSbBbruMJA5wrAcnvkHNaRpuSbRhUxEaTSl1PRM0jHDD8aZC+9AfWoLybylBzjg1FtTZtWuWQ4J604V59oniy5v8AxTfWMpT7Om7ysDBG1gDz3znP4V3sL70BpuLRjRrxq35ejsS0UUVJuFFFFABRRRQAh6GgdBQehoHQUALRRRQAUUUUAFFFFABRRRQA0feP4U6mj7x/CnUAFFFFABRRRQAUUUUAFNbt9adTW7fWhAOooooAKKKKACiiigCOb/VN+H86kqOb/VN+H86koF1CiiigYVHD/ql/H+dSVHD/AKpfx/nR0F1JKKKKBhRRRQAUUUUANXv9adTV7/WnUMAooooAKQnApaZIcKTQhM5rxVffYtLuZwcFEJH1xgfrivLPCrNbeI7JmyPOVs575Bx/IV2HxFu2GnxWiZL3EoGAeoHP88Vzd5bjTNe0Vhwq7IyR6BgCf1r0aEUqfqeFjpOVZW+yex2TZhB9qo61KI4CxOAAST+FWdPbMIHtWL4un8nSbp84IibH1wcfrXFb3rHqzlalfyPMfC90V8UQyEkGVmB/EE/zr22xbdCD7V4NpoNtf6bccgPMMn2DAH+de6aa2YF+lVVR5mVSd5J97mjRRRWJ7gUUUUAFFFFACHoaB0FB6GgdBQAtFFFABRRRQAUUUUAFFFFADR94/hTqaPvH8KdQAUUUUAFFFFABRRRQAU1u31p1Nbt9aEA6iiigAooooAKKKKAI5v8AVN+H86kqOb/VN+H86koF1CiiigYVHD/ql/H+dSVHD/ql/H+dHQXUkooooGFFFFABRmkyKAEXv8AWnU1T1+tLkUALRSZFGRQAtV7l9sZqfNZ+oShYyM9qqKuyZOyPONZJ1Xx7Z2g5S1XzGB5wfvf0WoPHEBhhsblRgxykA+5AP8A7LVrweh1LXtV1U8hpPLjPtnOPyC1c8fW2dAZ8f6qRW/M4/rXe3ySjH+tTxJQdSnUqd/yR2Olyh7ZHB4ZQR9CK5vx9P5egzgHliqj8SM/pmtDwtcedoVm+eTCoP1AAP6g1zvxHnxp0EQPLzAn6AH+pFcvLapY6qlT/ZXLyOSvoDb6Hpk4GCpJB9z8w/lXsejyiS2Rl6MoI+hFec+IbPy/C8Qx/qfL7dMDb/Wu18JT+fotk+ckwqD9QAD+oNKeqOXAr2dbl7pHUdqWkHSlrE90KKTIpc0AFFFGaAEPQ0DoKD0NA6CgBaKKKACiiigAooooAKKKKAGj7x/CnU0feP4U6gAooooAKKKKACiiigAprdvrTqa3b60IB1FFFABRRRQAUUUUARzf6pvw/nUlRzf6pvw/nUlAuoUUUUDCo4f9Uv8AnvUlRQ58odP8mjoIlpCcCk+b2oIYjtQMjeeOM4Z1U+5AqI3sA6zJ/wB9CmXFitw25ic4xwapvokL9S35/wD1q0io9WZSlJPRFs6jbjrPH/32KYdVtR1uIh/wMf41nv4ct26l/wAG/wDrVA/hW1bqZP8Avof4VahT7mbnV6I0v7ZtBnNzCOf74/xpp12zHW7gH/bQf41kN4OtGzzN1/vD/CoW8EWTdWm/76H+FWoUurM3Ur9Im0dfsR/y924/7aD/ABph8R2A/wCX23/7+r/jWE3gKxPVp/8Avsf4VC3w+sD/ABXH/fY/wq1To/zEOriOkTfbxLYAf8ftuP8Atqv+NYXiLxJa/wBkXbQXULyGMqoSQE5PAIAPbOfwqBvhxp5/iuP++x/hRH8NtN3AlrgjPILjn9KuMKC15jOdTEyTXLuXPAdgbbw/bkjDS5lPHqeP0Aqz4ytvN8P3q4ziIt/3zz/SuhsrJbSBIkVVRFCqBngAYAqlrkBnsposAiSMr+YIrCdTmqcxtGjyUOQ5vwLcb/DkCk8xllP4MSP0IrI8cMbnV9KtBzukOR65Kgf1pfAFwRplxDkZSYnnsCB/UGItTJvPiBYRDBEaqce43N/hVyVqjZ50p3wqj6L8Tc8Q23m+HbwYziIv+XP9Km8AT+ZoFupOTGWU/wDfRI/QitG/tjNp00WB88bL+YIrmvhzOfsM8ORlJs4PYED/AANc71TNmuTEQfdWPSi4Vck1nz6vawSmN7mJGHVWcAj8CafdTlICxIAAyT6V57o+lJ4hnvL64L4eY7dpx7nt6EVCXc7q9eUGoxV2zvV1q0PS6gP/AG0H+NPGq2p6XEJ/4GP8awIvBtmAMNN/30P8Ksp4UtU6GX/vof4U7ImNWu94m2NRtz0niP0YVzWt+J7m31CPTdKh+1302Sq7vlUc9cH2J6jAGc1pp4dgToX/ABb/AOtXN6lpl/ofiKLWtMtjdhVMcsOcs" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --green:#1a4a3a; --green-mid:#2f6b54; --green-pale:#e8f2ee; --green-dark:#0f2e24;
+  --gold:#c9a84c; --gold-pale:#faf5e8;
+  --cream:#f8f6f2; --ink:#1c2420; --muted:#5a6b63; --border:#d7e0da;
+  --sidebar-w:280px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--cream);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;overflow-x:hidden;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--green);padding:0 32px;height:58px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.18);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:24px;}
+.nav-links a{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{background:var(--gold)!important;color:#2a1a00!important;padding:7px 18px;border-radius:20px!important;letter-spacing:.05em!important;}
+
+/* HERO */
+.hero{background:var(--green);padding:64px 32px 56px;color:#fff;}
+.hero-inner{max-width:760px;margin:0 auto;}
+.hero-kicker{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
+.hero-ed{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.55);margin-bottom:8px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,46px);font-weight:700;line-height:1.15;color:#fff;margin-bottom:14px;}
+.hero-sub{font-family:'Source Serif 4',serif;font-style:italic;font-size:19px;color:rgba(255,255,255,.75);line-height:1.5;margin-bottom:18px;}
+.hero-byline{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.45);}
+
+/* STAT STRIP */
+.stat-strip{background:var(--green-dark);padding:24px 32px;}
+.stat-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.stat-item{text-align:center;padding:10px;}
+.stat-val{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);}
+.stat-label{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;line-height:1.4;}
+
+/* BODY LAYOUT */
+.body-wrap{max-width:960px;margin:0 auto;padding:48px 32px 80px;display:grid;grid-template-columns:1fr var(--sidebar-w);gap:56px;align-items:start;}
+main{min-width:0;}
+aside{position:sticky;top:78px;}
+
+/* ARTICLE SECTIONS */
+.section-label{font-family:'DM Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:40px 0 12px;}
+.section-label:first-child{margin-top:0;}
+.sub-h{font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;color:var(--green);margin:24px 0 10px;}
+p.body{font-family:'Source Serif 4',serif;font-size:17px;line-height:1.75;color:var(--ink);margin-bottom:16px;}
+p.body strong{font-weight:600;color:var(--green);}
+hr.sec-divider{border:none;border-top:1px solid var(--border);margin:36px 0;}
+
+/* PULL QUOTE */
+.pq{border-left:3px solid var(--gold);padding:14px 20px;margin:24px 0;background:var(--gold-pale);border-radius:0 8px 8px 0;}
+.pq p{font-family:'Source Serif 4',serif;font-style:italic;font-size:18px;color:var(--green);line-height:1.55;margin:0;}
+
+/* MW CHAIN — step numbers added for mobile sequence clarity */
+.mw-chain{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:24px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.mw-s{padding:16px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.15);position:relative;}
+.mw-s:last-child{border-right:none;}
+.mw-step{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.08em;margin-bottom:4px;}
+.mw-label{font-family:'DM Sans',sans-serif;font-weight:700;font-size:12.5px;color:#fff;margin-bottom:8px;}
+.mw-desc{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.8);line-height:1.4;margin-bottom:8px;}
+.mw-q{font-family:'Source Serif 4',serif;font-style:italic;font-size:11px;color:rgba(255,255,255,.6);}
+.mw-1{background:#3a6b55;} .mw-2{background:#2a5a8e;} .mw-3{background:#7a6010;} .mw-4{background:#7b4b63;} .mw-5{background:#1a4a3a;}
+
+/* THREE QUESTIONS */
+.three-q{background:var(--gold-pale);border:1px solid var(--gold);border-radius:10px;padding:20px 24px;margin:20px 0;}
+.three-q p{font-family:'Source Serif 4',serif;font-size:17px;font-weight:600;color:var(--green);line-height:1.9;margin:0;}
+
+/* CAPITAL ALLOCATION POINTS */
+.cap-point{margin-bottom:28px;}
+.cap-lead{font-family:'DM Sans',sans-serif;font-weight:700;font-size:15.5px;color:var(--green);margin-bottom:10px;line-height:1.4;}
+.cap-sub{font-family:'Source Serif 4',serif;font-size:16px;line-height:1.7;color:var(--ink);margin-bottom:6px;padding-left:16px;position:relative;}
+.cap-sub::before{content:"→";position:absolute;left:0;color:var(--gold);font-style:normal;}
+
+/* INVESTMENT LENS */
+.lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+.lens-card{background:#fff;border:1px solid var(--border);border-left:4px solid var(--green);border-radius:0 10px 10px 0;padding:18px;}
+.lens-market{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:2px;}
+.lens-name{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13.5px;color:var(--green);margin-bottom:12px;}
+.lens-row{display:grid;grid-template-columns:108px 1fr;gap:4px;margin-bottom:7px;align-items:start;}
+.lens-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11.5px;color:var(--muted);}
+.lens-val{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);line-height:1.45;}
+
+/* SERIES ARC */
+.arc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0;}
+.arc-card{background:var(--green-pale);border:1px solid var(--border);border-radius:8px;padding:14px;}
+.arc-card.active{border:2px solid var(--gold);background:#fff;}
+.arc-n{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;color:var(--gold);margin-bottom:3px;}
+.arc-title{font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;color:var(--green);margin-bottom:5px;}
+.arc-thesis{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;}
+
+/* HEURISTIC */
+.heuristic{background:var(--gold-pale);border:1px solid var(--gold);border-radius:10px;padding:20px 24px;margin:24px 0;}
+.heur-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:10px;}
+.heur-formula{font-family:'DM Sans',sans-serif;font-size:15px;color:var(--green);font-weight:600;line-height:1.8;margin-bottom:10px;}
+.heur-note{font-family:'Source Serif 4',serif;font-style:italic;font-size:13.5px;color:var(--muted);}
+
+/* CLOSING QUESTION */
+.closing-q{border-left:3px solid var(--green);padding:16px 20px;background:var(--green-pale);border-radius:0 8px 8px 0;margin:24px 0;}
+.closing-q p{font-family:'Source Serif 4',serif;font-size:17px;color:var(--green);line-height:1.65;margin:0 0 10px;}
+.closing-q p:last-child{margin:0;}
+
+/* SOURCES BLOCK */
+.sources{margin-top:48px;padding-top:32px;border-top:2px solid var(--border);}
+.src-cat{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin:18px 0 8px;}
+.src-item{font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--muted);margin-bottom:7px;padding-left:18px;position:relative;line-height:1.5;}
+.src-item::before{content:"→";position:absolute;left:0;color:var(--gold);}
+.src-note{font-family:'Source Serif 4',serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:16px;padding:14px 18px;border:1px solid var(--border);border-radius:6px;background:#fff;line-height:1.6;}
+.ver-note{margin-top:10px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);font-style:italic;}
+
+/* GLOSSARY */
+.glossary{margin-top:40px;padding-top:28px;border-top:1px solid var(--border);}
+.glossary h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--green);margin-bottom:14px;}
+.gloss-table{width:100%;border-collapse:collapse;font-size:13px;}
+.gloss-table thead tr{background:var(--green);color:#fff;}
+.gloss-table th{font-family:'DM Sans',sans-serif;font-weight:700;padding:9px 14px;text-align:left;}
+.gloss-table td{font-family:'DM Sans',sans-serif;padding:8px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.gloss-table tr:nth-child(even) td{background:var(--green-pale);}
+.gloss-table td:first-child{font-weight:700;color:var(--green);width:90px;}
+.gloss-table td:nth-child(2){width:180px;}
+
+/* SIDEBAR */
+.side-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;}
+.side-card h4{font-family:'Playfair Display',serif;color:var(--green);font-size:17px;margin-bottom:10px;}
+.side-card p{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:12px;}
+.side-subscribe{display:block;background:var(--green);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;text-align:center;padding:11px 16px;border-radius:8px;text-decoration:none;transition:background .15s;}
+.side-subscribe:hover{background:var(--green-mid);}
+.thread-list{list-style:none;margin-top:4px;}
+.thread-list li{font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--muted);padding:8px 0;border-bottom:1px solid var(--border);line-height:1.45;}
+.thread-list li:last-child{border-bottom:none;}
+.thread-list li strong{color:var(--green);display:block;margin-bottom:2px;}
+.thread-list li.current strong{color:var(--gold);}
+
+/* SIGN-OFF BAR */
+.signoff-bar{background:var(--green-pale);border-top:2px solid var(--border);padding:20px 32px;margin-top:48px;text-align:center;}
+.signoff-bar p{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);}
+.signoff-bar strong{color:var(--green);}
+
+/* FOOTER */
+footer{background:#0f2e24;padding:40px 32px;}
+.footer-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start;}
+.footer-tagline{font-family:'Source Serif 4',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,.5);margin-top:8px;}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.45);text-decoration:none;}
+.footer-links a:hover{color:rgba(255,255,255,.75);}
+.footer-copy{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.3);margin-top:24px;}
+.disclaimer{font-family:'DM Sans',sans-serif;font-size:11.5px;color:rgba(255,255,255,.35);margin-top:16px;line-height:1.6;border-top:1px solid rgba(255,255,255,.08);padding-top:16px;}
+.disclaimer strong{color:rgba(255,255,255,.5);}
+
+/* MOBILE */
+@media(max-width:700px){
+  body{overflow-x:hidden;}
+  .body-wrap{grid-template-columns:1fr;padding:28px 18px 60px;}
+  aside{position:static;}
+  .stat-inner{grid-template-columns:1fr 1fr;}
+  .stat-val{font-size:22px;overflow-wrap:break-word;word-break:break-word;}
+  .mw-chain{grid-template-columns:1fr;border-radius:10px;}
+  .mw-s{border-right:none;border-bottom:1px solid rgba(255,255,255,.15);}
+  .mw-s:last-child{border-bottom:none;}
+  .lens-grid{grid-template-columns:1fr;}
+  .arc-grid{grid-template-columns:1fr 1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .nav{flex-wrap:wrap;height:auto;min-height:58px;padding:10px 18px;}
+  .nav-links a:not(.nav-cta){display:none;}
+  h1{font-size:26px;}
+  .hero{padding:40px 18px 36px;}
+  .stat-strip{padding:16px 18px;}
+  /* On mobile show Plain English column, hide Full name (more useful at small size) */
+  .gloss-table th:nth-child(2), .gloss-table td:nth-child(2){display:none;}
+}
+@media(min-width:701px) and (max-width:900px){
+  .body-wrap{grid-template-columns:1fr;}
+  aside{position:static;}
+}
+.source-ref{font-family:'DM Sans',sans-serif;font-size:12px;white-space:nowrap;}
+main a{color:var(--green);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+main a:hover{color:var(--green-mid);}
+main a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+.src-item{scroll-margin-top:120px;overflow-wrap:anywhere;}
+.src-item:target{background:var(--gold-pale);}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+<a class="nav-logo" href="https://theuptimebrief.com/"><svg aria-label="The Uptime Brief" height="38" role="img" viewBox="0 0 320 72" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="ecg-g" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs>
+<polyline fill="none" points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" stroke="url(#ecg-g)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<circle cx="98" cy="28" fill="#3dbf8a" r="4"/>
+<line stroke="rgba(255,255,255,0.2)" stroke-width="0.5" x1="108" x2="290" y1="42" y2="42"/>
+<text fill="#ffffff" font-family="DM Sans,sans-serif" font-size="19" font-weight="700" letter-spacing="2" x="108" y="34">THE UPTIME</text>
+<text fill="#3dbf8a" font-family="Georgia,Times New Roman,serif" font-size="15" font-style="italic" letter-spacing="5" x="115" y="55">BRIEF</text>
+</svg></a>
+<div class="nav-links">
+<a href="https://theuptimebrief.com/">All Editions</a>
+<a class="nav-cta" href="https://lnkd.in/gaiMidys" rel="noopener noreferrer" target="_blank">Subscribe</a>
+</div>
+</nav>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-inner">
+<div class="hero-kicker">Data Centre &amp; Infrastructure Finance · APAC</div>
+<div class="hero-ed">The Uptime Brief — Edition 25 · 1 October 2026</div>
+<h1>Who Captures the Control Point?</h1>
+<p class="hero-sub">The Financeable MW — when physical scarcity becomes underwritable cash flow</p>
+<p class="hero-byline">By <strong style="color:rgba(255,255,255,.7)">Sel Fang, Lim</strong> · Data centre and infrastructure finance, APAC</p>
+</div>
+</div>
+<!-- STAT STRIP -->
+<div class="stat-strip">
+<div class="stat-inner">
+<div class="stat-item"><div class="stat-val">US$88bn</div><div class="stat-label">AI-related issuance by low-rated firms so far in 2026</div></div>
+<div class="stat-item"><div class="stat-val">20 GW</div><div class="stat-label">Sydney large-load connection enquiries</div></div>
+<div class="stat-item"><div class="stat-val">~95%</div><div class="stat-label">Keppel DC REIT contracted power capacity</div></div>
+<div class="stat-item"><div class="stat-val">US$4.25bn</div><div class="stat-label">Beacon Point senior secured notes</div></div>
+</div>
+</div>
+<!-- BODY -->
+<div class="body-wrap">
+<main>
+<p class="body" style="font-style:italic;color:var(--muted);margin-bottom:28px;">Edition 24 ended with a question: "So how much of the value created upstream ultimately survives into the owner's return?" This edition takes that question into the credit markets.</p>
+<!-- THE DEAL -->
+<div class="section-label">The Deal</div>
+<p class="body">Reuters reported that AI-related issuance by low-rated firms has reached roughly <strong>US$88 billion so far in 2026</strong>, with most borrowing coming from US issuers — compared with about US$20 billion in the first eleven months of 2025. <a aria-label="Research note: Reuters — AI-related leveraged finance" class="source-ref" href="#source-reuters">[source]</a> That is a financing signal: AI infrastructure is increasingly being tested in credit markets, where investors have to distinguish between projects that can and cannot support external capital.</p>
+<div class="pq"><p>The scarce megawatt is not necessarily the valuable megawatt.</p></div>
+<p class="body">Neither is the first megawatt to secure land, obtain a grid position, or receive an allocation. The question is what happens next — <strong>when does physical scarcity become cash flow that an investor can actually underwrite?</strong></p>
+<p class="body">Data-centre scarcity is often discussed as though there were one bottleneck. There isn't. Land can be scarce. Grid access can be scarce. Power allocation can be scarce. And a credible delivery window can itself become scarce. Each layer can carry option value.</p>
+<p class="body">Keppel's planned AI data-centre campus near Morwell, Victoria, shows how that value can begin well before a facility exists. Keppel secured rights to lease a 123-hectare site with up to 720 MW of gross power capacity, and pays an annual access fee while it undertakes pre-development work, including planning approvals and contracting power and water. <a aria-label="Research note: Keppel — Morwell 720 MW powerbank" class="source-ref" href="#source-keppel">[source]</a></p>
+<p class="body">Transgrid says Sydney currently has insufficient transmission capacity to connect any of the 20 GW of new large-load connection enquiries it has received. Additional data-centre connections depend on new user-funded transmission upgrades. <a aria-label="Research note: Transgrid — Sydney large-load enquiries" class="source-ref" href="#source-transgrid">[source]</a> In Singapore, the government provisionally allocated 200 MW of new data-centre capacity to four operators under DC-CFA2. <a aria-label="Research note: EDB / IMDA — DC-CFA2" class="source-ref" href="#source-singapore">[source]</a></p>
+<p class="body">Land rights, grid positions and regulatory allocations create option value. They tell us that someone controls an opportunity. They do not yet tell us whether that opportunity will become an underwritable asset.</p>
+<p class="body">AEMO reported 11 large data-centre projects representing 5.4 GW of maximum demand in the transmission connection process in Q1 2026 — 4.1 GW at application stage and 1.3 GW at proponent implementation stage. <a aria-label="Research note: AEMO — Q1 2026 connection process" class="source-ref" href="#source-aemo">[source]</a> That is evidence of progress toward deliverability. It is not evidence that those MW have reached it.</p>
+<hr class="sec-divider"/>
+<!-- ENGINEERING READ -->
+<div class="section-label">The Engineering Read</div>
+<div class="sub-h">A megawatt is not a single thing</div>
+<p class="body">The same MW label covers at least five structurally different states. They are not a funnel — they do not describe one dataset shrinking mechanically from top to bottom. They describe different risks being removed, each answering a different underwriting question.</p>
+<!-- FIX: Step counters added to each MW card for sequence clarity on mobile reflow -->
+<div class="mw-chain">
+<div class="mw-s mw-1"><div class="mw-step">Step 1</div><div class="mw-label">Nominal MW</div><div class="mw-desc">Announced or proposed capacity.</div><div class="mw-q">What capacity is being discussed?</div></div>
+<div class="mw-s mw-2"><div class="mw-step">Step 2</div><div class="mw-label">Controlled MW</div><div class="mw-desc">Site rights, grid allocation or development rights secured.</div><div class="mw-q">Do I control the opportunity?</div></div>
+<div class="mw-s mw-3"><div class="mw-step">Step 3</div><div class="mw-label">Deliverable MW</div><div class="mw-desc">Power and connection pathway sufficiently credible.</div><div class="mw-q">Can the power credibly arrive?</div></div>
+<div class="mw-s mw-4"><div class="mw-step">Step 4</div><div class="mw-label">Revenue MW</div><div class="mw-desc">Customer-contracted capacity generating revenue.</div><div class="mw-q">Is someone paying for the capacity?</div></div>
+<div class="mw-s mw-5"><div class="mw-step">Step 5</div><div class="mw-label">Financeable MW</div><div class="mw-desc">Cash flows and risk allocation support external capital.</div><div class="mw-q">Can outside capital underwrite it?</div></div>
+</div>
+<div class="sub-h">Deliverable MW is not Revenue MW</div>
+<p class="body">Malaysia's TNB Green Lane has compressed the electricity-supply implementation process from 36–48 months to as little as 12 months. By end-2024, TNB reported 18 completed supply connections representing 1,856 MW; during 2024, it signed 37 ESAs representing 5,765 MW. <a aria-label="Research note: TNB Green Lane" class="source-ref" href="#source-tnb">[source]</a></p>
+<div class="pq"><p>Power contract ≠ customer contract.</p></div>
+<p class="body">A signed ESA evidences a utility-side supply commitment or pathway. It does not confirm a tenant/customer contract. TNB's completed connections provide the stronger evidence of delivered electricity supply. That distinction is what separates Deliverable MW from Revenue MW.</p>
+<p class="body">Keppel DC REIT's 1H 2026 results report portfolio contracted power capacity of approximately 95%, which it defines as the proportion of revenue-generating power capacity, alongside contract renewals in Singapore and Australia and a WALE of 6.7 years by lettable area. <a aria-label="Research note: Keppel DC REIT 1H 2026 results" class="source-ref" href="#source-keppeldcreit">[source]</a> At Revenue MW, the capacity is no longer merely available — someone is paying for it.</p>
+<div class="sub-h">Financeable MW adds a fifth state</div>
+<p class="body">Financeable MW is where contract, counterparty, delivery, collateral and risk allocation together support external capital. Five gates need to align sufficiently for external capital to underwrite the project:</p>
+<!-- FIX: .three-q styled to match .heuristic for visual consistency -->
+<div class="three-q">
+<p>
+  Counterparty credit quality<br/>
+  Contract durability<br/>
+  Physical delivery credibility<br/>
+  Collateral quality<br/>
+  Risk allocation between owner, lender and tenant
+</p>
+</div>
+<p class="body">Weakness in any one gate can materially change the financing structure, pricing, recourse or amount of external capital available. Financing structure and credit support — senior secured debt, non-recourse SPVs, guarantees and other protections — are shaped by how those gates are resolved; they are not themselves a gate.</p>
+<!-- FIX: Bridge sentence moved here from end of The Deal, where it introduced 'financeable state' before the framework existed -->
+<p class="body">The examples above show why headline pipeline depth can overstate the amount of capacity that has actually reached the financeable state.</p>
+<hr class="sec-divider"/>
+<!-- CAPITAL ALLOCATION READ -->
+<div class="section-label">The Capital Allocation Read</div>
+<div class="cap-point">
+<div class="cap-lead">1. Beacon Point illustrates one form of the conversion at scale.</div>
+<p class="cap-sub">Hut 8's Beacon Point project in Texas provides a real-world test of Financeable MW.</p>
+<p class="cap-sub">In June, Beacon Point DC issued US$4.25 billion of 6.129% senior secured notes due November 2042. The proceeds are financing a data centre with 352 MW of critical IT capacity and associated substation infrastructure. <a aria-label="Research note: Hut 8 Q2 2026 10-Q" class="source-ref" href="#source-hut8">[source]</a></p>
+<p class="cap-sub">The facility is leased in its entirety to a high-investment-grade company under a triple-net lease. Hut 8's filing states that rent under that lease is expected to be the principal source of cash flow servicing the notes.</p>
+<p class="cap-sub">The debt is secured by first-priority liens over substantially all of Beacon Point DC's assets and by a pledge of equity interests in the project company. The obligations are not guaranteed by Hut 8 or the tenant.</p>
+</div>
+<div class="heuristic">
+<div class="heur-lbl">Beacon Point — financing package</div>
+<div class="heur-formula">
+    Development and construction pathway for 352 MW<br/>
+    → long-term customer contract<br/>
+    → high-investment-grade counterparty<br/>
+    → contracted rent as principal debt-service source<br/>
+    → first-priority project liens<br/>
+    → non-recourse SPV structure
+  </div>
+<div class="heur-note">Each link maps to one of the five underwriting gates: counterparty, contract, delivery, collateral and risk allocation.</div>
+</div>
+<div class="cap-point">
+<div class="cap-lead">2. Financeable MW is a state, not a permanent badge.</div>
+<p class="cap-sub"><strong>Project Jupiter shows why Financeable MW is not necessarily a permanent state.</strong> Oracle recently issued a force-majeure notice relating to its New Mexico campus following setbacks in its power-delivery pathway. The notice reportedly preserves Oracle's ability to delay the start of higher rental payments if the project misses its planned 2028 opening, although Oracle says the project remains on schedule and Blue Owl says the notice does not change the project's financial commitments. <a aria-label="Research note: Oracle Project Jupiter force-majeure notice" class="source-ref" href="#source-jupiter">[source]</a></p>
+<p class="cap-sub">The underwriting point is narrower: a signed tenant contract does not eliminate delivery risk. If the power pathway slips, contractual protections can activate, rent timing can change, and the economics supporting external capital may need to be reassessed.</p>
+<p class="cap-sub"><strong>Financeable MW therefore has to be monitored, not merely achieved.</strong></p>
+</div>
+<div class="cap-point">
+<div class="cap-lead">3. Contracts move risk — they do not make it disappear.</div>
+<p class="cap-sub">Meta holds a 20% membership interest in a Louisiana data-centre joint venture. The parties have committed to fund their respective pro-rata shares of approximately US$27 billion of total estimated development costs. <a aria-label="Research note: Meta Q2 2026 10-Q" class="source-ref" href="#source-meta">[source]</a></p>
+<!-- FIX: Parenthetical added inline so body-text readers understand the figure without scrolling to sources -->
+<p class="cap-sub">Meta also disclosed approximately US$12.31 billion of initial lease commitments, residual-value guarantees with an aggregate threshold of approximately US$28 billion, and maximum exposure to loss of approximately US$46.03 billion as of June 2026 (a maximum-exposure measure, not an estimate of expected loss).</p>
+<p class="cap-sub">Separately, Meta states that residual-value guarantee payments were assessed as not probable and no RVG liability had been recorded.</p>
+<p class="cap-sub"><strong>Minority ownership is not minority economic exposure.</strong> And moving the financing structure is not the same as moving all the risk.</p>
+</div>
+<div class="cap-point">
+<div class="cap-lead">4. The five-state ladder changes how investors should read pipeline figures.</div>
+<p class="cap-sub">A pipeline figure that does not specify MW state conflates five structurally different levels of investment readiness.</p>
+<p class="cap-sub">Nominal and Controlled MW may carry option value through site rights, grid position and development optionality. They are not yet cash flow.</p>
+<p class="cap-sub">The transition from Revenue MW to Financeable MW requires structural work distinct from building the data centre: contract structure, counterparty selection, collateral packaging and risk allocation between owner, lender and tenant.</p>
+</div>
+<div class="cap-point">
+<div class="cap-lead">5. The investor question for markets such as Johor is which structures support the conversion.</div>
+<p class="cap-sub">Beacon Point illustrates one form of project financeability. The diligence question for markets such as Johor is whether contractual and risk-allocation structures are developing alongside the MW pipeline.</p>
+</div>
+<hr class="sec-divider"/>
+<!-- INVESTMENT LENS -->
+<div class="section-label">Investment Lens</div>
+<div class="lens-grid">
+<div class="lens-card">
+<div class="lens-market">Conversion</div><div class="lens-name">Nominal → Financeable</div>
+<div class="lens-row"><span class="lens-lbl">Constraint</span><span class="lens-val">Headline pipeline MW does not equal financeable capacity</span></div>
+<div class="lens-row"><span class="lens-lbl">Impact</span><span class="lens-val">Pipeline depth can overstate project-finance readiness</span></div>
+<div class="lens-row"><span class="lens-lbl">Capital response</span><span class="lens-val">Test all five underwriting gates before assigning value</span></div>
+<div class="lens-row"><span class="lens-lbl">More financeable</span><span class="lens-val">Durable contracted cash flow + credible counterparty + enforceable security + clearly allocated project risks</span></div>
+</div>
+<div class="lens-card">
+<div class="lens-market">Utility vs tenant</div><div class="lens-name">ESA ≠ Customer Contract</div>
+<div class="lens-row"><span class="lens-lbl">Constraint</span><span class="lens-val">Utility-side supply arrangement is not tenant-side revenue</span></div>
+<div class="lens-row"><span class="lens-lbl">Impact</span><span class="lens-val">Deliverable MW does not automatically become Revenue MW</span></div>
+<div class="lens-row"><span class="lens-lbl">Capital response</span><span class="lens-val">Separate power-pathway diligence from lease-up diligence</span></div>
+<div class="lens-row"><span class="lens-lbl">More financeable</span><span class="lens-val">Credible utility pathway + contracted customer demand</span></div>
+</div>
+<div class="lens-card">
+<div class="lens-market">Risk allocation</div><div class="lens-name">Ownership ≠ Exposure</div>
+<div class="lens-row"><span class="lens-lbl">Constraint</span><span class="lens-val">Minority ownership can coexist with large contingent obligations</span></div>
+<div class="lens-row"><span class="lens-lbl">Impact</span><span class="lens-val">Headline equity stake can understate economic exposure</span></div>
+<div class="lens-row"><span class="lens-lbl">Capital response</span><span class="lens-val">Analyse guarantee scope, triggers and probability of payment</span></div>
+<div class="lens-row"><span class="lens-lbl">More financeable</span><span class="lens-val">Transparent risk allocation and well-defined guarantee conditions</span></div>
+</div>
+<!-- FIX: Standalone Credit Case card differentiated from Nominal→Financeable with project-level DSCR framing -->
+<div class="lens-card">
+<div class="lens-market">Project finance</div><div class="lens-name">Standalone Credit Case</div>
+<div class="lens-row"><span class="lens-lbl">Constraint</span><span class="lens-val">Sponsor strength does not answer what project cash flow itself can support</span></div>
+<div class="lens-row"><span class="lens-lbl">Impact</span><span class="lens-val">Debt terms depend on project-level cash flow, collateral and risk allocation — not sponsor balance sheet</span></div>
+<div class="lens-row"><span class="lens-lbl">Capital response</span><span class="lens-val">Underwrite the project independently: model project-level DSCR from contracted project cash flows</span></div>
+<div class="lens-row"><span class="lens-lbl">More financeable</span><span class="lens-val">Project DSCR covers debt service without recourse to sponsor; collateral is ring-fenced at SPV level</span></div>
+</div>
+</div>
+<hr class="sec-divider"/>
+<!-- BROADER MARKET -->
+<div class="section-label">What This Means for the Broader Market</div>
+<div class="arc-grid">
+<div class="arc-card"><div class="arc-n">E22</div><div class="arc-title">Where Inference Has to Run</div><div class="arc-thesis">Where does the control point sit?</div></div>
+<div class="arc-card"><div class="arc-n">E23</div><div class="arc-title">The Value of Time</div><div class="arc-thesis">Which control point captures the value of arriving earlier?</div></div>
+<div class="arc-card"><div class="arc-n">E24</div><div class="arc-title">100 MW ≠ 100 MW</div><div class="arc-thesis">How much upstream value survives into the owner's return?</div></div>
+<div class="arc-card active"><div class="arc-n">E25</div><div class="arc-title">The Financeable MW</div><div class="arc-thesis">What converts physical advantage into underwritable cash flow?</div></div>
+</div>
+<p class="body">The last few editions have moved from where a megawatt needs to be, to when it can arrive, to what state it has actually reached.</p>
+<div class="heuristic">
+<div class="heur-lbl">Edition 25 thesis</div>
+<div class="heur-formula">
+    Scarcity creates option value.<br/>
+    Delivery creates usable capacity.<br/>
+    A bankable contract turns that capacity into financeable value.
+  </div>
+<div class="heur-note">The valuable megawatt is not merely the scarce MW — or even the deliverable MW. It is the MW whose physical advantage can be converted into underwritable cash flow.</div>
+</div>
+<p class="body">The MW-state framework can be applied across markets and scales. Transgrid's 20 GW is at Nominal. Keppel Morwell and Singapore's DC-CFA2 200 MW are at Controlled. TNB Green Lane is moving capacity toward Deliverable. Keppel DC REIT's 95% contracted power capacity demonstrates Revenue. Beacon Point has reached Financeable.</p>
+<p class="body">Each state can carry value. But Financeable MW is the state where the project's ability to support external capital has been explicitly demonstrated.</p>
+<div class="closing-q">
+<p><strong>The next question shifts from infrastructure to counterparty.</strong></p>
+<p>What changes when the counterparty behind the bankable contract is a neocloud rather than a hyperscaler?</p>
+</div>
+<!-- SOURCES -->
+<div class="sources" id="research-notes">
+<div class="section-label" style="margin-top:0">Sources &amp; Research Notes</div>
+<p style="font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);margin-bottom:16px;">Analysis relies primarily on regulatory filings, official operator and government disclosures, supplemented by Reuters market reporting. Sources current as of 1 October 2026.</p>
+<div class="src-cat">Project finance and corporate filings</div>
+<div class="src-item" id="source-hut8"><strong>Hut 8 — Q2 2026 10-Q (SEC)</strong> — Beacon Point: US$4.25bn of 6.129% senior secured notes due 30 Nov 2042; 352 MW critical IT capacity; NNN lease to a high-investment-grade company; non-recourse; first-priority liens; lease rent expected to be principal source of debt service.</div>
+<div class="src-item" id="source-keppeldcreit"><strong>Keppel DC REIT — 1H 2026 results</strong> — contracted power capacity ~95%, defined as revenue-generating power capacity; WALE 6.7 years; contract renewals Singapore and Australia.</div>
+<div class="src-item" id="source-meta"><strong>Meta — Q2 2026 10-Q (SEC)</strong> — Louisiana JV: 20% membership interest; ~US$27bn estimated development costs; ~US$12.31bn initial lease commitments; ~US$28bn residual-value guarantee threshold; ~US$46.03bn maximum exposure to loss. Maximum exposure is not equity value or expected cash outflow.</div>
+<div class="src-cat">Delivery risk and contract mechanics</div>
+<div class="src-item" id="source-jupiter"><strong>Reuters / Project Jupiter reporting — 24 September 2026</strong> — Oracle issued a force-majeure notice to Blue Owl Capital relating to the New Mexico Project Jupiter campus amid potential power-delivery delays. The notice reportedly preserves Oracle's ability to delay the start of higher rental payments if the project misses its planned 2028 opening. Oracle said the project remains on schedule; Blue Owl said the notice does not change the project's financial commitments. Sources: Reuters (24 Sep 2026), TechCrunch, Data Center Dynamics and CNBC.</div>
+<div class="src-cat">Grid and connection data</div>
+<div class="src-item" id="source-transgrid"><strong>Transgrid — Sydney large-load connection enquiries</strong> — 20 GW of new large-load connection enquiries; not presently connectable capacity.</div>
+<div class="src-item" id="source-aemo"><strong>AEMO — QED Q1 2026</strong> — 11 projects / 5.4 GW in transmission connection process: 4.1 GW application stage, 1.3 GW proponent implementation.</div>
+<div class="src-item" id="source-tnb"><strong>TNB — Green Lane programme</strong> — 18 completed supply connections / 1,856 MW by end-2024; 37 ESAs / 5,765 MW signed during 2024; electricity-supply pathway compressed from 36–48 months to as little as 12 months.</div>
+<div class="src-cat">Allocation and development rights</div>
+<div class="src-item" id="source-singapore"><strong>Singapore EDB / IMDA — DC-CFA2</strong> — 200 MW provisionally allocated to four operators.</div>
+<div class="src-item" id="source-keppel"><strong>Keppel — Morwell 720 MW powerbank</strong> — rights to lease ~123 ha; up to 720 MW gross power capacity; annual access fee / pre-development stage.</div>
+<div class="src-cat">Market financing context</div>
+<div class="src-item" id="source-reuters"><strong>Reuters — AI-related leveraged finance, 30 Sep 2026</strong> — AI-related issuance by low-rated firms reached ~US$88bn so far in 2026, with most borrowing from US issuers; leveraged-finance AI issuance was ~US$20bn in the first 11 months of 2025.</div>
+<div class="src-note"><strong>Research discipline:</strong> Sourced facts are attributed to the originating institution. The MW-State Framework (Nominal → Controlled → Deliverable → Revenue → Financeable) is an analytical framework developed for <em>The Uptime Brief</em>, not an industry accounting convention. ESA and customer contract are not interchangeable terms in underwriting. Meta's maximum-exposure figure is not equity value or expected cash outflow. Detailed source references and verification notes are maintained in this web edition.</div>
+</div>
+<!-- GLOSSARY -->
+<div class="glossary">
+<h3>Glossary — acronyms used in this edition</h3>
+<table class="gloss-table">
+<thead><tr><th>Acronym</th><th>Full name</th><th>Plain English</th></tr></thead>
+<tbody>
+<tr><td>MW</td><td>Megawatt</td><td>Unit of electrical power (1,000 kW)</td></tr>
+<tr><td>GW</td><td>Gigawatt</td><td>1,000 MW</td></tr>
+<tr><td>DC-CFA2</td><td>Data Centre Call for Applications 2</td><td>Singapore's second competitive allocation process for new data-centre capacity</td></tr>
+<tr><td>AEMO</td><td>Australian Energy Market Operator</td><td>Operator of Australia's major electricity and gas markets and systems</td></tr>
+<tr><td>TNB</td><td>Tenaga Nasional Berhad</td><td>Malaysia's national electricity utility</td></tr>
+<tr><td>ESA</td><td>Electricity Supply Agreement</td><td>Utility-side electricity supply arrangement</td></tr>
+<tr><td>NNN</td><td>Triple-net lease</td><td>Lease structure in which specified operating costs are borne by the tenant</td></tr>
+<tr><td>SPV</td><td>Special-purpose vehicle</td><td>Ring-fenced legal entity used to hold/project-finance an asset</td></tr>
+<tr><td>WALE</td><td>Weighted Average Lease Expiry</td><td>Average remaining lease duration across a portfolio</td></tr>
+<tr><td>RVG</td><td>Residual Value Guarantee</td><td>Contractual protection tied to an asset's future residual value</td></tr>
+<tr><td>DSCR</td><td>Debt Service Coverage Ratio</td><td>Project cash flow relative to debt obligations; core project-finance underwriting metric</td></tr>
+</tbody>
+</table>
+</div>
+</main>
+<!-- SIDEBAR — unchanged per instruction -->
+<aside>
+<div class="side-card">
+<h4>About this newsletter</h4>
+<p>The Uptime Brief covers data centre and infrastructure finance in APAC — one engineering constraint and one capital allocation insight per week.</p>
+<p>By <strong>Sel Fang, Lim</strong> · Data centre and infrastructure finance, APAC</p>
+<a class="side-subscribe" href="https://lnkd.in/gaiMidys" rel="noopener noreferrer" target="_blank">Subscribe on LinkedIn</a>
+</div>
+<div class="side-card">
+<h4>The edition thread</h4>
+<ul class="thread-list">
+<li class="current"><strong>E25 — The Financeable MW</strong>What converts physical advantage into underwritable cash flow?</li>
+<li><strong>E24 — 100 MW ≠ 100 MW</strong>So how much of the value created upstream ultimately survives into the owner's return?</li>
+<li><strong>E23 — The Value of Time</strong>If the value lies in arriving earlier, which control point actually captures it?</li>
+<li><strong>E22 — Where Inference Has to Run</strong>Is the winning asset a data centre — or the control point wrapped around it?</li>
+</ul>
+</div>
+<div class="side-card" style="background:var(--green-pale);">
+<h4 style="color:var(--green);font-size:14px;">theuptimebrief.com</h4>
+<p style="font-size:12px;">Full archive of The Uptime Brief editions, sources and glossaries.</p>
+<a href="https://theuptimebrief.com/" style="font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--green);font-weight:700;text-decoration:none;">← All editions</a>
+</div>
+</aside>
+</div><!-- /body-wrap -->
+<!-- SIGN-OFF BAR -->
+<div class="signoff-bar">
+<p><strong>The Uptime Brief</strong> · Where uptime meets capital allocation · Published weekly</p>
+</div>
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div>
+<svg aria-label="The Uptime Brief" height="30" role="img" viewBox="0 0 320 72" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="ecg-f" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs>
+<polyline fill="none" points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" stroke="url(#ecg-f)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<circle cx="98" cy="28" fill="#3dbf8a" r="4"/>
+<line stroke="rgba(255,255,255,0.12)" stroke-width="0.5" x1="108" x2="290" y1="42" y2="42"/>
+<text fill="rgba(255,255,255,0.75)" font-family="DM Sans,sans-serif" font-size="19" font-weight="700" letter-spacing="2" x="108" y="34">THE UPTIME</text>
+<text fill="#3dbf8a" font-family="Georgia,Times New Roman,serif" font-size="15" font-style="italic" letter-spacing="5" x="115" y="55">BRIEF</text>
+</svg>
+<p class="footer-tagline">Where uptime meets capital allocation.</p>
+<div class="footer-links" style="margin-top:16px;">
+<a href="https://theuptimebrief.com/">Editions</a>
+<a href="https://lnkd.in/gaiMidys" rel="noopener noreferrer" target="_blank">Subscribe</a>
+</div>
+<p class="footer-copy">© 2026 The Uptime Brief · Sel Fang, Lim</p>
+<div class="disclaimer">
+<strong>Editorial note:</strong> This publication is provided for informational and educational purposes only. It reflects the author's analysis of publicly available information as of the publication date and should not be construed as investment, legal, accounting, or financial advice. Opinions are the author's own and may change as further disclosures become available.<br/>
+<span style="font-style:italic;color:rgba(255,255,255,.25);">No investment advice intended or implied.</span>
+</div>
+</div>
+<div>
+<p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.3);text-align:right;">Edition 25 · 1 Oct 2026</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
