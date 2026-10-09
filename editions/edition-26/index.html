@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Credit Behind the Compute — The Uptime Brief, Edition 26</title>
+<meta name="description" content="Two Hut 8 data-centre bonds reached the same investment-grade market through different credit chains — a Google-backstopped neocloud lease and a direct high-investment-grade lease. By Sel Fang, Lim.">
+<link rel="canonical" href="https://theuptimebrief.com/editions/edition-26">
+<meta property="og:title" content="The Credit Behind the Compute — The Uptime Brief, Edition 26">
+<meta property="og:description" content="Two investment-grade data-centre bonds. Two different credit chains. What did the market actually make bankable? By Sel Fang, Lim.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theuptimebrief.com/editions/edition-26">
+<meta property="og:site_name" content="The Uptime Brief">
+<meta property="og:image" content="https://theuptimebrief.com/assets/og-edition26.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#1a4a3a;--green-mid:#2f6b54;--green-pale:#e8f2ee;--gold:#c9a84c;--teal:#3dbf8a;--blue:#4ab8d4;--cream:#f8f6f2;--ink:#1c2420;--muted:#5a6b63;--border:#d7e0da;--dark:#111;}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;font-size:17px;overflow-x:hidden;}
+  a{color:var(--green-mid);}
+  nav{position:sticky;top:0;z-index:50;background:var(--green);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;transition:box-shadow .2s;flex-wrap:wrap;}
+  nav.scrolled{box-shadow:0 2px 14px rgba(0,0,0,.18);}
+  nav .navlinks{display:flex;gap:22px;align-items:center;}
+  nav .navlinks a{color:#fff;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;}
+  nav .navlinks a.cta{background:var(--gold);color:var(--green);padding:8px 16px;border-radius:6px;font-weight:700;}
+  .hero{background:var(--green);color:#fff;text-align:center;padding:40px 24px 54px;}
+  .hero .kicker{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
+  .hero .edlabel{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px;}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:44px;line-height:1.1;margin:6px auto 12px;max-width:760px;}
+  .hero .tagline{font-style:italic;font-size:19px;color:rgba(255,255,255,.85);max-width:640px;margin:0 auto 20px;}
+  .hero .byline{font-family:'DM Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,.7);letter-spacing:.02em;}
+  .hero .ctas{margin-top:24px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .hero .ctas a{font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;}
+  .hero .ctas .primary{background:var(--gold);color:var(--green);padding:11px 22px;border-radius:7px;}
+  .hero .ctas .ghost{color:#fff;padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.4);}
+  .stats{display:flex;gap:16px;max-width:1000px;margin:-28px auto 0;padding:0 24px;flex-wrap:wrap;position:relative;z-index:5;}
+  .stat{flex:1;min-width:210px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;box-shadow:0 4px 18px rgba(26,74,58,.08);}
+  .stat .fig{font-family:'Playfair Display',serif;font-size:24px;color:var(--green);font-weight:700;overflow-wrap:break-word;}
+  .stat .rule{width:40px;height:2px;background:var(--gold);margin:8px auto;}
+  .stat .lab{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.03em;color:var(--muted);text-transform:uppercase;}
+  .container{max-width:1060px;margin:40px auto 0;padding:0 24px;display:grid;grid-template-columns:1fr 300px;gap:44px;}
+  article h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--green);font-weight:700;margin:36px 0 8px;display:flex;align-items:center;gap:12px;}
+  article h2 .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;}
+  article h3{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--green-mid);margin:22px 0 4px;}
+  article p{margin:0 0 15px;}
+  article .lead{font-size:19px;color:var(--ink);}
+  .chain{background:var(--green-pale);border-radius:10px;padding:16px 18px;margin:18px 0;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--green);font-weight:500;line-height:1.9;}
+  .chain b{color:var(--green-mid);font-weight:700;}
+  .numblock{margin:18px 0;padding-left:18px;border-left:3px solid var(--gold);}
+  .numblock .nh{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:15.5px;margin-bottom:6px;}
+  .numblock p{margin:6px 0;font-size:15.5px;}
+  .lens{background:var(--green-pale);border:1px solid var(--green-mid);border-radius:12px;padding:22px;margin:28px 0;}
+  .lens h3{font-family:'Playfair Display',serif;color:var(--green);font-size:19px;margin:0 0 14px;}
+  .lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .lens-card{background:#fff;border:1px solid var(--border);border-radius:9px;padding:14px;}
+  .lens-card .ll{font-family:'DM Sans',sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-mid);font-weight:700;margin-bottom:2px;}
+  .lens-card .lv{font-size:14px;margin-bottom:9px;}
+  .lens-card .lv:last-child{margin-bottom:0;}
+  .testbox{background:#fff;border:2px solid var(--gold);border-radius:12px;padding:20px;margin:28px 0;}
+  .testbox h3{font-family:'Playfair Display',serif;color:var(--green);font-size:18px;margin:0 0 12px;}
+  .testbox ol{margin:0;padding-left:22px;}
+  .testbox li{margin:7px 0;font-size:15.5px;}
+  .callout{background:#fff;border:1px solid var(--green-mid);border-radius:12px;padding:18px 20px;margin:24px 0;}
+  .callout h4{font-family:'Playfair Display',serif;color:var(--green);font-size:18px;margin:0 0 8px;}
+  .callout .cav{font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--muted);font-style:italic;margin-top:8px;}
+  .closing{font-size:20px;color:var(--green);font-weight:600;font-family:'Source Serif 4',serif;margin:26px 0 8px;line-height:1.5;}
+  .threadfwd{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:16px;}
+  table.deal{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
+  table.deal th{background:var(--green);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;text-align:left;padding:9px 11px;font-size:12.5px;}
+  table.deal td{padding:8px 11px;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.deal tr:nth-child(even) td{background:var(--green-pale);}
+  table.deal td:first-child{font-family:'DM Sans',sans-serif;font-weight:600;color:var(--green);white-space:nowrap;}
+  .tablewrap{overflow-x:auto;}
+  aside{align-self:start;position:sticky;top:82px;}
+  .side-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;}
+  .side-card h4{font-family:'Playfair Display',serif;color:var(--green);font-size:17px;margin:0 0 8px;}
+  .side-card p{font-size:14px;margin:0 0 10px;color:var(--muted);}
+  .side-card .sub-btn{display:block;text-align:center;background:var(--gold);color:var(--green);font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;padding:11px;border-radius:7px;}
+  .thread-list{list-style:none;margin:0;padding:0;}
+  .thread-list li{padding:9px 0;border-bottom:1px solid var(--border);font-size:13.5px;}
+  .thread-list li:last-child{border-bottom:none;}
+  .thread-list a{text-decoration:none;color:var(--ink);display:block;}
+  .thread-list .te{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
+  .thread-list .tt{color:var(--green);font-weight:600;}
+  .fullwidth{max-width:1060px;margin:20px auto 0;padding:0 24px;}
+  .srcblock{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:30px;}
+  .srcblock h2{font-family:'Playfair Display',serif;color:var(--green);font-size:22px;margin:0 0 14px;}
+  .srcline{padding:7px 0;border-bottom:1px dotted var(--border);font-size:14px;}
+  .srcline b{color:var(--green);}
+  .srcnum{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;color:var(--teal);margin-right:4px;}
+  .inline-src{font-family:'DM Sans',sans-serif;font-size:0.72em;font-weight:600;color:var(--teal);text-decoration:none;white-space:nowrap;}
+  .inline-src:hover{text-decoration:underline;}
+  .verif{background:#fbf9f4;border:1px solid var(--border);border-radius:9px;padding:16px;margin-top:18px;}
+  .verif .vh{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:13.5px;margin-bottom:8px;}
+  .flag{font-family:'DM Sans',sans-serif;font-size:13px;margin-top:7px;}
+  .flag .tag{font-weight:700;color:var(--green-mid);}
+  table.gloss{width:100%;border-collapse:collapse;margin-top:12px;font-size:13.5px;}
+  table.gloss th{background:var(--green);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;text-align:left;padding:9px 11px;font-size:12.5px;}
+  table.gloss td{padding:8px 11px;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.gloss tr:nth-child(even) td{background:var(--green-pale);}
+  table.gloss td:first-child{font-family:'DM Sans',sans-serif;font-weight:600;color:var(--green);white-space:nowrap;}
+  .signoff-bar{text-align:center;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--muted);margin:34px auto 0;max-width:1060px;padding:20px 24px;border-top:2px solid var(--gold);}
+  .editorial-note{font-size:12.5px;color:var(--muted);font-style:italic;max-width:1060px;margin:16px auto 0;padding:0 24px;line-height:1.6;}
+  footer{background:var(--dark);color:rgba(255,255,255,.7);margin-top:40px;padding:32px 24px;}
+  footer .fwrap{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer .flinks{display:flex;gap:20px;font-family:'DM Sans',sans-serif;font-size:13px;}
+  footer .flinks a{color:rgba(255,255,255,.7);text-decoration:none;}
+  footer .copy{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.45);width:100%;text-align:center;margin-top:10px;}
+  @media(max-width:700px){
+    .container{grid-template-columns:1fr;gap:28px;}
+    aside{position:static;}
+    .lens-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:30px;}
+    nav .navlinks a:not(.cta){display:none;}
+    .stats{margin-top:20px;}
+    .stat{padding:16px;}
+    .stat .fig{font-size:20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" aria-label="The Uptime Brief home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="38" role="img" aria-label="The Uptime Brief">
+  <defs><linearGradient id="ecg-g" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/>
+  </linearGradient></defs>
+  <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+  <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+  <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="#ffffff" letter-spacing="2">THE UPTIME</text>
+  <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+</svg></a>
+  <div class="navlinks">
+    <a href="/#editions">All Editions</a>
+    <a class="cta" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="edlabel">Edition 26 &middot; Weekly &middot; APAC &middot; Infrastructure Finance</div>
+  <h1>The Credit Behind the Compute</h1>
+  <p class="tagline">Two investment-grade data-centre bonds. Two different credit chains. What did the market actually make bankable?</p>
+  <div class="byline">By Sel Fang, Lim &middot; Data centre and infrastructure finance, APAC</div>
+  <div class="ctas">
+    <a class="primary" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe on LinkedIn</a>
+    <a class="ghost" href="/#editions">Read the editions &rarr;</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="fig">US$7.5bn</div><div class="rule"></div><div class="lab">Two Hut 8 project-bond financings, April &amp; June 2026</div></div>
+  <div class="stat"><div class="fig">BBB&minus; / Baa2</div><div class="rule"></div><div class="lab">River Bend vs. Beacon Point ratings (cross-agency, not same-agency)</div></div>
+  <div class="stat"><div class="fig">20bp tighter</div><div class="rule"></div><div class="lab">Beacon Point's issuance spread vs. River Bend, as reported by Hut 8</div></div>
+</div>
+
+<div class="container">
+  <article>
+    <p class="lead">Edition 25 ended with a question: what changes when the counterparty behind a bankable contract is a neocloud rather than a hyperscaler? Hut 8's 2026 financings offer an unusually useful way to investigate it.</p>
+
+    <h2><span class="n">1</span> The deal</h2>
+    <p>In April and June 2026, two Hut 8 project subsidiaries issued US$7.5 billion of investment-grade senior secured notes to help finance data centres under construction. <a class="inline-src" href="#src-hut8">[1]</a> The notes are non-recourse to Hut 8's parent company, subject to the applicable carve-outs. Both mature in 2042. Yet the tenants behind the expected rent are different.</p>
+    <p>At River Bend in Louisiana, the immediate tenant is Fluidstack, a neocloud. Google provides a financial backstop for specified rent payments and other obligations under Fluidstack's lease. At Beacon Point Phase 1 in Texas, the lease is with an unnamed high-investment-grade company, with no separate external lease backstop disclosed.</p>
+    <p>Different counterparty architectures. The same broad capital-market outcome: investment-grade, non-recourse project debt. That does not prove the two projects carry identical risks. It challenges the simpler assumption that a neocloud tenant necessarily prevents long-dated institutional financing. The better question is what sits between the tenant and the noteholder.</p>
+
+    <h3>Same market, different credit chains</h3>
+    <div class="tablewrap">
+    <table class="deal">
+      <thead><tr><th></th><th>River Bend &mdash; Louisiana</th><th>Beacon Point Phase 1 &mdash; Texas</th></tr></thead>
+      <tbody>
+        <tr><td>Critical IT capacity</td><td>245 MW</td><td>352 MW</td></tr>
+        <tr><td>Tenant</td><td>Fluidstack (neocloud)</td><td>Unnamed high-investment-grade company</td></tr>
+        <tr><td>Lease</td><td>15-year triple-net</td><td>15-year triple-net</td></tr>
+        <tr><td>Additional support</td><td>Google backstop of specified lease obligations</td><td>No separate external lease backstop disclosed</td></tr>
+        <tr><td>Bond rating</td><td>BBB&minus; (S&amp;P and Fitch)</td><td>Baa2 (Moody's)</td></tr>
+        <tr><td>Senior secured notes</td><td>US$3.25bn at 6.192%</td><td>US$4.25bn at 6.129%</td></tr>
+        <tr><td>Relative issuance spread</td><td>Reference transaction</td><td>20bp tighter than River Bend, as reported by Hut 8</td></tr>
+        <tr><td>Maturity</td><td>15 November 2042</td><td>30 November 2042</td></tr>
+        <tr><td>Amortisation begins</td><td>May 2028</td><td>May 2030</td></tr>
+        <tr><td>Note guarantees</td><td>Not guaranteed by Hut 8, Fluidstack or Google</td><td>Not guaranteed by Hut 8 or the tenant</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Both financings are non-recourse to Hut 8's parent, subject to applicable carve-outs. The most important distinction is not the coupon. It is the difference between a lease-level backstop and a note guarantee. At River Bend, Google supports specified obligations under Fluidstack's lease &mdash; Google does not guarantee the project bonds. Under the disclosed structure, noteholders have claims against the project issuer and its secured assets and accounts; Google's support behind the lease should not be mistaken for an unconditional promise by Google to repay the bonds. At Beacon Point, the high-investment-grade tenant is directly obligated under its lease, but does not guarantee the project notes either.</p>
+    <p>Rent is expected to be the principal source of debt service in both cases. First-priority project security, pledged issuer equity and debt-service reserve accounts form part of the financing protection.</p>
+    <p>What can we observe? Both projects reached the investment-grade bond market using different payment-support arrangements. What cannot we observe from the public filings alone? Each investor's internal cash-flow stress tests, recovery assumptions, or how much of the financing price was attributable specifically to tenant credit rather than other project characteristics. That boundary matters for the investment conclusion.</p>
+    <p>The two financings also received different ratings and issuance spreads, despite their remarkably similar coupons. That distinction matters. But it does not automatically tell us how much of the difference reflects tenant credit rather than other financing characteristics.</p>
+
+    <h2><span class="n">2</span> The engineering read: four clocks, running together</h2>
+    <p>The contract, physical asset and financing do not begin producing or demanding cash on one synchronised timetable. A credit committee must track four overlapping clocks.</p>
+    <h3>Delivery clock</h3>
+    <p>Power interconnection, construction, testing and commissioning determine when contracted MW can actually be handed over. Debt can be raised while those steps remain incomplete. If energisation slips, the financial impact depends on the lease, completion protections, reserves and who contractually bears the delay.</p>
+    <h3>Tenant-revenue clock</h3>
+    <p>A neocloud may rely on compute customers whose service commitments and cash generation differ from the data-centre lease. The relevant questions are the duration, concentration, performance conditions and renewal risk of those commitments &mdash; not a blanket assertion that all neocloud contracts last only months.</p>
+    <h3>Lease clock</h3>
+    <p>The lease determines what rent is due, when it starts, how it escalates and under what circumstances obligations can end. Fifteen years of contractual rent is meaningful. It is not equivalent to fifteen years of certain collections.</p>
+    <h3>Debt-service clock</h3>
+    <p>Interest, principal instalments, reserve requirements and covenant triggers have their own dates. River Bend's scheduled amortisation begins in May 2028, while Beacon Point's begins in May 2030. The notes are structured to amortise through maturity, reducing dependence on a large scheduled bullet refinancing. That does not eliminate cash-flow shortfall, covenant, restructuring or residual-value risk.</p>
+    <div class="chain">Whose promise? &rarr; <b>Covering which obligation?</b> &rarr; Effective from when? &rarr; Enforceable by whom? &rarr; Ending when?</div>
+    <p>This is where an engineering constraint becomes a financing constraint: delayed ready-for-service &rarr; potentially delayed rent or support activation &rarr; tighter debt-service cash flow or greater reserve use &rarr; less headroom for distributions and downside shocks. This is a conditional transmission chain, not an assertion that either Hut 8 project has experienced a delay or covenant breach. The actual contractual allocation determines where the economic loss lands.</p>
+
+    <h2><span class="n">3</span> The capital allocation read</h2>
+    <h3>From contractual backlog to debt-service capacity</h3>
+    <p>The same underwriting discipline appears at a different financing layer: computing infrastructure and its customer contracts, rather than a data-centre property's lease income. In March 2026, CoreWeave entered into its US$8.5 billion DDTL 4.0 facility to finance GPUs and related infrastructure required for a customer contract. <a class="inline-src" href="#src-coreweave">[2]</a></p>
+    <p>The facility received ratings of A3 from Moody's and A (low) from Morningstar DBRS <a class="inline-src" href="#src-dbrs">[3]</a> &mdash; ratings associated with the secured transaction and its borrowing entity, not investment-grade corporate ratings of CoreWeave Inc. The financing has a specific legal perimeter: the borrowing subsidiary's obligations are secured by substantially all assets of the borrower and its subsidiaries, while borrower subsidiaries provide guarantees. CoreWeave Inc.'s parent-level guarantee is limited to specified bad acts.</p>
+    <p>The disclosed facility also requires a minimum 1.15&times; debt-service coverage ratio (DSCR). <a class="inline-src" href="#src-coreweave">[2]</a> Testing begins in the first full calendar month after the earlier of the loan commitments being reduced to zero, or 30 June 2027. That is a contractual testing trigger, not evidence that the borrower currently has 1.15&times; coverage or that all neocloud facilities use the same covenant threshold.</p>
+    <p>Put simply, lenders cannot treat a headline backlog as though it were cash already available in a debt-service account. They need to examine which contracted receipts can service debt, what collateral is pledged, what expenses and principal payments fall due, and what happens when service performance or customer payments fall short. CoreWeave reported approximately US$104 billion of revenue backlog at 30 June 2026 <a class="inline-src" href="#src-coreweave">[2]</a> &mdash; a figure that includes remaining performance obligations and estimated future revenue under committed customer contracts, subject to delivery and service-availability requirements. Backlog is not cash collected, realised earnings or a DSCR calculation.</p>
+    <p>The Hut 8 projects and CoreWeave's DDTL cannot be priced against each other as though they financed the same asset &mdash; the former are property-level project notes, the latter finances GPU and customer-contract-backed infrastructure. The shared principle is narrower and more useful: investment-grade credit quality can be achieved at the financing-structure level without requiring the ultimate operating parent to hold the same investment-grade corporate rating.</p>
+
+    <h3>What the pricing cannot tell us</h3>
+    <p>Hut 8 reported that Beacon Point's notes priced 20 basis points inside River Bend's issuance spread. That issuer-reported comparison is informative, but it does not isolate the cost of a neocloud counterparty. The notes were issued about 40 days apart, against different assets, capacities, amortisation profiles, ratings and market conditions. Beacon Point's Baa2 rating from Moody's is also one notch above River Bend's BBB&minus; ratings from S&amp;P and Fitch &mdash; a cross-agency equivalence, not a same-agency comparison, which makes the rating gap alone no easier to isolate than the spread.</p>
+    <p>The 6.192% and 6.129% coupons are not, by themselves, a controlled experiment in tenant-credit pricing. The defensible conclusion is that a supported neocloud lease and a direct high-investment-grade lease both enabled access to investment-grade, non-recourse project financing in these transactions. How much the support package reduced funding costs, changed debt sizing or altered recovery assumptions is not disclosed with sufficient precision to quantify. For investors, the financing result is observable. The full internal underwriting process is not.</p>
+
+    <div class="lens">
+      <h3>Investment Lens: which MW deserves the capital?</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:14px;">Edition 25's five Financeable MW gates remain unchanged: counterparty, contract, delivery, collateral and risk allocation. Edition 26 changes the questions inside those gates &mdash; payment, protection, timing, resilience and recovery.</p>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <div class="ll">Constraint</div><div class="lv">A long lease can outlast the visibility of the tenant's own revenue, while rent, support and debt-service dates may diverge.</div>
+          <div class="ll">Impact</div><div class="lv">A collection or delivery shortfall can reduce debt-service coverage, consume reserves and compress cash flow available to equity &mdash; even before a formal default.</div>
+        </div>
+        <div class="lens-card">
+          <div class="ll">Capital response</div><div class="lv">Stress-test collection, energisation and re-leasing scenarios. Size leverage against cash available for debt service. Examine reserves, amortisation, enforceable support and covenant headroom rather than treating contracted rent as risk-free.</div>
+          <div class="ll">Winning asset</div><div class="lv">Conditionally, a deliverable, power-secured and adaptable facility with durable tenant payments or enforceable support &mdash; and sufficient cash-flow and recovery headroom to withstand a counterparty setback.</div>
+        </div>
+      </div>
+    </div>
+    <p>The return implication is directional, not a published project-level IRR estimate. Stronger protection may support debt capacity or reduce downside risk, but its value depends on cost, enforceability and contractual limits. Fully amortising debt can reduce refinancing dependence while requiring more principal cash payments during the operating life. Equity value depends on both sides of that trade-off.</p>
+
+    <h2><span class="n">4</span> What this means for the broader market</h2>
+    <h3>APAC: plenty of financing, less comparable tenant-level disclosure</h3>
+    <p>In July 2026, AirTrunk announced US$2.325 billion of green financing for its JHB2 hyperscale data-centre campus in Johor, describing it as its largest single-asset financing to date. <a class="inline-src" href="#src-airtrunk">[4]</a> A Reserve Bank of Australia staff analysis published on 23 September 2026 estimated that Australian data-centre operators had raised at least A$35 billion in 2026 through 8 September, with syndicated lending representing the largest financing channel. <a class="inline-src" href="#src-rba">[5]</a></p>
+    <p>Those figures demonstrate the scale of infrastructure capital formation across parts of APAC. They do not establish a comparable APAC funding spread for neocloud versus direct investment-grade tenants &mdash; the borrowers, assets, guarantees and security packages differ, and some crucial tenant-level terms are not publicly disclosed. The disciplined APAC question is therefore not simply which market funds neoclouds more cheaply. It is: where are the payment obligations, credit support and recovery rights sufficiently disclosed to make a meaningful comparison?</p>
+
+    <h3>Beyond the rating</h3>
+    <p>The River Bend and Beacon Point comparison does not suggest that the market has stopped caring about tenant credit. It shows that tenant credit is one input into a transaction-specific assessment of contractual payment, enforceable support, collateral, repayment timing and recovery. A direct investment-grade lease provides one path. A neocloud lease with a defined external backstop provides another. A GPU-backed facility is a different financing solution altogether. None eliminates the need to ask what happens when the real project departs from the financing model.</p>
+    <p class="closing">A contract can make the MW financeable at closing. The real test is who keeps it financeable after closing.</p>
+    <p class="threadfwd">And if a data-centre operator depends on a handful of large customers, how much of that contracted growth becomes resilient cash flow for the operator's own investors? That is the question I'm taking forward next.</p>
+  </article>
+
+  <aside>
+    <div class="side-card">
+      <h4>The Uptime Brief</h4>
+      <p>Where uptime meets capital allocation. Data centre and infrastructure finance, with an APAC focus &mdash; for institutional investors, infrastructure finance professionals, and market operators.</p>
+      <a class="sub-btn" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe on LinkedIn</a>
+    </div>
+    <div class="side-card">
+      <h4>Edition thread</h4>
+      <ul class="thread-list">
+        <li><a href="/editions/edition-25/"><span class="te">Edition 25</span><span class="tt">Who Captures the Control Point?</span></a></li>
+        <li><a href="/editions/edition-24/"><span class="te">Edition 24</span><span class="tt">100 MW &ne; 100 MW</span></a></li>
+        <li><a href="/editions/edition-23/"><span class="te">Edition 23</span><span class="tt">The Value of Time</span></a></li>
+        <li><a href="/editions/edition-22/"><span class="te">Edition 22</span><span class="tt">Where Inference Has to Run</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<div class="fullwidth">
+  <div class="srcblock">
+    <h2>Sources &amp; research notes</h2>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:12px;">This edition draws on primary issuer and rating-agency disclosures, current to early October 2026. Figures are tiered; issuer-only comparisons are flagged.</p>
+    <div class="srcline" id="src-hut8"><span class="srcnum">1.</span> <b>Hut 8</b> &mdash; Q2 2026 Form 10-Q; River Bend and Beacon Point financing disclosures; Q2 2026 results announcement.</div>
+    <div class="srcline" id="src-coreweave"><span class="srcnum">2.</span> <b>CoreWeave</b> &mdash; 30 March 2026 Form 8-K and DDTL 4.0 announcement; Q2 2026 financial results and revenue-backlog disclosure.</div>
+    <div class="srcline" id="src-dbrs"><span class="srcnum">3.</span> <b>Morningstar DBRS</b> &mdash; 3 April 2026 rating announcement for CoreWeave Compute Acquisition Co. VIII.</div>
+    <div class="srcline" id="src-airtrunk"><span class="srcnum">4.</span> <b>AirTrunk</b> &mdash; 29 July 2026 JHB2 green financing announcement.</div>
+    <div class="srcline" id="src-rba"><span class="srcnum">5.</span> <b>Reserve Bank of Australia</b> &mdash; Data Centre Financing in Australia, staff analysis, 23 September 2026.</div>
+
+    <div class="verif">
+      <div class="vh">Verification notes</div>
+      <div class="flag"><span class="tag">[VERIFIED &mdash; cross-agency comparison]</span> River Bend's BBB&minus; (S&amp;P/Fitch) and Beacon Point's Baa2 (Moody's) ratings are both confirmed against primary disclosures. Baa2 sits one notch above BBB&minus; only under the standard cross-agency equivalence table &mdash; the two ratings are not from the same agency and should not be read as a same-agency comparison.</div>
+      <div class="flag"><span class="tag">[VERIFIED &mdash; issuer-reported]</span> The 20bp relative spread between Beacon Point and River Bend is as reported by Hut 8, not independently verified against third-party pricing data.</div>
+    </div>
+  </div>
+
+  <div class="srcblock">
+    <h2>Glossary</h2>
+    <table class="gloss">
+      <thead><tr><th>Term</th><th>Full name</th><th>Plain English</th></tr></thead>
+      <tbody>
+        <tr><td>APAC</td><td>Asia-Pacific</td><td>The region this newsletter tracks.</td></tr>
+        <tr><td>bp</td><td>Basis point</td><td>One hundredth of a percentage point &mdash; the standard unit for comparing bond spreads.</td></tr>
+        <tr><td>DDTL</td><td>Delayed-Draw Term Loan</td><td>A loan facility the borrower draws down over time, rather than all at once, as capital is needed.</td></tr>
+        <tr><td>DSCR</td><td>Debt-Service Coverage Ratio</td><td>Cash flow available divided by debt payments due &mdash; a measure of how comfortably a borrower can service its debt.</td></tr>
+        <tr><td>GPU</td><td>Graphics Processing Unit</td><td>The accelerator hardware used for AI training and inference.</td></tr>
+        <tr><td>IG</td><td>Investment grade</td><td>A credit-rating tier (roughly BBB&minus;/Baa3 and above) generally associated with lower default risk.</td></tr>
+        <tr><td>JHB2</td><td>Johor Bahru 2</td><td>AirTrunk's hyperscale data-centre campus in Johor, Malaysia.</td></tr>
+        <tr><td>MW</td><td>Megawatt</td><td>The standard unit of data-centre power capacity.</td></tr>
+        <tr><td>Non-recourse</td><td>&mdash;</td><td>Debt that can only be repaid from the pledged project's own assets and cash flows, not from the broader parent company's balance sheet, subject to standard carve-outs.</td></tr>
+        <tr><td>NNN / triple-net lease</td><td>Triple-Net Lease</td><td>A lease where the tenant pays rent plus most property costs (tax, insurance, maintenance) directly.</td></tr>
+        <tr><td>RBA</td><td>Reserve Bank of Australia</td><td>Australia's central bank.</td></tr>
+        <tr><td>SEC / 10-Q / 8-K</td><td>U.S. Securities and Exchange Commission filings</td><td>10-Q is a quarterly report; 8-K discloses a material event, both filed with the SEC.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="signoff-bar">The Uptime Brief &middot; Where uptime meets capital allocation &middot; By Sel Fang, Lim &middot; Published weekly</div>
+<p class="editorial-note"><strong>Editorial note:</strong> This publication is provided for informational and educational purposes only. It reflects the author's analysis of publicly available information as of the publication date and should not be construed as investment, legal, accounting, or financial advice. Opinions are the author's own and may change as further disclosures become available. No investment advice intended or implied.</p>
+
+<footer>
+  <div class="fwrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="30" role="img" aria-label="The Uptime Brief">
+  <defs><linearGradient id="ecg-gf" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/>
+  </linearGradient></defs>
+  <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-gf)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+  <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+  <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="rgba(255,255,255,0.75)" letter-spacing="2">THE UPTIME</text>
+  <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+</svg>
+    <div class="flinks">
+      <a href="/#editions">All Editions</a>
+      <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe</a>
+      <a href="/">Home</a>
+    </div>
+    <div class="copy">&copy; 2026 The Uptime Brief. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>8);});
+</script>
+</body>
+</html>
