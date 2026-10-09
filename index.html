@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Uptime Brief — Where uptime meets capital allocation</title>
+<meta name="description" content="A weekly newsletter covering data centre and infrastructure finance in APAC. By Sel Fang, Lim.">
+<meta property="og:title" content="The Uptime Brief">
+<meta property="og:description" content="Where uptime meets capital allocation. Weekly data centre and infrastructure finance analysis for APAC investors, engineers, and operators.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theuptimebrief.com">
+<meta property="og:site_name" content="The Uptime Brief">
+<meta property="og:image" content="https://theuptimebrief.com/assets/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://theuptimebrief.com">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1a4a3a;
+  --green-light: #2d6b55;
+  --green-dark: #112e24;
+  --green-pale: #e8f2ee;
+  --green-mid: #c2d8cc;
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --gold-pale: #f9f3e3;
+  --cream: #f8f6f2;
+  --cream-dark: #f0ece4;
+  --ink: #1c1c1c;
+  --ink-mid: #3a3a3a;
+  --ink-light: #6b6b6b;
+  --border: #ddd8d0;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  background: var(--green);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--gold) !important;
+  color: #2a1a00 !important;
+  padding: 7px 18px;
+  border-radius: 3px;
+  letter-spacing: 0.08em !important;
+  transition: background 0.15s !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--green);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grain overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Radial glow */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 70vw; height: 70vw;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-kicker {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: slideUp 0.7s ease forwards 0.7s;
+}
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5.5vw, 68px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: slideUp 0.7s ease forwards 0.7s;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-tagline {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--green-mid);
+  margin-bottom: 40px;
+  line-height: 1.5;
+  opacity: 0;
+  animation: slideUp 0.7s ease forwards 0.9s;
+}
+.hero-meta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: slideUp 0.7s ease forwards 1.0s;
+}
+.hero-meta strong { color: rgba(255,255,255,0.65); }
+
+/* ECG logo animation */
+.ecg-path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: drawECG 2s ease forwards 0.5s;
+}
+.ecg-dot {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards 2.4s;
+}
+@keyframes drawECG {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: slideUp 0.7s ease forwards 1.1s;
+}
+.btn-primary {
+  background: var(--gold);
+  color: #2a1a00;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-secondary {
+  color: var(--green-mid);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s;
+}
+.btn-secondary:hover { color: var(--white); }
+.btn-secondary::after { content: '→'; font-size: 15px; transition: transform 0.15s; }
+.btn-secondary:hover::after { transform: translateX(3px); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards 2.2s;
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  animation: scrollPulse 2s ease infinite 2.5s;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.7; transform: scaleY(1.15); }
+}
+.scroll-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── ABOUT STRIP ─── */
+.about-strip {
+  background: var(--gold-pale);
+  border-top: 1px solid var(--gold-light);
+  border-bottom: 1px solid var(--gold-light);
+  padding: 36px 48px;
+}
+.about-strip-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+}
+.about-item {
+  padding: 0 32px;
+  border-right: 1px solid var(--gold-light);
+}
+.about-item:first-child { padding-left: 0; }
+.about-item:last-child { border-right: none; }
+.about-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.about-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-mid);
+  line-height: 1.4;
+}
+
+/* ─── EDITIONS SECTION ─── */
+.editions-section {
+  padding: 80px 48px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.section-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.15s;
+}
+.section-link::after { content: '→'; }
+.section-link:hover { color: var(--green-light); }
+
+.editions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.edition-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.edition-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(26,74,58,0.1);
+  border-color: var(--green-mid);
+}
+.edition-card.featured {
+  grid-column: span 2;
+  flex-direction: row;
+}
+.card-flag {
+  background: var(--green);
+  padding: 18px 20px 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.edition-card.featured .card-flag {
+  width: 220px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 28px 24px;
+}
+.card-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.card-date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.04em;
+}
+.card-ecg {
+  opacity: 0.3;
+}
+.card-body {
+  padding: 20px 20px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.edition-card.featured .card-body {
+  padding: 28px 28px 32px;
+}
+.card-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-pale);
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 10px;
+  flex: 1;
+}
+.edition-card.featured .card-title {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+.card-excerpt {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+.card-read {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  transition: gap 0.15s;
+}
+.edition-card:hover .card-read { gap: 8px; }
+.card-read::after { content: '→'; }
+
+/* ─── THESIS STRIP ─── */
+.thesis-strip {
+  background: var(--green);
+  padding: 72px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.thesis-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+.thesis-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.thesis-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.thesis-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+.thesis-quote em { color: var(--gold); font-style: normal; }
+.thesis-divider {
+  border: none;
+  border-top: 1px solid rgba(201, 168, 76, 0.3);
+  margin: 28px auto;
+  width: 80px;
+}
+.thesis-attr {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+}
+
+/* ─── THREAD SECTION ─── */
+.thread-section {
+  padding: 80px 48px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.thread-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+.thread-line::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 30px;
+  bottom: 30px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--green-pale), var(--border), var(--green-pale));
+}
+.thread-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 20px 0;
+  position: relative;
+}
+.thread-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--green-pale);
+  border: 2px solid var(--green-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  position: relative;
+  z-index: 1;
+}
+.thread-item.active .thread-dot {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+.thread-content { flex: 1; padding-top: 4px; }
+.thread-edition {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+.thread-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+.thread-question {
+  font-family: 'Source Serif 4', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+/* ─── SUBSCRIBE SECTION ─── */
+.subscribe-section {
+  background: var(--cream-dark);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 72px 48px;
+}
+.subscribe-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+.subscribe-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.subscribe-inner p {
+  font-family: 'Source Serif 4', serif;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink-mid);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+.subscribe-form-placeholder {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 32px;
+  text-align: center;
+}
+.subscribe-form-placeholder p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--ink-light);
+  font-style: normal;
+  margin-bottom: 16px;
+}
+.subscribe-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.subscribe-linkedin:hover { background: var(--green-light); }
+.subscribe-note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--ink-light);
+  margin-top: 14px;
+  font-style: normal !important;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: #0f0f0f;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: end;
+}
+.footer-left {}
+.footer-tagline {
+  font-family: 'Source Serif 4', serif;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.3);
+  margin-top: 10px;
+}
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+.footer-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.6); }
+.footer-copy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 860px) {
+  .nav { padding: 0 24px; }
+  .hero { padding: 100px 24px 60px; }
+  .about-strip { padding: 28px 24px; }
+  .about-strip-inner { grid-template-columns: 1fr; gap: 20px; }
+  .about-item { border-right: none; border-bottom: 1px solid var(--gold-light); padding: 0 0 20px; }
+  .about-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .editions-section, .thread-section { padding: 56px 24px; }
+  .edition-card.featured { grid-column: span 1; flex-direction: column; }
+  .edition-card.featured .card-flag { width: 100%; flex-direction: row; align-items: flex-end; padding: 16px 20px; }
+  .thesis-strip { padding: 56px 24px; }
+  .subscribe-section { padding: 56px 24px; }
+  .footer { padding: 36px 24px; grid-template-columns: 1fr; }
+  .footer-right { align-items: flex-start; }
+}
+@media (max-width: 540px) {
+  .editions-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/" style="text-decoration:none;display:flex;align-items:center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56" height="32" role="img" aria-label="The Uptime Brief">
+      <defs><linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs>
+      <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ng)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="#editions">Editions</a>
+    <a href="#about">About</a>
+    <a href="https://lnkd.in/gaiMidys" target="_blank" class="nav-cta">Subscribe</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- Full logo — centred, large, opening statement -->
+    <div class="hero-logo" style="margin-bottom:44px;opacity:0;animation:fadeIn 0.8s ease forwards 0.2s">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 108" height="88" role="img" aria-label="The Uptime Brief">
+        <defs>
+          <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4ab8d4"/>
+            <stop offset="100%" stop-color="#3dbf8a"/>
+          </linearGradient>
+        </defs>
+        <!-- ECG line — animated draw -->
+        <polyline class="ecg-path"
+          points="0,42 42,42 51,42 57,21 66,63 75,12 84,63 90,42 138,42"
+          fill="none" stroke="url(#hg)" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+        <circle class="ecg-dot" cx="147" cy="42" r="6" fill="#3dbf8a"/>
+        <!-- Underline rule -->
+        <line x1="162" y1="63" x2="462" y2="63" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+        <!-- THE UPTIME -->
+        <text x="162" y="51" font-family="DM Sans,sans-serif" font-weight="700"
+          font-size="28" fill="#ffffff" letter-spacing="3">THE UPTIME</text>
+        <!-- BRIEF -->
+        <text x="172" y="84" font-family="Georgia,Times New Roman,serif"
+          font-style="italic" font-size="22" fill="#3dbf8a" letter-spacing="8">BRIEF</text>
+      </svg>
+    </div>
+
+    <p class="hero-kicker">WEEKLY · APAC · INFRA</p>
+    <h1 class="hero-headline">Where <em>uptime</em> meets<br>capital allocation.</h1>
+    <p class="hero-tagline">Data centre and infrastructure finance analysis for investors, engineers, and market operators across Asia-Pacific.</p>
+    <p class="hero-meta">By <strong>Sel Fang, Lim</strong> · Data centre and infrastructure finance, APAC</p>
+    <div class="hero-actions">
+      <a href="https://lnkd.in/gaiMidys" target="_blank" class="btn-primary">Subscribe on LinkedIn</a>
+      <a href="#editions" class="btn-secondary">Read the editions</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="scroll-label">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip" id="about">
+  <div class="about-strip-inner">
+    <div class="about-item">
+      <div class="about-num">26+</div>
+      <div class="about-label">Editions published<br>and growing</div>
+    </div>
+    <div class="about-item">
+      <div class="about-num">10+</div>
+      <div class="about-label">Markets and economies<br>tracked across APAC</div>
+    </div>
+    <div class="about-item">
+      <div class="about-num">2</div>
+      <div class="about-label">Lenses per edition<br>Engineering constraint → Capital allocation insight</div>
+    </div>
+  </div>
+</div>
+
+<!-- EDITIONS -->
+<section class="editions-section" id="editions">
+  <div class="section-header">
+    <h2 class="section-title">All Editions</h2>
+  </div>
+  <div class="editions-grid">
+
+    <!-- Edition 26 — Featured -->
+    <a href="/editions/edition-26/" class="edition-card featured">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 26</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">The Credit Behind the Compute</div>
+        </div>
+        <div class="card-date">October 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Data Centres · Credit Structuring · APAC</span>
+        <div class="card-title">The Credit Behind the Compute — two Hut 8 project bonds, two different credit chains, the same investment-grade outcome</div>
+        <p class="card-excerpt">In 2026, Hut 8 raised US$7.5 billion across two data-centre project-bond financings — River Bend, leased to neocloud Fluidstack with a Google backstop on specified obligations, and Beacon Point, leased directly to an unnamed high-investment-grade tenant with no separate backstop disclosed. Both reached the investment-grade, non-recourse bond market on coupons 6.3 basis points apart, despite different ratings (BBB− vs Baa2 — a cross-agency equivalence, not a same-agency comparison) and payment-support architectures. The comparison doesn't show the market has stopped caring about tenant credit. It shows tenant credit is one input into a transaction-specific assessment of payment, protection, timing, resilience and recovery — not a single screening test. If a data-centre operator depends on a handful of large customers, how much of that contracted growth becomes resilient cash flow for the operator's own investors?</p>
+        <span class="card-read">Read Edition 26</span>
+      </div>
+    </a>
+
+    <!-- Edition 25 -->
+    <a href="/editions/edition-25/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 25</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Who Captures the Control Point?</div>
+        </div>
+        <div class="card-date">October 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Data Centres · Infrastructure Finance · APAC</span>
+        <div class="card-title">Who Captures the Control Point? — The Financeable MW — what converts physical scarcity into underwritable cash flow</div>
+        <p class="card-excerpt">A megawatt can be Nominal, Controlled, Deliverable, Revenue — or Financeable. The fifth state is not the next step in the MW-State Framework: it is a separate gate, imposed by capital markets, not engineering. Passing it requires five bankability conditions: counterparty credit quality, contract durability, physical delivery credibility, collateral quality, and risk allocation. Hut 8's US$4.25bn non-recourse bond on 352 MW of critical IT capacity and Meta's ~US$27bn JV development exposure define what the gate looks like when passed at scale. The US$88bn AI leveraged-finance signal tells you capital is ready. The bankability gates tell you which MW gets to use it.</p>
+        <span class="card-read">Read Edition 25</span>
+      </div>
+    </a>
+
+    <!-- Edition 24 -->
+    <a href="/editions/edition-24/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 24</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">100 MW ≠ 100 MW</div>
+        </div>
+        <div class="card-date">September 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Data Centres · Power Infrastructure · APAC</span>
+        <div class="card-title">100 MW ≠ 100 MW — why the state of a megawatt matters as much as the size of the pipeline</div>
+        <p class="card-excerpt">A data-centre developer can announce 100 MW. Another can announce the same 100 MW. On a pipeline chart, they look identical. From an investor's perspective, they may be very different assets. This edition introduces the MW-State Framework — Nominal MW, Controlled MW, Deliverable MW, Revenue MW — and argues that in a power-constrained APAC market, the strongest development position may not belong to the platform with the most announced capacity. It may belong to the one that controls the critical transitions — provided it has not overpaid for that control.</p>
+        <span class="card-read">Read Edition 24</span>
+      </div>
+    </a>
+
+    <!-- Edition 23 -->
+    <a href="/editions/edition-23/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 23</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">The Value of Time</div>
+        </div>
+        <div class="card-date">September 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Power Delivery · Data Centres · Capital Allocation</span>
+        <div class="card-title">The Value of Time — why two identical megawatts can have different economic value</div>
+        <p class="card-excerpt">A data centre can get its power on time and still be delivered late. Grid, engineering, contract and cash-flow clocks do not always line up: energisation must become commissioned, customer-ready capacity before the delivery path can turn into revenue. From TNB's Green Lane and Australia's connection constraints to Keppel's Melbourne powerbank and a publicly filed customer agreement, this edition examines delivery probability, the price paid for earlier readiness and the risk that remains with the owner. The engineering schedule becomes the cash-flow schedule. But who captures the value of arriving earlier?</p>
+        <span class="card-read">Read Edition 23</span>
+      </div>
+    </a>
+
+    <!-- Edition 22 -->
+    <a href="/editions/edition-22/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 22</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Where Inference Has to Run</div>
+        </div>
+        <div class="card-date">September 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">AI Infrastructure · Data Centres · APAC</span>
+        <div class="card-title">Where Inference Has to Run — inference doesn't migrate to one new geography, it splits location into workload-specific placement envelopes</div>
+        <p class="card-excerpt">OpenAI and Mistral now both charge a 10% uplift for eligible geographically constrained processing — the market pricing "here, not there" explicitly. But that surcharge accrues at the model-service layer, not to the facility hosting the endpoint, and inference is pulling in two directions at once: cloud pooling can make regions interchangeable for workloads that don't need to stay local, while latency, sovereignty and enterprise data gravity pin others to a much narrower set of locations. This edition builds a placement-envelope framework for underwriting which workloads can be pooled and which can't — and argues that in the inference era, the most valuable megawatt may not be the closest one. It may be the least substitutable one.</p>
+        <span class="card-read">Read Edition 22</span>
+      </div>
+    </a>
+
+    <!-- Edition 21 -->
+    <a href="/editions/edition-21/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 21</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">The Returns Inversion</div>
+        </div>
+        <div class="card-date">August 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Data Centres · Capital Allocation · APAC</span>
+        <div class="card-title">The Returns Inversion — why the cheapest megawatt to build may not be the most valuable megawatt to own</div>
+        <p class="card-excerpt">Across APAC the cost gap looks decisive: Cushman &amp; Wakefield puts a mid-spec Singapore build near US$14.4m/MW against roughly US$9.6m in Malaysia, and Wood Mackenzie's hyperscale power bill runs ~US$123m a year in Singapore versus ~US$42m in Indonesia. So why doesn't the owner of the cheaper asset simply keep the difference — and why did Singapore just provisionally allocate another 200 MW on Jurong Island, its most constrained, highest-baseline market? Because a cost advantage at a location is not a cost advantage in an owner's cash flow. It has to survive the lease structure, competitive pass-through, customer eligibility, utilisation and the business model before any of it reaches equity. This edition proves non-equivalence — a location's cost advantage and an owner's return advantage are different things — and gives a seven-question test for which megawatt you are actually buying, and who keeps the economics.</p>
+        <span class="card-read">Read Edition 21</span>
+      </div>
+    </a>
+
+    <!-- Edition 20 -->
+    <a href="/editions/edition-20/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 20</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Whose Credit Sits Behind the Rent?</div>
+        </div>
+        <div class="card-date">August 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Data Centres · Credit · AI Infrastructure</span>
+        <div class="card-title">Whose Credit Sits Behind the Rent? — when a household name stands behind AI data-centre rent, "backed" is not one structure</div>
+        <p class="card-excerpt">In 2026 several of the largest AI infrastructure financings put a stronger balance sheet behind an unrated tenant's rent — Google supports specified Fluidstack lease obligations; Broadcom disclosed ~US$29bn of maximum exposure inside a US$35bn AI-rack platform; Nvidia disclosed up to US$105bn tied to OpenAI's twenty-year Ohio lease. But they don't do the same thing: the support sits in different places, protects different obligations, and starts under different conditions — and the name that gives investors comfort may not even be the party owing the rent. A guarantee doesn't remove risk; it reallocates it. This edition is a field guide to reading what the guarantee actually covers, when it starts, and when it ends — because "backed" is not a risk grade.</p>
+        <span class="card-read">Read Edition 20</span>
+      </div>
+    </a>
+
+    <!-- Edition 19 -->
+    <a href="/editions/edition-19/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 19</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Scarcity Doesn't Equal Return</div>
+        </div>
+        <div class="card-date">August 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Data Centres · Capital Markets · APAC</span>
+        <div class="card-title">Scarcity Doesn't Equal Return — power-secured capacity is scarce in Greater Seoul, but a scarcity premium only becomes a return if it survives to investor IRR</div>
+        <p class="card-excerpt">Greater Seoul's grid is a genuine bottleneck: of 522 power-system applications to March 2026, only 10 cleared final approval, and rents have run up over 70% since 2019. But a scarcity premium isn't a return — it has to survive three leaks before it reaches investor IRR. The lease can hold contractual rent below market inside a fund's holding period; fully-fitted structures can leave reinvestment CapEx with the landlord as GPU density climbs; and an asset built for today's tenant may not clear tomorrow's buyer. Read through Keppel's greenfield Ansan entry, Korea is the evidence — the subject is the principle: scarcity creates optionality, structure decides how much becomes IRR.</p>
+        <span class="card-read">Read Edition 19</span>
+      </div>
+    </a>
+
+    <!-- Edition 18 -->
+    <a href="/editions/edition-18/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 18</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Premiums Don't Raise Capital. Sponsors Do.</div>
+        </div>
+        <div class="card-date">August 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">REITs · Capital Markets · APAC</span>
+        <div class="card-title">Premiums Don't Raise Capital. Sponsors Do. — two data centre REITs trade above NAV, but convert those premiums into capital in very different ways</div>
+        <p class="card-excerpt">Keppel DC REIT trades at a sustained ~1.32x its reported NAV; the GDS C-REIT (Southern GDS Data Centre REIT) has swung across roughly 1.28x–1.49x over three official closes, including a spike that triggered an exchange trading suspension. Both look like scarcity premiums — but a premium-to-NAV is not a financing mechanism. What creates value is how a sponsor converts it into acquisition capital: Keppel DC REIT through a conventional preferential offering into a deep secondary market, the GDS C-REIT through a rule-priced directed placement (定向扩募). Same-looking premium, different market structure, different playbook — and the difference decides who gets paid when the next asset is funded.</p>
+        <span class="card-read">Read Edition 18</span>
+      </div>
+    </a>
+
+    <!-- Edition 17 -->
+    <a href="/editions/edition-17/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 17</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Can Scarcity Fund the Second Asset?</div>
+        </div>
+        <div class="card-date">August 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">China · C-REIT · Capital Recycling</span>
+        <div class="card-title">Can Scarcity Fund the Second Asset? — GDS's C-REIT expansion and the premium-as-acquisition-currency test</div>
+        <p class="card-excerpt">The first listed data-centre C-REIT proved investors will pay a premium for scarce compute — a Shanghai fund covered 166x institutionally, 455x retail, trading ~49% above NAV by January. Now GDS has filed to expand and acquire a second asset in Langfang. The question is whether that scarcity premium can be converted into lower-cost acquisition equity, or whether it only ever belonged to the first, scarcest asset. Written before the valuation lands, this edition is an underwriting guide: the three transferability tests — price, asset, platform — a fiduciary should force the next disclosure to answer.</p>
+        <span class="card-read">Read Edition 17</span>
+      </div>
+    </a>
+
+    <!-- Edition 16 -->
+    <a href="/editions/edition-16/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 16</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Two Tracks, No Common Benchmark</div>
+        </div>
+        <div class="card-date">July 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Securitisation · C-REIT · Benchmark Formation</span>
+        <div class="card-title">Two Tracks, No Common Benchmark — how APAC prices data centre cash flows twice</div>
+        <p class="card-excerpt">China has already priced data centre cash flow at extraordinary demand — a Shanghai C-REIT covered 166x institutionally, 456x retail, trading 50% above issue within five months. Yet APAC still has no common benchmark, because it has two different instruments: a lease-backed term ABS priced on credit spreads, and a closed-end C-REIT priced on fund units over a 38-year term. Read through the GDS transactions, the spread decomposition, and the transferability test, the bottleneck is no longer capital or capacity — it is comparability.</p>
+        <span class="card-read">Read Edition 16</span>
+      </div>
+    </a>
+
+    <!-- Edition 15 -->
+    <a href="/editions/edition-15/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 15</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">When Offtake Meets the Funding Window</div>
+        </div>
+        <div class="card-date">July 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Financing Structure · Tenor · Refinancing</span>
+        <div class="card-title">The Tenor Trap — why a financed megawatt is not a safe cash flow</div>
+        <p class="card-excerpt">Bankability is tested at underwriting; durability is tested years later, at renewal and refinancing. A financed data centre runs three contractual clocks — debt, lease, and the tenant's own customer contracts — that rarely align. Read through APAC's 1 GW quarter, Johor's doubling capacity, and the lease-tail maths, the risk is not whether a megawatt gets financed, but what the lease and tenant look like when the debt comes due.</p>
+        <span class="card-read">Read Edition 15</span>
+      </div>
+    </a>
+
+    <!-- Edition 14 -->
+    <a href="/editions/edition-14/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 14</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">The Bankable Megawatt</div>
+        </div>
+        <div class="card-date">July 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Bankability · Underwriting · Capital Allocation</span>
+        <div class="card-title">The MW That Doesn't Clear — announced megawatts are not bankable megawatts</div>
+        <p class="card-excerpt">APAC's data-centre pipeline is repriced by bankability, not demand. Introducing the Uptime Brief Bankable MW Framework: announced MW → technical MW → bankable MW → operating MW, with conversion set by five underwriting gates. Read through Korea's stalled Seoul pipeline, Ansan's powered-land deals, and the SGX REIT yield dispersion, the premium is shifting from plans to proof.</p>
+        <span class="card-read">Read Edition 14</span>
+      </div>
+    </a>
+
+    <!-- Edition 13 -->
+    <a href="/editions/edition-13/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 13</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">When the Offtake Is Downstream of the Funding Window</div>
+        </div>
+        <div class="card-date">July 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Credit · Refinancing · Offtake</span>
+        <div class="card-title">When the offtake is downstream of the funding window — Oracle's credit round-trip and the third obsolescence</div>
+        <p class="card-excerpt">Oracle's credit spread eased when it added equity, then widened to a new high weeks later. The fix worked once and did not hold. Long-duration offtake is downstream of the funding window — and beyond technical and economic obsolescence sits a third: financing obsolescence, where the asset still computes but the debt behind it becomes harder to roll.</p>
+        <span class="card-read">Read Edition 13</span>
+      </div>
+    </a>
+
+    <!-- Edition 12 -->
+    <a href="/editions/edition-12/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 12</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Compute as Financeable Collateral</div>
+        </div>
+        <div class="card-date">June 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Private Credit · Collateral · Residual Value</span>
+        <div class="card-title">Compute is being tested as financeable collateral — what the US$35B Apollo–Blackstone TPU financing reveals</div>
+        <p class="card-excerpt">A US$35B deal financed Google's TPUs the way the market once financed aircraft and fibre — but it needed a vendor to stand in for the one thing compute lacks: a residual value the market can see. The deal did not need Broadcom because compute is now infrastructure-grade collateral. It needed Broadcom because compute is not — yet.</p>
+        <span class="card-read">Read Edition 12</span>
+      </div>
+    </a>
+    <!-- Edition 11 -->
+    <a href="/editions/edition-11/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 11</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">AI Infrastructure Lifecycle Risk</div>
+        </div>
+        <div class="card-date">June 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">GPU Lifecycle · DSCR · Underwriting</span>
+        <div class="card-title">The asset-life question — when the depreciation clock and the cash-flow clock stop moving together</div>
+        <p class="card-excerpt">GPU rental prices are rising, but the real signal is in the financing underneath. Technical and economic obsolescence are diverging — and the risk has migrated from demand to asset life. Compute scarcity is the signal. The capital structure is the risk.</p>
+        <span class="card-read">Read Edition 11</span>
+      </div>
+    </a>
+    <!-- Edition 10 -->
+    <a href="/editions/edition-10/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 10</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">You Can&#x27;t Exit a Feature</div>
+        </div>
+        <div class="card-date">June 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Intermediation · Separability · Private Equity</span>
+        <div class="card-title">You Can't Exit a Feature — standalone or moat: what are you actually buying in APAC's intermediation layer?</div>
+        <p class="card-excerpt">Two assets can look identical and be worth radically different multiples depending on whether the cash flows can be detached and sold. The moat may earn well. But you can't exit a feature.</p>
+        <span class="card-read">Read Edition 10</span>
+      </div>
+    </a>
+    <!-- Edition 9 -->
+    <a href="/editions/edition-9/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 9</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">The Intermediation Layer</div>
+        </div>
+        <div class="card-date">June 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">APAC · Market Structure · Capital Allocation</span>
+        <div class="card-title">The Intermediation Layer — who sits between DFI-built grid capacity and the commercial buyers who can't access it at scale</div>
+        <p class="card-excerpt">When the Philippines grid failed in May, there was no intermediation layer operating at sufficient scale to buffer the disruption. The capital structures that close that gap are not interchangeable.</p>
+        <span class="card-read">Read Edition 9</span>
+      </div>
+    </a>
+    <!-- Edition 8 -->
+    <a href="/editions/edition-8/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 8</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Follow the Money into the Wires</div>
+        </div>
+        <div class="card-date">May 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">DFI · Grid Finance · Open Access</span>
+        <div class="card-title">Follow the Money into the Wires — who is financing APAC grid infrastructure, and whether those terms create a platform aggregators can build on</div>
+        <p class="card-excerpt">DFI capital finances the wires through utility balance sheets under sovereign guarantee. But technical openness and commercial openness are not the same thing — and the gap is where the next layer of value sits.</p>
+        <span class="card-read">Read Edition 8</span>
+      </div>
+    </a>
+    <!-- Edition 7 -->
+    <a href="/editions/edition-7/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 7</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Grid Access Is the Moat</div>
+        </div>
+        <div class="card-date">May 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Grid · Interconnection · APAC</span>
+        <div class="card-title">Grid Access Is the Moat — the interconnection bottleneck and co-located generation as the structural workaround</div>
+        <p class="card-excerpt">With 1,650GW queued across APAC grids, the entity that controls grid access controls the economics. Co-located generation and storage are no longer a premium feature — they are the workaround for a queue that no longer clears.</p>
+        <span class="card-read">Read Edition 7</span>
+      </div>
+    </a>
+    <!-- Edition 6 -->
+    <a href="/editions/edition-6/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 6</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">The Nuclear Wildcard</div>
+        </div>
+        <div class="card-date">May 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Nuclear · SMR · 24-7 CFE</span>
+        <div class="card-title">The Nuclear Wildcard — SMRs, 24/7 carbon-free energy demand, and the firming stack lock-in question</div>
+        <p class="card-excerpt">Hormuz repricing arrives at the meter as the Philippines declares a national energy emergency. The firming stack decision can't be deferred — and who controls baseload is now a live capital allocation input.</p>
+        <span class="card-read">Read Edition 6</span>
+      </div>
+    </a>
+    <!-- Edition 5 -->
+    <a href="/editions/edition-5/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 5</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">The Financialisation Phase</div>
+        </div>
+        <div class="card-date">May 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">M&A · Valuation · Clean Energy</span>
+        <div class="card-title">The Financialisation Phase — Stack Infrastructure's reported US$30B APAC sale and infrastructure scarcity pricing</div>
+        <p class="card-excerpt">When a buyer acquires 1,100MW+ across three markets, they don't use the fragmented green electricity access layer. They effectively internalise the market function. The energy opportunity bifurcates — it does not collapse.</p>
+        <span class="card-read">Read Edition 5</span>
+      </div>
+    </a>
+    <!-- Edition 4 -->
+    <a href="/editions/edition-4/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 4</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">The APAC Power Crunch</div>
+        </div>
+        <div class="card-date">Apr 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">APAC · Power Markets · SEA</span>
+        <div class="card-title">The APAC Power Crunch — green electricity access barriers and the under-intermediation thesis</div>
+        <p class="card-excerpt">The fragmented procurement layer that mid-market buyers depend on is structurally at risk as the largest buyers begin bypassing it entirely.</p>
+        <span class="card-read">Read Edition 4</span>
+      </div>
+    </a>
+    <!-- Edition 3 -->
+    <a href="/editions/edition-3/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 3</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">BESS Capital Allocation</div>
+        </div>
+        <div class="card-date">Apr 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">BESS · PPA · Capital Structure</span>
+        <div class="card-title">BESS Capital Allocation — PPA pricing mechanics and hyperscaler procurement comparisons</div>
+        <p class="card-excerpt">How storage economics reshape the firmed clean energy value chain — and what the debt tenor and augmentation timing implications mean for project finance.</p>
+        <span class="card-read">Read Edition 3</span>
+      </div>
+    </a>
+    <!-- Edition 2 -->
+    <a href="/editions/edition-2/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 2</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Amazon&#x27;s AU$2.8B Renewable Deal</div>
+        </div>
+        <div class="card-date">Apr 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Australia · PPA · Hyperscaler</span>
+        <div class="card-title">Amazon's AU$2.8B Renewable Deal — storage-backed PPAs as infrastructure finance signal</div>
+        <p class="card-excerpt">The largest renewable procurement in Australian history — and what the storage-backed structure signals about how hyperscalers are rewriting the energy access playbook.</p>
+        <span class="card-read">Read Edition 2</span>
+      </div>
+    </a>
+    <!-- Edition 1 -->
+    <a href="/editions/edition-1/" class="edition-card">
+      <div class="card-flag">
+        <div>
+          <div class="card-num">Edition 1</div>
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.3;margin-top:10px">Geopolitical Data Chokepoints</div>
+        </div>
+        <div class="card-date">Apr 2026</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Geopolitics · Connectivity · IRR</span>
+        <div class="card-title">Geopolitical Data Chokepoints — undersea cables, cloud infrastructure, and IRR implications</div>
+        <p class="card-excerpt">Iran-linked mapping of Persian Gulf undersea cables as strategic pressure points — and what connectivity risk means for data centre underwriting in APAC.</p>
+        <span class="card-read">Read Edition 1</span>
+      </div>
+    </a>
+</section>
+
+<!-- THESIS STRIP -->
+<div class="thesis-strip">
+  <div class="thesis-inner">
+    <div class="thesis-label">The running thesis</div>
+    <p class="thesis-quote">"The constraint is no longer whether compute is wanted —<br><em>but whether it can be financed, and refinanced.</em>"</p>
+    <p class="thesis-attr">The Uptime Brief · Editions 11–15</p>
+    <hr class="thesis-divider">
+    <p class="thesis-quote">"Scarcity is not the same as capture.<br><em>A desirable infrastructure characteristic does not automatically become an investor return.</em>"</p>
+    <p class="thesis-attr">The Uptime Brief · Editions 19–25</p>
+  </div>
+</div>
+
+<!-- THREAD SECTION -->
+<section class="thread-section">
+  <div class="section-header">
+    <h2 class="section-title">The Edition Thread</h2>
+  </div>
+  <div class="thread-line">
+
+    <div class="thread-item active">
+      <div class="thread-dot">26</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 26 · October 2026</div>
+        <div class="thread-title">The Credit Behind the Compute</div>
+        <div class="thread-question">Two different credit chains — a Google-backstopped neocloud lease and a direct high-investment-grade lease — both reached the investment-grade, non-recourse bond market within 40 days of each other, on coupons 6.3bp apart. Tenant credit is one input into a transaction-specific assessment of payment, protection, timing, resilience and recovery, not a single screening test. If a data-centre operator depends on a handful of large customers, how much of that contracted growth becomes resilient cash flow for the operator's own investors?</div>
+      </div>
+    </div>
+
+    <div class="thread-item">
+      <div class="thread-dot">25</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 25 · October 2026</div>
+        <div class="thread-title">Who Captures the Control Point?</div>
+        <div class="thread-question">What changes when the counterparty behind the bankable contract is a neocloud rather than a hyperscaler?</div>
+      </div>
+    </div>
+
+    <div class="thread-item">
+      <div class="thread-dot">24</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 24 · September 2026</div>
+        <div class="thread-title">100 MW ≠ 100 MW</div>
+        <div class="thread-question">The state of the MW tells us how far it has progressed from development possibility toward an economic asset — and control helps determine who can move it to the next state. The strongest development position in a power-constrained market may not belong to the platform with the most announced capacity. It may belong to the one that controls the critical transitions — provided it has not overpaid for that control. So how much of the value created upstream ultimately survives into the owner's return?</div>
+      </div>
+    </div>
+
+    <div class="thread-item">
+      <div class="thread-dot">22</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 22 · September 2026</div>
+        <div class="thread-title">Where Inference Has to Run</div>
+        <div class="thread-question">Inference doesn't migrate to one new geography; different workloads create different placement envelopes, and location scarcity emerges where workload requirements remove substitutes. But scarcity only becomes an infrastructure investment advantage if the owner controls enough of the bottleneck to capture it — placement scarcity and owner capture are not the same claim. The most valuable megawatt may not be the closest one. It may be the least substitutable one. Which raises the next question: if a durable constraint doesn't automatically hand its premium to whoever sits inside the border, is the winning asset a data centre at all, or the control point wrapped around it?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">21</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 21 · August 2026</div>
+        <div class="thread-title">The Returns Inversion</div>
+        <div class="thread-question">A location's cost advantage is not automatically an owner's return advantage. Cheaper to build is a fact about a place; better to own is a fact about a cash flow — and the saving only reaches equity for the part the owner can make usable, qualify for the customer, contractually hold, competitively defend and convert into filled, priced capacity. The cheapest megawatt to build and the most valuable megawatt to own need not be the same megawatt. Which raises the next question: what happens when AI starts to change what "location" even means — when the cheapest place to build is no longer where the workload has to run?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">20</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 20 · August 2026</div>
+        <div class="thread-title">Whose Credit Sits Behind the Rent?</div>
+        <div class="thread-question">A guarantee doesn't remove risk — it reallocates it. Across 2026's largest AI data-centre financings, Google, Broadcom and Nvidia each stand behind the rent in a different place, protecting a different obligation, starting on different terms. "Backed" is not one structure, and not a risk grade. Which raises a broader question: once you look beyond the credit support, is the cheapest asset to build still the best asset to own?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">19</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 19 · August 2026</div>
+        <div class="thread-title">Scarcity Doesn't Equal Return</div>
+        <div class="thread-question">Power-secured capacity in Greater Seoul is genuinely scarce — but a scarcity premium only becomes a return if it survives the lease, the reinvestment and the exit into investor IRR. And even when the lease economics work, another question remains: whose credit actually sits behind the rent?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">18</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 18 · August 2026</div>
+        <div class="thread-title">Premiums Don't Raise Capital. Sponsors Do.</div>
+        <div class="thread-question">When a trust raises expansion equity off its own premium, are new investors paying for a scarce asset — or for the sponsor's willingness to keep buying its own units? The GDS C-REIT's Langfang valuation and issue terms aren't disclosed yet, so this isn't the verdict — we score it when the evidence lands.</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">17</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 17 · August 2026</div>
+        <div class="thread-title">Can Scarcity Fund the Second Asset?</div>
+        <div class="thread-question">When the valuation and issue terms for GDS's Langfang expansion are published, do they score the three transferability tests as a pass — a premium that travels and a repeatable platform — or reveal that the premium was only ever attached to the first, scarcest asset?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">16</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 16 · July 2026</div>
+        <div class="thread-title">Two Tracks, No Common Benchmark</div>
+        <div class="thread-question">If APAC prices data centre cash flow through two different instruments — a lease-backed term ABS on credit spreads and a closed-end C-REIT on fund units — with no single comparable benchmark, does the first benchmark transfer to the next asset, or does each transaction reprice from scratch?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">15</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 15 · July 2026</div>
+        <div class="thread-title">The Tenor Trap</div>
+        <div class="thread-question">If a financed data centre runs three contractual clocks — debt, lease, and the tenant's own customer contracts — that rarely align, what does the lease and tenant look like when the debt comes due, and who inherits the gap?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">14</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 14 · July 2026</div>
+        <div class="thread-title">The MW That Doesn't Clear</div>
+        <div class="thread-question">If APAC's pipeline is repriced using probability-weighted bankable MW rather than announced capacity — and the binding gate is rarely the one announced — which national market looks largest on paper, and smallest once every gate is applied?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">13</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 13 · July 2026</div>
+        <div class="thread-title">When the Offtake Is Downstream of the Funding Window</div>
+        <div class="thread-question">If offtake credit must now be financeable before an APAC project breaks ground — and if hyperscale data-centre risk is moving from private refinancing markets into public listed vehicles — which planned regional builds get repriced before they ever break ground?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">12</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 12 · June 2026</div>
+        <div class="thread-title">Financeable Collateral</div>
+        <div class="thread-question">This architecture was built during a period of unusually strong private-credit liquidity. What happens to a compute SPV when the residual backstop holds but the financing market that priced it doesn't — when the question is no longer whether the chips hold value, but whether anyone will refinance the paper that bought them?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">11</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 11 · June 2026</div>
+        <div class="thread-title">The Asset-Life Question</div>
+        <div class="thread-question">If the depreciation clock and the cash-flow clock are diverging — if compute can keep paying past its frontier life — how does capital respond when hardware starts behaving like a contractable cash flow?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">10</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 10 · June 2026</div>
+        <div class="thread-title">You Can't Exit a Feature</div>
+        <div class="thread-question">If the intermediation layer is absorbed into the vertical stacks of the operators who need it most, who's left to serve the mid-market buyers hyperscalers will never contract with directly — and what does the capital structure of that specialist lane look like?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">9</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 9 · June 2026</div>
+        <div class="thread-title">The Intermediation Layer</div>
+        <div class="thread-question">Are the entities positioning in each market building intermediation as a standalone business — or as a defensive moat for an adjacent position they already hold?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">8</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 8 · May 2026</div>
+        <div class="thread-title">Follow the Money into the Wires</div>
+        <div class="thread-question">The next layer of value is not in grid expansion. It is in who can structurally convert financed capacity into contracted load — and who is structurally excluded from doing so.</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">7</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 7 · May 2026</div>
+        <div class="thread-title">Grid Access Is the Moat</div>
+        <div class="thread-question">If grid access is the binding constraint, who finances the grid investment — on what terms, and do those terms create a platform commercial aggregators can build on?</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-dot">6</div>
+      <div class="thread-content">
+        <div class="thread-edition">Edition 6 · May 2026</div>
+        <div class="thread-title">The Nuclear Wildcard</div>
+        <div class="thread-question">If hyperscalers start locking in nuclear baseload — does the firming layer become even more valuable, or eventually face the same compression dynamic as aggregation?</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="subscribe-section">
+  <div class="subscribe-inner">
+    <h2>Stay in the loop.</h2>
+    <p>Every edition bridges the engineering constraint and the capital allocation implication. Published weekly during the APAC infrastructure build-out.</p>
+    <div class="subscribe-form-placeholder">
+      <p>Email subscription coming soon. For now, subscribe on LinkedIn:</p>
+      <a href="https://lnkd.in/gaiMidys" target="_blank" class="subscribe-linkedin">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        Subscribe on LinkedIn
+      </a>
+      <p class="subscribe-note">Beehiiv email subscription launching soon at theuptimebrief.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="30" role="img" aria-label="The Uptime Brief">
+      <defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/></linearGradient></defs>
+      <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+      <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+      <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="rgba(255,255,255,0.75)" letter-spacing="2">THE UPTIME</text>
+      <text x="115" y="55" font-family="Georgia,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+    </svg>
+    <p class="footer-tagline">Where uptime meets capital allocation.</p>
+  </div>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="#editions">Editions</a>
+      <a href="https://lnkd.in/gaiMidys" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-copy">© 2026 The Uptime Brief. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Nav scroll state
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+</script>
+
+</body>
+</html>
