@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Uptime Brief — Edition 27 — Production Tool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1a4a3a;--green-mid:#2f6b54;--green-pale:#e8f2ee;--gold:#c9a84c;--gold-pale:#faf3e0;--teal:#3dbf8a;--cream:#f8f6f2;--ink:#1c2420;--muted:#5a6b63;--border:#d7e0da;--red:#b94a3a;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;font-size:16px;overflow-x:hidden}
+header.top{background:var(--green);color:#fff;padding:22px 20px 18px;text-align:center}
+header.top .kicker{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+header.top h1{font-family:'Playfair Display',serif;font-size:26px;margin:4px 0 2px}
+header.top p{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.75);margin:0}
+.tabbar{position:sticky;top:0;z-index:30;display:flex;background:#fff;border-bottom:2px solid var(--border);overflow-x:auto}
+.tabbtn{flex:1;min-width:140px;text-align:center;padding:14px 10px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:13.5px;color:var(--muted);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tabbtn.active{color:var(--green);border-bottom-color:var(--gold);background:var(--green-pale)}
+.tabpanel{display:none;max-width:900px;margin:0 auto;padding:26px 20px 60px}
+.tabpanel.active{display:block}
+.panel-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.panel-head h2{font-family:'Playfair Display',serif;color:var(--green);font-size:21px;margin:0}
+button.copybtn{background:var(--gold);color:var(--green);border:none;padding:9px 16px;border-radius:7px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;cursor:pointer}
+button.copybtn.copied{background:var(--green);color:#fff}
+.counter{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted)}
+.counter.over{color:var(--red);font-weight:700}
+.copybox{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px 20px;font-family:'DM Sans',sans-serif;font-size:14.5px;line-height:1.75;}
+.note{font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--muted);font-style:italic;margin:6px 0 14px}
+.commentblock{margin-bottom:28px}
+.commentblock h3{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--green-mid);text-transform:uppercase;letter-spacing:.05em;margin:0 0 8px}
+.prev-stats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.prev-stat{flex:1;min-width:180px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.prev-stat .fig{font-family:'Playfair Display',serif;font-size:22px;color:var(--green);font-weight:700;overflow-wrap:anywhere}
+.prev-stat .lab{font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.prevart h2{font-family:'Playfair Display',serif;font-size:23px;color:var(--green);margin:32px 0 10px;display:flex;align-items:center;gap:10px}
+.prevart h2 .badge{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.prevart h3{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green-mid);font-size:14.5px;margin:20px 0 4px}
+.prevart p{margin:0 0 14px}
+.tablewrap{overflow-x:auto;margin:16px 0}
+table.ht{width:100%;border-collapse:collapse;font-size:13.5px}
+table.ht th{background:var(--green);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;padding:8px 10px;text-align:left}
+table.ht td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.ht tr:nth-child(even) td{background:var(--green-pale)}
+table.ht td.r,table.ht th.r{text-align:right;white-space:nowrap}
+.callout{background:#fff;border:1px solid var(--green-mid);border-left:4px solid var(--gold);border-radius:10px;padding:14px 18px;margin:18px 0}
+.callout h4{font-family:'Playfair Display',serif;color:var(--green);font-size:16px;margin:0 0 6px}
+.callout p{font-size:15px;margin:0!important}
+.lens{background:var(--green-pale);border:1px solid var(--green-mid);border-radius:12px;padding:20px;margin:24px 0}
+.lens h3{font-family:'Playfair Display',serif!important;color:var(--green)!important;font-size:18px!important;margin:0 0 12px!important}
+.lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lens-card{background:#fff;border:1px solid var(--border);border-radius:9px;padding:12px;min-width:0}
+.lens-card .ct{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;line-height:1.35}
+.lens-card .ll{font-family:'DM Sans',sans-serif;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--green-mid);font-weight:700;margin-bottom:2px}
+.lens-card .lv{font-size:13.5px;margin-bottom:8px}
+.lens-card .lv:last-child{margin-bottom:0}
+.inline-src{font-family:'DM Sans',sans-serif;font-size:0.72em;font-weight:600;color:var(--teal);text-decoration:none;white-space:nowrap}
+.inline-src:hover{text-decoration:underline}
+.srcblock{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:26px}
+.srcblock h3{font-family:'Playfair Display',serif!important;color:var(--green)!important;font-size:18px!important;margin:0 0 10px!important}
+.srcline{padding:6px 0;border-bottom:1px dotted var(--border);font-size:13.5px}
+.srcline b{color:var(--green)}
+.srcnum{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;color:var(--teal);margin-right:4px}
+.verif{background:var(--gold-pale);border-radius:9px;padding:14px;margin-top:14px}
+.verif .vh{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:13px;margin-bottom:6px}
+.flag{font-family:'DM Sans',sans-serif;font-size:13px;margin-top:6px}
+.flag .tag{font-weight:700;color:var(--green-mid)}
+.disc{font-size:12.5px;color:var(--muted);margin-top:16px;line-height:1.6}
+.disc b{color:var(--ink)}
+.signoff{text-align:center;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);margin-top:24px;padding-top:16px;border-top:2px solid var(--gold)}
+@media(max-width:600px){
+  .lens-grid{grid-template-columns:1fr}
+  .prev-stats{flex-direction:column}
+  .panel-head{flex-direction:column;align-items:flex-start}
+}
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="kicker">The Uptime Brief · Production Tool</div>
+  <h1>Edition 27 — The Concentration Behind the Contract</h1>
+  <p>Five-tab working file · teaser and newsletter text locked · 16 October 2026</p>
+</header>
+
+<div class="tabbar" id="tabbar">
+  <button class="tabbtn active" data-tab="t1">1 · LinkedIn Post</button>
+  <button class="tabbtn" data-tab="t2">2 · Newsletter Text</button>
+  <button class="tabbtn" data-tab="t3">3 · Newsletter Preview</button>
+  <button class="tabbtn" data-tab="t4">4 · Comments</button>
+  <button class="tabbtn" data-tab="t5">5 · Pipeline &amp; Handoff</button>
+</div>
+
+<section class="tabpanel active" id="t1">
+  <div class="panel-head">
+    <h2>LinkedIn Teaser Post</h2>
+    <button class="copybtn" onclick="copyIt('raw-t1', this)">Copy</button>
+  </div>
+  <div class="counter" id="charcount">0 / 3,000 characters</div>
+  <div class="note">Reminder: paste the newsletter link in the first comment immediately after posting — no external link goes in the post body. Always confirm against LinkedIn's live counter before posting.</div>
+  <div class="copybox" id="raw-t1">One customer. 69.2% of revenue. A red flag — or part of what makes the business financeable?
+DayOne Data Centers' October 2026 US IPO (initial public offering) filing reveals that one unnamed customer contributed 69.2% of its unaudited H1 (first half) 2026 revenue.
+At first glance, that's a serious concentration risk.
+But I think it's only half the story.
+Here's why 👇
+━━━━━━━━━━
+🗓️ 𝗪𝗵𝗮𝘁'𝘀 𝗵𝗮𝗽𝗽𝗲𝗻𝗶𝗻𝗴
+⚡ DayOne's top two customers accounted for 84.3% of unaudited H1 2026 revenue.
+⚡ Yet 99.3% of its capacity under construction was already pre-committed as of 20 September 2026.
+⚡ Its Johor financing platform reached approximately US$7.2 billion in arranged facilities, according to the 14 October issuer announcement. That's financing capacity, not debt already drawn.
+━━━━━━━━━━
+🔍 𝗧𝗵𝗲 𝗿𝗲𝗮𝗹 𝘀𝗶𝗴𝗻𝗮𝗹
+Large anchor-customer commitments can make data-centre developments easier to finance by reducing speculative demand risk.
+But they don't automatically make equity cash flows resilient.
+━━━━━━━━━━
+🔧 𝗧𝗵𝗲 𝗲𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴 𝗿𝗲𝗮𝗹𝗶𝘁𝘆
+🔌 2,281 MW (megawatts) were booked as of 20 September, but only 953 MW were billing.
+🔌 Contracted capacity still needs power availability, construction completion, commissioning and customer acceptance before it can generate the expected operating revenue.
+🔌 Delivery delays may trigger contractual penalties, service credits or fee reductions.
+A signed contract reduces demand uncertainty. It doesn't eliminate delivery risk.
+━━━━━━━━━━
+💰 𝗧𝗵𝗲 𝗳𝗶𝗻𝗮𝗻𝗰𝗲 𝗿𝗲𝗮𝗹𝗶𝘁𝘆
+📊 DayOne's unaudited H1 2026 statements reported US$512.0 million in revenue versus approximately US$14.0 million in operating cash flow during its capital-intensive expansion.
+📊 Financing arrangements can support construction, but debt service and reinvestment still stand between operating cash flow and shareholder returns.
+📊 And here's another layer: even when customers pay, lender covenants can restrict how much cash the borrowing entities can distribute.
+━━━━━━━━━━
+🏢 𝗧𝗵𝗲 𝗯𝗼𝘁𝘁𝗼𝗺 𝗹𝗶𝗻𝗲
+Contracted anchor demand can reduce speculative development risk without removing investor risk.
+𝗖𝗼𝗻𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗺𝗲𝗴𝗮𝘄𝗮𝘁𝘁𝘀 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝘃𝗶𝘀𝗶𝗯𝗶𝗹𝗶𝘁𝘆. 𝗧𝗵𝗲𝘆 𝗮𝗿𝗲 𝗻𝗼𝘁 𝘁𝗵𝗲 𝘀𝗮𝗺𝗲 𝗮𝘀 𝗲𝗾𝘂𝗶𝘁𝘆 𝗰𝗮𝘀𝗵 𝗳𝗹𝗼𝘄.
+💭 When billions of dollars of infrastructure development depend on a handful of long-term contracts, what should investors actually underwrite — and how much should they pay for that contracted growth?
+In Edition 27 of The Uptime Brief — The Concentration Behind the Contract, I examine DayOne's disclosures, contrast its customer model with Equinix, and explore six underwriting questions that help distinguish contracted growth from resilient investor returns.
+📖 𝗙𝘂𝗹𝗹 𝗻𝗲𝘄𝘀𝗹𝗲𝘁𝘁𝗲𝗿 𝗹𝗶𝗻𝗸 𝗶𝗻 𝘁𝗵𝗲 𝗰𝗼𝗺𝗺𝗲𝗻𝘁𝘀 👇
+🔔 Subscribe so the next edition lands in your feed → https://lnkd.in/gaiMidys
+#DataCenter #InfrastructureFinance #APAC #ProjectFinance #TheUptimeBrief</div>
+</section>
+
+<section class="tabpanel" id="t2">
+  <div class="panel-head">
+    <h2>Newsletter Text</h2>
+    <button class="copybtn" onclick="copyIt('raw-t2', this)">Copy</button>
+  </div>
+  <div class="note">Copy-paste ready for the LinkedIn newsletter editor. Unicode bold renders natively. Tables appear as → lines; full tables, source links and the evidence ledger live on the web edition.</div>
+  <div class="copybox" id="raw-t2">𝗧𝗵𝗲 𝗨𝗽𝘁𝗶𝗺𝗲 𝗕𝗿𝗶𝗲𝗳 — 𝗘𝗱𝗶𝘁𝗶𝗼𝗻 𝟮𝟳
+𝗧𝗵𝗲 𝗖𝗼𝗻𝗰𝗲𝗻𝘁𝗿𝗮𝘁𝗶𝗼𝗻 𝗕𝗲𝗵𝗶𝗻𝗱 𝘁𝗵𝗲 𝗖𝗼𝗻𝘁𝗿𝗮𝗰𝘁
+
+This edition reads best at https://theuptimebrief.com — with cleaner layout, research notes and the full archive.
+
+𝗪𝗵𝗮𝘁 𝘄𝗼𝘂𝗹𝗱 𝗮𝗻 𝗶𝗻𝘃𝗲𝘀𝘁𝗺𝗲𝗻𝘁 𝗰𝗼𝗺𝗺𝗶𝘁𝘁𝗲𝗲 𝗺𝗮𝗸𝗲 𝗼𝗳 𝗮 𝗱𝗮𝘁𝗮-𝗰𝗲𝗻𝘁𝗿𝗲 𝗼𝗽𝗲𝗿𝗮𝘁𝗼𝗿 𝗱𝗲𝗿𝗶𝘃𝗶𝗻𝗴 𝟲𝟵.𝟮% 𝗼𝗳 𝗶𝘁𝘀 𝗿𝗲𝘃𝗲𝗻𝘂𝗲 𝗳𝗿𝗼𝗺 𝗼𝗻𝗲 𝗰𝘂𝘀𝘁𝗼𝗺𝗲𝗿?
+
+Edition 26, The Credit Behind the Compute, closed by asking how a customer-concentrated operator turns contracted growth into resilient cash flow for investors. DayOne Data Centers provides a revealing case: its capacity under construction was 99.3% pre-committed as of 20 September 2026, yet one unnamed customer accounted for 69.2% of its unaudited H1 (first half) 2026 revenue.
+
+These facts are not contradictory. A large anchor customer can make a campus easier to finance while leaving the operator dependent on that same relationship. The underwriting question is what survives between the contract and the eventual return to equity.
+
+―――――――――――――――――――――――――
+
+𝟭. 𝗧𝗵𝗲 𝗗𝗲𝗮𝗹
+
+DayOne filed Form F-1 (a registration statement for certain foreign private issuers) with the SEC (Securities and Exchange Commission) on 5 October 2026 for a proposed United States IPO (initial public offering). The filing reports that its unnamed largest customer generated 69.2% of total recognised revenue in unaudited H1 2026; the second-largest contributed 15.1% on the same basis. Together, they represented 84.3%, expressly disclosed in the filing. For FY2025 (financial year 2025), the comparable top-two figure was 81.6%; the individually rounded shares of 69.4% and 12.3% sum to 81.7%.
+
+The company is building a large hyperscale wholesale platform on the strength of long-term demand commitments. As of 20 September, it had 2,281 MW (megawatts) of Bookings — legally committed IT (information technology) power capacity — primarily from seven global hyperscale and leading technology customers. In its 14 October announcement, DayOne reported that Bookings came from 15 customers as of 20 September. That customer-count observation is not a new 14 October KPI (key performance indicator) snapshot. Seven major customers and 15 booking customers describe different populations; neither statement tells us how booked capacity is divided among those customers.
+
+The later issuer announcement reported that Billings, or committed capacity already generating income, had exceeded 1 GW (gigawatt). The financing architecture behind that expansion deserves separate scrutiny alongside the operating milestones.
+
+Concentration can be a feature of this business model. A contracted anchor tenant can improve a purpose-built campus’s ability to attract financing before the first hall is energised, subject to the lender’s assessment of obligations and delivery risk. But contracted megawatts, recognised revenue and cash available to shareholders are three different measurements.
+
+―――――――――――――――――――――――――
+
+𝟮. 𝗧𝗵𝗲 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴 𝗥𝗲𝗮𝗱
+
+𝗙𝗿𝗼𝗺 𝗯𝗼𝗼𝗸𝗲𝗱 𝗠𝗪 𝘁𝗼 𝗯𝗶𝗹𝗹𝗲𝗱 𝗠𝗪
+
+The Form F-1 defines these operating metrics as IT power capacity, not dollars. All figures below are as of 20 September 2026.
+
+→ 𝗕𝗼𝗼𝗸𝗶𝗻𝗴𝘀 — 2,281 MW · Legally committed capacity; Billings + Backlog
+→ 𝗕𝗶𝗹𝗹𝗶𝗻𝗴𝘀 — 953 MW · Committed capacity already income-generating
+→ 𝗕𝗮𝗰𝗸𝗹𝗼𝗴 — 1,328 MW · Committed capacity not yet income-generating
+→ 𝗖𝗮𝗽𝗮𝗰𝗶𝘁𝘆 𝗶𝗻 𝗦𝗲𝗿𝘃𝗶𝗰𝗲 — 962 MW · Ready-for-service, equipped capacity
+→ 𝗖𝗮𝗽𝗮𝗰𝗶𝘁𝘆 𝗨𝗻𝗱𝗲𝗿 𝗖𝗼𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻 — 1,328 MW · Capacity physically under active construction, not yet ready for service
+→ 𝗨𝘁𝗶𝗹𝗶𝘀𝗮𝘁𝗶𝗼𝗻 — 99.1% · Billings divided by Capacity in Service
+→ 𝗣𝗿𝗲-𝗰𝗼𝗺𝗺𝗶𝘁𝗺𝗲𝗻𝘁 — 99.3% · Backlog under construction, a subset of total Backlog, divided by Capacity Under Construction
+
+Important distinction: Backlog and Capacity Under Construction each round to 1,328 MW but are different measures. Dividing the two displayed totals gives 100%, not the issuer-reported 99.3% pre-commitment rate; the precise numerator is the under-construction subset, not the whole backlog.
+
+Five relevant dates should not be blended: 30 June (unaudited H1 financials), 20 September (operating KPI snapshot), 5 October (F-1 filing), 13 October (seven-lender financing announcement), and 14 October (later issuer operating update). Billings above 1 GW in the 14 October announcement do not retroactively alter the September observation of 953 MW.
+
+𝗣𝗼𝘄𝗲𝗿 𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝘆 𝗜𝘀 𝗮 𝗖𝗮𝘀𝗵-𝗙𝗹𝗼𝘄 𝗚𝗮𝘁𝗲
+
+For a developer, a power-secured site is not automatically a revenue-producing site. Grid readiness, electrical and cooling systems, commissioning, customer acceptance and contractual availability commitments all influence when booked MW begin billing. Delay can defer cash receipts while development financing costs continue. Who ultimately bears each delay cost depends on the individual agreements, not a generic project-finance assumption.
+
+DayOne's F-1 warns that delivery delays or missed service commitments may lead to financial penalties, service credits, fee reductions and, in some cases, termination. Extended force-majeure events can permit termination without penalty, while material defaults and certain SLA (service-level agreement) breaches create separate termination risks, subject to contractual conditions and cure periods. In some contracts, customers may also terminate without financial penalty if committed power availability falls below a specified minimum for a continuous period. That is a qualified contractual right, not an automatic exit for every power shortfall. The engineering promise and the legal payment promise must be assessed together.
+
+―――――――――――――――――――――――――
+
+𝟯. 𝗧𝗵𝗲 𝗖𝗮𝗽𝗶𝘁𝗮𝗹 𝗔𝗹𝗹𝗼𝗰𝗮𝘁𝗶𝗼𝗻 𝗥𝗲𝗮𝗱
+
+The easy response to 69.2% concentration is to apply a valuation discount automatically. The equally easy response to long-term, take-or-pay commitments is to assume that counterparty risk has been removed. Neither follows from the filings alone.
+
+Anchor customers can reduce speculative lease-up risk and help lenders underwrite project deployment. DayOne says a significant majority of its agreements span 10–15 years, and substantially all September Bookings were covered by long-term take-or-pay arrangements. That is constructive demand visibility — conditional on the obligor, the terms and the operator's ability to perform. Importantly, DayOne also discloses that all customer contracts permit early termination subject to specified costs and penalties, which, after a certain number of years, would usually be less than the revenue DayOne otherwise expected over the remaining contractual term. Long tenor is therefore not a lifetime payment guarantee.
+
+𝗦𝗶𝘅 𝘂𝗻𝗱𝗲𝗿𝘄𝗿𝗶𝘁𝗶𝗻𝗴 𝗴𝗮𝘁𝗲𝘀 𝗯𝗲𝘁𝘄𝗲𝗲𝗻 𝗰𝗼𝗻𝘁𝗿𝗮𝗰𝘁 𝗮𝗻𝗱 𝗲𝗾𝘂𝗶𝘁𝘆 𝗿𝗲𝘁𝘂𝗿𝗻
+
+→ 𝟭 · 𝗢𝗯𝗹𝗶𝗴𝗼𝗿 — Which legal entity owes payment, and what parent or affiliate support is enforceable?
+→ 𝟮 · 𝗖𝗼𝗻𝘁𝗿𝗮𝗰𝘁 — What fees are minimum or take-or-pay, and which carve-outs, termination rights and remedies matter?
+→ 𝟯 · 𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝘆 — When can grid power, cooling, commissioning and customer acceptance start contractual billing? Who bears delay?
+→ 𝟰 · 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻𝘀 𝗮𝗻𝗱 𝗺𝗮𝗿𝗴𝗶𝗻 — How much revenue becomes collected service-fee cash after power pass-through and operating costs?
+→ 𝟱 · 𝗙𝗶𝗻𝗮𝗻𝗰𝗶𝗻𝗴 — What construction draws, debt service, reserves, covenants and refinancing requirements rank ahead of equity?
+→ 𝟲 · 𝗘𝗾𝘂𝗶𝘁𝘆 𝗿𝗲𝘀𝗶𝗱𝘂𝗮𝗹 — After maintenance, expansion capex (capital expenditure), debt payments and dilution, what cash or return can shareholders actually receive?
+
+The F-1 reports that certain customer agreements are entered into with local affiliates and financial support varies. A recognised global brand is not itself proof of a parent guarantee. The underwriter must distinguish these customer-payment protections from the operator’s separate performance obligations and remedies.
+
+The financial evidence makes this more than a theoretical checklist. DayOne’s unaudited H1 2026 financial statements reported US$512.0 million of revenue and approximately US$14.0 million of net cash provided by operating activities. While operating cash flow was low relative to revenue, the cash-flow statement shows significant cash absorption through increases in receivables and other operating and contract assets during the period. The key investment question is whether cash conversion strengthens as contracted capacity enters service and customer payments are collected.
+
+Those same unaudited interim statements recorded about US$4.48 billion of net investing cash outflows and approximately US$4.49 billion of net financing inflows. Investing cash flow includes items other than physical construction capex; it should not be relabelled as an all-capex figure.
+
+At 30 June 2026, the unaudited interim balance sheet reported total borrowings of approximately US$4.43 billion, excluding finance leases. Management estimated a further US$11.4 billion of development cost to complete projects associated with its Bookings. That estimate covers the booked project portfolio, not simply the 1,328 MW Backlog figure, and is not proof of an unfunded shortfall.
+
+The Johor financing structure makes the funding sequence more concrete. The package combines United States dollar financing with RM (Malaysian ringgit) borrowing. On 13 October, a seven-lender consortium announced an additional RM15 billion in financing (reported by The Tech Capital as approximately US$3.67 billion): a US$2.4 billion offshore term-loan facility and a RM5.5 billion Murabahah (Islamic cost-plus financing) facility. Together with RM15 billion arranged in 2025, the Johor financing platform totals RM30 billion (approximately US$7.2 billion). These are arranged facility amounts, not proof of amounts drawn or an additional US$7.2 billion to add to 30 June borrowings.
+
+For equity investors, the underwriting questions are post-June borrowing and hedging positions, financing costs, amortisation and covenant headroom, and whether collections can cover debt service during commissioning.
+
+DayOne’s filed financing documents identify the Johor borrower and guarantor entities, prepayment terms and financial covenants. Certain distributions funded from EBITDA (earnings before interest, taxes, depreciation and amortisation) under these arrangements require at least 1.2× finance-service coverage and net leverage below 5.2×, among other conditions. Even when customers pay, insufficient covenant headroom may prevent cash from reaching shareholders.
+
+Exhibit 10.8 separately records a DayOne-parent completion and cost-overrun undertaking to the Security Agent, with cost-overrun support extending up to three months after each covered building becomes ready for service. These are lender protections, not customer parent guarantees, and do not establish current debt drawings, actual covenant headroom or distributable equity cash.
+
+There is also an important denominator problem. In the same unaudited H1 2026 statements, electricity costs were US$203.1 million, against US$512.0 million in total revenue. Consumption-based electricity charges are generally passed through to customers. The filing does not disclose the largest customer's split between power pass-through and service fees. A 69.2% share of total revenue should not be assumed to equal 69.2% of operating contribution.
+
+𝗖𝗼𝗻𝘁𝗿𝗮𝗰𝘁 𝗩𝗮𝗹𝘂𝗲 𝗜𝘀 𝗩𝗶𝘀𝗶𝗯𝗶𝗹𝗶𝘁𝘆, 𝗡𝗼𝘁 𝗣𝗿𝗲𝘀𝗲𝗻𝘁 𝗩𝗮𝗹𝘂𝗲
+
+Under “Visible, De-risked Growth Profile Underpinned by Customer Commitments” and “Certain Definitions,” the F-1 also reports approximately US$34 billion of remaining total contract value as of 20 September: issuer-defined future contracted service fees under executed agreements, excluding recognised revenue and specified unexercised or non-binding commitments. It is not collected cash, a discounted present value or a guaranteed equity return. Nor do we know whether the largest customer represents 69.2% of that contract-value measure.
+
+As a static arithmetic illustration, a hypothetical 10% reduction in the largest customer’s revenue, with all else unchanged, would reduce group revenue by 6.92%, or US$35.4 million on the unaudited H1 2026 revenue base. A hypothetical 25% reduction gives 17.30%, or US$88.6 million. Neither scenario predicts a default or estimates EBITDA, credit losses or equity value. Power-cost offsets, contractual remedies, collection timing and re-letting could all alter outcomes.
+
+Geography adds a separate consideration. Malaysia contributed 87.0% of unaudited H1 2026 revenue, but the filing does not quantify how much of that geographic revenue comes from the largest customer. The exposures should be tested jointly where they coincide, not presumed to be identical.
+
+―――――――――――――――――――――――――
+
+𝗜𝗻𝘃𝗲𝘀𝘁𝗺𝗲𝗻𝘁 𝗟𝗲𝗻𝘀
+
+𝗖𝗼𝗻𝘀𝘁𝗿𝗮𝗶𝗻𝘁 𝟭 · 𝗖𝗼𝗻𝗰𝗲𝗻𝘁𝗿𝗮𝘁𝗲𝗱 𝗮𝗻𝗰𝗵𝗼𝗿 𝗱𝗲𝗺𝗮𝗻𝗱
+𝗜𝗺𝗽𝗮𝗰𝘁: Firm anchor commitments can reduce speculative lease-up risk, but exposure to one customer makes receipts more sensitive to one relationship.
+𝗖𝗮𝗽𝗶𝘁𝗮𝗹 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗲: Underwrite actual obligor credit, binding fees, remedies, delivery milestones and the availability of replacement demand.
+𝗙𝗮𝘃𝗼𝘂𝗿𝗮𝗯𝗹𝗲 𝗮𝘀𝘀𝗲𝘁 𝘁𝗿𝗮𝗶𝘁 (𝗰𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹): Adaptable, power-secured capacity backed by enforceable payments — at a price that compensates for concentration.
+
+𝗖𝗼𝗻𝘀𝘁𝗿𝗮𝗶𝗻𝘁 𝟮 · 𝗖𝘂𝘀𝘁𝗼𝗺𝗲𝗿 𝗼𝗯𝗹𝗶𝗴𝗼𝗿 𝗮𝗻𝗱 𝗰𝗼𝗻𝘁𝗿𝗮𝗰𝘁 𝗽𝗿𝗼𝘁𝗲𝗰𝘁𝗶𝗼𝗻
+𝗜𝗺𝗽𝗮𝗰𝘁: A local customer affiliate may be the contractual payer even where the parent is widely known; support is not uniform across agreements.
+𝗖𝗮𝗽𝗶𝘁𝗮𝗹 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗲: Trace the legal obligor, guarantee beneficiary, caps, activation triggers, enforcement rights and termination compensation.
+𝗙𝗮𝘃𝗼𝘂𝗿𝗮𝗯𝗹𝗲 𝗮𝘀𝘀𝗲𝘁 𝘁𝗿𝗮𝗶𝘁 (𝗰𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹): A clear, enforceable payment chain with remedies that meaningfully protect the operator when performance or collections diverge.
+
+𝗖𝗼𝗻𝘀𝘁𝗿𝗮𝗶𝗻𝘁 𝟯 · 𝗕𝗼𝗼𝗸𝗲𝗱 𝗰𝗮𝗽𝗮𝗰𝗶𝘁𝘆 𝘁𝗼 𝗲𝗾𝘂𝗶𝘁𝘆 𝗰𝗮𝘀𝗵 𝗳𝗹𝗼𝘄
+𝗜𝗺𝗽𝗮𝗰𝘁: Backlog, remaining contract value and reported revenue differ from income-generating capacity, cash collections and investor distributions.
+𝗖𝗮𝗽𝗶𝘁𝗮𝗹 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗲: Match energisation, billing, power pass-through, construction spending, financing draws, debt service and reinvestment in a time-phased model.
+𝗙𝗮𝘃𝗼𝘂𝗿𝗮𝗯𝗹𝗲 𝗮𝘀𝘀𝗲𝘁 𝘁𝗿𝗮𝗶𝘁 (𝗰𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹): Proven delivery and service-margin cash conversion with realistic liquidity and debt-service headroom.
+
+𝗖𝗼𝗻𝘀𝘁𝗿𝗮𝗶𝗻𝘁 𝟰 · 𝗚𝗲𝗼𝗴𝗿𝗮𝗽𝗵𝗶𝗰 𝗰𝗼𝗻𝗰𝗲𝗻𝘁𝗿𝗮𝘁𝗶𝗼𝗻
+𝗜𝗺𝗽𝗮𝗰𝘁: Malaysia represented 87.0% of unaudited H1 2026 revenue; geographic and customer exposure may reinforce one another, but their exact overlap is not disclosed.
+𝗖𝗮𝗽𝗶𝘁𝗮𝗹 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗲: Test Malaysian grid, policy and execution scenarios separately from counterparty stresses; combine them only where their overlap is supported or explicitly assumed.
+𝗙𝗮𝘃𝗼𝘂𝗿𝗮𝗯𝗹𝗲 𝗮𝘀𝘀𝗲𝘁 𝘁𝗿𝗮𝗶𝘁 (𝗰𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹): Capacity diversified across independently resilient markets and obligors, where the incremental diversification justifies its cost.
+
+―――――――――――――――――――――――――
+
+𝟰. 𝗪𝗵𝗮𝘁 𝗧𝗵𝗶𝘀 𝗠𝗲𝗮𝗻𝘀 𝗳𝗼𝗿 𝘁𝗵𝗲 𝗕𝗿𝗼𝗮𝗱𝗲𝗿 𝗠𝗮𝗿𝗸𝗲𝘁
+
+A brief contrast makes the point. Equinix reported that its largest customer represented approximately 2% of H1 2026 recurring revenue, and its largest 50 approximately 36%. DayOne's 69.2% and 84.3% figures measure total revenue, not recurring revenue. Equinix also operates a different, more distributed colocation and interconnection model. The comparison illustrates two customer architectures; it cannot rank returns, credit quality or valuation without comparable economics and pricing.
+
+For infrastructure investors, concentrated offtake is neither inherently a flaw nor automatically a moat. It may enable faster, less speculative development. It can also locate credit, execution and refinancing exposure in a small number of agreements. The decision is whether the contract protections, customer and site economics, delivery history and financing cushion justify the price paid.
+
+An anchor contract can make a megawatt financeable at closing. The harder test is whether that megawatt stays cash-generative for equity through delivery, collections, debt service and reinvestment.
+
+When a handful of agreements underpin billions of dollars of data-centre development, which of those commitments will become durable cash for the operator's investors — and what price should they pay for the uncertainty that remains?
+
+―――――――――――――――――――――――――
+
+𝗦𝗼𝘂𝗿𝗰𝗲𝘀 &amp; 𝗥𝗲𝘀𝗲𝗮𝗿𝗰𝗵 𝗡𝗼𝘁𝗲𝘀
+
+Primary disclosures and issuer announcements:
+
+→ DayOne Data Centers — Form F-1 filed 5 October 2026, SEC EDGAR (Electronic Data Gathering, Analysis and Retrieval): customer risk factors; Key Performance Indicators; Business, “Visible, De-risked Growth Profile Underpinned by Customer Commitments”; Certain Definitions; unaudited H1 statements.
+
+→ DayOne Data Centers — issuer press release dated 14 October 2026: Billings above 1 GW, 15 booking customers as of 20 September, and enlarged total Johor financing facility.
+
+→ UOB (United Overseas Bank) — seven-lender consortium announcement, 13 October 2026: additional RM15bn Johor financing (US$2.4bn offshore term loan + RM5.5bn Murabahah); total platform RM30bn after 2025 financing.
+
+→ The Tech Capital — 15 October 2026 secondary report providing an approximate US$3.67bn equivalent for the RM15bn Johor financing; currency components and RM amounts are sourced from the primary lender announcement.
+
+→ DayOne — filed financing documents, Form F-1 Exhibits 10.8 and 10.11: Johor borrower/guarantor entities and prepayment terms; Exhibit 10.8 finance-service coverage covenant, conditional distributions and DayOne-parent completion/cost-overrun undertaking (including its three-month cost-overrun tail).
+
+→ Equinix — Form 10-Q (quarterly report), six months ended 30 June 2026, SEC EDGAR, Item 2 MD&amp;A (Management’s Discussion and Analysis), Revenue, page 40: largest customer approximately 2% and top 50 approximately 36% of recurring revenue.
+
+𝗥𝗲𝘀𝗲𝗮𝗿𝗰𝗵 𝗱𝗶𝘀𝗰𝗶𝗽𝗹𝗶𝗻𝗲: The largest DayOne customer remains anonymous because the F-1 does not name it. H1 financial figures are unaudited; operating and financing facts have different measurement dates. Arranged facility size is not debt already drawn. Selected filed Johor financing agreements disclose borrower entities and certain loan provisions, but these sources do not establish current drawdowns, live hedge positions, customer-level service-fee margins or project-level equity returns. Detailed source links and verification notes are maintained in the web edition.
+
+🔔 Subscribe to The Uptime Brief so the next edition lands in your feed automatically → https://lnkd.in/gaiMidys
+
+𝗧𝗵𝗲 𝗨𝗽𝘁𝗶𝗺𝗲 𝗕𝗿𝗶𝗲𝗳 · Where uptime meets capital allocation · Published weekly
+
+Editorial note: This publication is provided for informational and educational purposes only. It reflects the author’s analysis of publicly available information as of the publication date and should not be construed as investment, legal, accounting, or financial advice. Opinions are the author’s own and may change as further disclosures become available.
+
+𝙉𝙤 𝙞𝙣𝙫𝙚𝙨𝙩𝙢𝙚𝙣𝙩 𝙖𝙙𝙫𝙞𝙘𝙚 𝙞𝙣𝙩𝙚𝙣𝙙𝙚𝙙 𝙤𝙧 𝙞𝙢𝙥𝙡𝙞𝙚𝙙.</div>
+</section>
+
+<section class="tabpanel" id="t3">
+  <div class="panel-head"><h2>Newsletter Preview</h2></div>
+  <div class="prev-stats">
+  <div class="prev-stat"><div class="fig">69.2%</div><div class="lab">Largest customer, share of unaudited H1 2026 revenue</div></div>
+  <div class="prev-stat"><div class="fig">99.3%</div><div class="lab">Capacity under construction pre-committed, as of 20 Sept 2026</div></div>
+  <div class="prev-stat"><div class="fig">US$512.0m vs ~US$14.0m</div><div class="lab">Unaudited H1 2026 revenue vs operating cash flow</div></div></div>
+  <article class="prevart">
+
+    <p style="font-size:18px"><strong>What would an investment committee make of a data-centre operator deriving 69.2% of its revenue from one customer?</strong></p>
+    <p>Edition 26, <em>The Credit Behind the Compute</em>, closed by asking how a customer-concentrated operator turns contracted growth into resilient cash flow for investors. DayOne Data Centers provides a revealing case: its capacity under construction was 99.3% pre-committed as of 20 September 2026, yet one unnamed customer accounted for 69.2% of its unaudited H1 (first half) 2026 revenue.</p>
+    <p>These facts are not contradictory. A large anchor customer can make a campus easier to finance while leaving the operator dependent on that same relationship. The underwriting question is what survives between the contract and the eventual return to equity.</p>
+
+    <h2><span class="badge">1</span>The deal</h2>
+    <p>DayOne filed Form F-1 (a registration statement for certain foreign private issuers) with the SEC (Securities and Exchange Commission) on 5 October 2026 for a proposed United States IPO (initial public offering). The filing reports that its unnamed largest customer generated 69.2% of total recognised revenue in unaudited H1 2026; the second-largest contributed 15.1% on the same basis. Together, they represented 84.3%, expressly disclosed in the filing. For FY2025 (financial year 2025), the comparable top-two figure was 81.6%; the individually rounded shares of 69.4% and 12.3% sum to 81.7%. <a class="inline-src" href="#src-f1">[1]</a></p>
+    <p>The company is building a large hyperscale wholesale platform on the strength of long-term demand commitments. As of 20 September, it had 2,281 MW (megawatts) of Bookings — legally committed IT (information technology) power capacity — primarily from seven global hyperscale and leading technology customers. In its 14 October announcement, DayOne reported that Bookings came from 15 customers as of 20 September. That customer-count observation is not a new 14 October KPI (key performance indicator) snapshot. Seven major customers and 15 booking customers describe different populations; neither statement tells us how booked capacity is divided among those customers. <a class="inline-src" href="#src-pr">[2]</a></p>
+    <p>The later issuer announcement reported that Billings, or committed capacity already generating income, had exceeded 1 GW (gigawatt). <a class="inline-src" href="#src-pr">[2]</a> The financing architecture behind that expansion deserves separate scrutiny alongside the operating milestones.</p>
+    <p>Concentration can be a feature of this business model. A contracted anchor tenant can improve a purpose-built campus's ability to attract financing before the first hall is energised, subject to the lender's assessment of obligations and delivery risk. But contracted megawatts, recognised revenue and cash available to shareholders are three different measurements.</p>
+
+    <h2><span class="badge">2</span>The engineering read</h2>
+    <h3>From booked MW to billed MW</h3>
+    <p>The Form F-1 defines these operating metrics as IT power capacity, not dollars. All figures below are <strong>as of 20 September 2026</strong>. <a class="inline-src" href="#src-f1">[1]</a></p>
+    <div class="tablewrap"><table class="ht">
+      <thead><tr><th>DayOne metric</th><th class="r">Reported</th><th>What it actually measures</th></tr></thead>
+      <tbody>
+        <tr><td>Bookings</td><td class="r">2,281 MW</td><td>Legally committed capacity; <strong>Billings + Backlog</strong></td></tr>
+        <tr><td>Billings</td><td class="r">953 MW</td><td>Committed capacity already income-generating</td></tr>
+        <tr><td>Backlog</td><td class="r">1,328 MW</td><td>Committed capacity <strong>not yet</strong> income-generating</td></tr>
+        <tr><td>Capacity in Service</td><td class="r">962 MW</td><td>Ready-for-service, equipped capacity</td></tr>
+        <tr><td>Capacity Under Construction</td><td class="r">1,328 MW</td><td>Capacity physically under active construction, not yet ready for service</td></tr>
+        <tr><td>Utilisation</td><td class="r">99.1%</td><td>Billings divided by Capacity in Service</td></tr>
+        <tr><td>Pre-commitment</td><td class="r">99.3%</td><td><strong>Backlog under construction</strong>, a subset of total Backlog, divided by Capacity Under Construction</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout">
+      <h4>Important distinction</h4>
+      <p>Backlog and Capacity Under Construction each round to 1,328 MW but are different measures. Dividing the two displayed totals gives 100%, <strong>not</strong> the issuer-reported 99.3% pre-commitment rate; the precise numerator is the under-construction subset, not the whole backlog.</p>
+    </div>
+    <p>Five relevant dates should not be blended: <strong>30 June</strong> (unaudited H1 financials), <strong>20 September</strong> (operating KPI snapshot), <strong>5 October</strong> (F-1 filing), <strong>13 October</strong> (seven-lender financing announcement), and <strong>14 October</strong> (later issuer operating update). Billings above 1 GW in the 14 October announcement do not retroactively alter the September observation of 953 MW.</p>
+
+    <h3>Power delivery is a cash-flow gate</h3>
+    <p>For a developer, a power-secured site is not automatically a revenue-producing site. Grid readiness, electrical and cooling systems, commissioning, customer acceptance and contractual availability commitments all influence when booked MW begin billing. Delay can defer cash receipts while development financing costs continue. Who ultimately bears each delay cost depends on the individual agreements, not a generic project-finance assumption.</p>
+    <p>DayOne's F-1 warns that delivery delays or missed service commitments may lead to financial penalties, service credits, fee reductions and, in some cases, termination. Extended force-majeure events can permit termination without penalty, while material defaults and certain SLA (service-level agreement) breaches create separate termination risks, subject to contractual conditions and cure periods. In some contracts, customers may also terminate without financial penalty if committed power availability falls below a specified minimum for a continuous period. That is a qualified contractual right, not an automatic exit for every power shortfall. The engineering promise and the legal payment promise must be assessed together.</p>
+
+    <h2><span class="badge">3</span>The capital allocation read</h2>
+    <p>The easy response to 69.2% concentration is to apply a valuation discount automatically. The equally easy response to long-term, take-or-pay commitments is to assume that counterparty risk has been removed. Neither follows from the filings alone.</p>
+    <p>Anchor customers can reduce speculative lease-up risk and help lenders underwrite project deployment. DayOne says a significant majority of its agreements span 10–15 years, and substantially all September Bookings were covered by long-term take-or-pay arrangements. That is constructive demand visibility — conditional on the obligor, the terms and the operator's ability to perform. Importantly, DayOne also discloses that all customer contracts permit early termination subject to specified costs and penalties, which, after a certain number of years, would usually be less than the revenue DayOne otherwise expected over the remaining contractual term. Long tenor is therefore not a lifetime payment guarantee.</p>
+
+    <h3>Six underwriting gates between contract and equity return</h3>
+    <div class="tablewrap"><table class="ht">
+      <thead><tr><th>Gate</th><th>The investment committee's question</th></tr></thead>
+      <tbody>
+        <tr><td>1 · Obligor</td><td>Which legal entity owes payment, and what parent or affiliate support is enforceable?</td></tr>
+        <tr><td>2 · Contract</td><td>What fees are minimum or take-or-pay, and which carve-outs, termination rights and remedies matter?</td></tr>
+        <tr><td>3 · Delivery</td><td>When can grid power, cooling, commissioning and customer acceptance start contractual billing? Who bears delay?</td></tr>
+        <tr><td>4 · Collections and margin</td><td>How much revenue becomes collected service-fee cash after power pass-through and operating costs?</td></tr>
+        <tr><td>5 · Financing</td><td>What construction draws, debt service, reserves, covenants and refinancing requirements rank ahead of equity?</td></tr>
+        <tr><td>6 · Equity residual</td><td>After maintenance, expansion capex (capital expenditure), debt payments and dilution, what cash or return can shareholders actually receive?</td></tr>
+      </tbody>
+    </table></div>
+
+    <p>The F-1 reports that certain customer agreements are entered into with local affiliates and financial support varies. A recognised global brand is <strong>not</strong> itself proof of a parent guarantee. The underwriter must distinguish these customer-payment protections from the operator's separate performance obligations and remedies.</p>
+    <p>The financial evidence makes this more than a theoretical checklist. DayOne's unaudited H1 2026 financial statements reported US$512.0 million of revenue and approximately US$14.0 million of net cash provided by operating activities. While operating cash flow was low relative to revenue, the cash-flow statement shows significant cash absorption through increases in receivables and other operating and contract assets during the period. The key investment question is whether cash conversion strengthens as contracted capacity enters service and customer payments are collected.</p>
+    <p>Those same unaudited interim statements recorded about US$4.48 billion of net investing cash outflows and approximately US$4.49 billion of net financing inflows. Investing cash flow includes items other than physical construction capex; it should not be relabelled as an all-capex figure. <a class="inline-src" href="#src-f1">[1]</a></p>
+    <p>At 30 June 2026, the unaudited interim balance sheet reported total borrowings of approximately US$4.43 billion, excluding finance leases. Management estimated a further US$11.4 billion of development cost to complete projects associated with its Bookings. That estimate covers the booked project portfolio, not simply the 1,328 MW Backlog figure, and is not proof of an unfunded shortfall.</p>
+    <p>The Johor financing structure makes the funding sequence more concrete. The package combines United States dollar financing with RM (Malaysian ringgit) borrowing. On 13 October, a seven-lender consortium announced an additional RM15 billion in financing (reported by The Tech Capital as approximately US$3.67 billion <a class="inline-src" href="#src-tc">[4]</a>): a US$2.4 billion offshore term-loan facility and a RM5.5 billion Murabahah (Islamic cost-plus financing) facility. <a class="inline-src" href="#src-uob">[3]</a> Together with RM15 billion arranged in 2025, the Johor financing platform totals RM30 billion (approximately US$7.2 billion) <a class="inline-src" href="#src-pr">[2]</a>. These are arranged facility amounts, not proof of amounts drawn or an additional US$7.2 billion to add to 30 June borrowings.</p>
+    <p>For equity investors, the underwriting questions are post-June borrowing and hedging positions, financing costs, amortisation and covenant headroom, and whether collections can cover debt service during commissioning.</p>
+    <p>DayOne's filed financing documents identify the Johor borrower and guarantor entities, prepayment terms and financial covenants. Certain distributions funded from EBITDA (earnings before interest, taxes, depreciation and amortisation) under these arrangements require at least 1.2× finance-service coverage and net leverage below 5.2×, among other conditions. Even when customers pay, insufficient covenant headroom may prevent cash from reaching shareholders.</p>
+    <p>Exhibit 10.8 separately records a DayOne-parent completion and cost-overrun undertaking to the Security Agent, with cost-overrun support extending up to three months after each covered building becomes ready for service. These are lender protections, not customer parent guarantees, and do not establish current debt drawings, actual covenant headroom or distributable equity cash. <a class="inline-src" href="#src-ex">[5]</a></p>
+    <p>There is also an important denominator problem. In the same unaudited H1 2026 statements, electricity costs were US$203.1 million, against US$512.0 million in total revenue. Consumption-based electricity charges are generally passed through to customers. The filing does not disclose the largest customer's split between power pass-through and service fees. A 69.2% share of total revenue should not be assumed to equal 69.2% of operating contribution.</p>
+
+    <h3>Contract value is visibility, not present value</h3>
+    <p>Under “Visible, De-risked Growth Profile Underpinned by Customer Commitments” and “Certain Definitions,” the F-1 also reports approximately US$34 billion of remaining total contract value as of 20 September: issuer-defined future contracted service fees under executed agreements, excluding recognised revenue and specified unexercised or non-binding commitments. It is not collected cash, a discounted present value or a guaranteed equity return. Nor do we know whether the largest customer represents 69.2% of that contract-value measure. <a class="inline-src" href="#src-f1">[1]</a></p>
+    <p>As a <strong>static arithmetic illustration</strong>, a hypothetical 10% reduction in the largest customer's revenue, with all else unchanged, would reduce group revenue by <strong>6.92%</strong>, or <strong>US$35.4 million</strong> on the unaudited H1 2026 revenue base. A hypothetical 25% reduction gives <strong>17.30%</strong>, or <strong>US$88.6 million</strong>. Neither scenario predicts a default or estimates EBITDA, credit losses or equity value. Power-cost offsets, contractual remedies, collection timing and re-letting could all alter outcomes.</p>
+    <p>Geography adds a separate consideration. Malaysia contributed 87.0% of unaudited H1 2026 revenue, but the filing does not quantify how much of that geographic revenue comes from the largest customer. The exposures should be tested jointly where they coincide, not presumed to be identical.</p>
+
+    <div class="lens">
+      <h3>Investment Lens</h3>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <div class="ct">Constraint 1 · Concentrated anchor demand</div>
+          <div class="ll">Impact</div><div class="lv">Firm anchor commitments can reduce speculative lease-up risk, but exposure to one customer makes receipts more sensitive to one relationship.</div>
+          <div class="ll">Capital response</div><div class="lv">Underwrite actual obligor credit, binding fees, remedies, delivery milestones and the availability of replacement demand.</div>
+          <div class="ll">Favourable asset trait (conditional)</div><div class="lv">Adaptable, power-secured capacity backed by enforceable payments — <strong>at a price that compensates for concentration</strong>.</div>
+        </div>
+        <div class="lens-card">
+          <div class="ct">Constraint 2 · Customer obligor and contract protection</div>
+          <div class="ll">Impact</div><div class="lv">A local customer affiliate may be the contractual payer even where the parent is widely known; support is not uniform across agreements.</div>
+          <div class="ll">Capital response</div><div class="lv">Trace the legal obligor, guarantee beneficiary, caps, activation triggers, enforcement rights and termination compensation.</div>
+          <div class="ll">Favourable asset trait (conditional)</div><div class="lv">A clear, enforceable payment chain with remedies that meaningfully protect the operator when performance or collections diverge.</div>
+        </div>
+        <div class="lens-card">
+          <div class="ct">Constraint 3 · Booked capacity to equity cash flow</div>
+          <div class="ll">Impact</div><div class="lv">Backlog, remaining contract value and reported revenue differ from income-generating capacity, cash collections and investor distributions.</div>
+          <div class="ll">Capital response</div><div class="lv">Match energisation, billing, power pass-through, construction spending, financing draws, debt service and reinvestment in a time-phased model.</div>
+          <div class="ll">Favourable asset trait (conditional)</div><div class="lv">Proven delivery and service-margin cash conversion with realistic liquidity and debt-service headroom.</div>
+        </div>
+        <div class="lens-card">
+          <div class="ct">Constraint 4 · Geographic concentration</div>
+          <div class="ll">Impact</div><div class="lv">Malaysia represented 87.0% of unaudited H1 2026 revenue; geographic and customer exposure may reinforce one another, but their exact overlap is not disclosed.</div>
+          <div class="ll">Capital response</div><div class="lv">Test Malaysian grid, policy and execution scenarios separately from counterparty stresses; combine them only where their overlap is supported or explicitly assumed.</div>
+          <div class="ll">Favourable asset trait (conditional)</div><div class="lv">Capacity diversified across independently resilient markets and obligors, where the incremental diversification justifies its cost.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2><span class="badge">4</span>What this means for the broader market</h2>
+    <p>A brief contrast makes the point. Equinix reported that its largest customer represented approximately 2% of H1 2026 recurring revenue, and its largest 50 approximately 36%. <a class="inline-src" href="#src-eq">[6]</a> DayOne's 69.2% and 84.3% figures measure total revenue, not recurring revenue. Equinix also operates a different, more distributed colocation and interconnection model. The comparison illustrates two customer architectures; it cannot rank returns, credit quality or valuation without comparable economics and pricing.</p>
+    <p>For infrastructure investors, concentrated offtake is neither inherently a flaw nor automatically a moat. It may enable faster, less speculative development. It can also locate credit, execution and refinancing exposure in a small number of agreements. The decision is whether the contract protections, customer and site economics, delivery history and financing cushion justify the price paid.</p>
+    <p>An anchor contract can make a megawatt financeable at closing. The harder test is whether that megawatt stays cash-generative for equity through delivery, collections, debt service and reinvestment.</p>
+    <p class="closing" style="font-size:19px;color:var(--green);font-weight:600;margin-top:18px">When a handful of agreements underpin billions of dollars of data-centre development, which of those commitments will become durable cash for the operator's investors — and what price should they pay for the uncertainty that remains?</p>
+    <p style="font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green)">That is the question I'm taking forward next.</p>
+  
+<div class="srcblock">
+    <h3>Sources &amp; research notes</h3>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:12px;">This edition draws on DayOne's Form F-1 and exhibits, issuer and lender announcements, and Equinix's quarterly filing, current to 14&ndash;15 October 2026. Figures are tiered; unaudited and secondary-source items are flagged.</p>
+    <div class="srcline" id="src-f1"><span class="srcnum">1.</span> <b>DayOne Data Centers</b> &mdash; Form F-1 filed 5 October 2026, SEC EDGAR (Electronic Data Gathering, Analysis and Retrieval): customer risk factors; Key Performance Indicators; Business, &ldquo;Visible, De-risked Growth Profile Underpinned by Customer Commitments&rdquo;; Certain Definitions; unaudited H1 statements.</div>
+    <div class="srcline" id="src-pr"><span class="srcnum">2.</span> <b>DayOne Data Centers</b> &mdash; issuer press release, 14 October 2026: Billings above 1 GW, 15 booking customers as of 20 September, and enlarged total Johor financing facility.</div>
+    <div class="srcline" id="src-uob"><span class="srcnum">3.</span> <b>UOB (United Overseas Bank)</b> &mdash; seven-lender consortium announcement, 13 October 2026: additional RM15bn Johor financing (US$2.4bn offshore term loan + RM5.5bn Murabahah); total platform RM30bn after 2025 financing.</div>
+    <div class="srcline" id="src-tc"><span class="srcnum">4.</span> <b>The Tech Capital</b> &mdash; 15 October 2026 secondary report providing the approximate US$3.67bn equivalent for the RM15bn Johor financing; currency components and RM amounts are sourced from the primary lender announcement.</div>
+    <div class="srcline" id="src-ex"><span class="srcnum">5.</span> <b>DayOne</b> &mdash; filed financing documents, Form F-1 Exhibits 10.8 and 10.11: Johor borrower/guarantor entities and prepayment terms; Exhibit 10.8 finance-service coverage covenant, conditional distributions and DayOne-parent completion/cost-overrun undertaking (including its three-month cost-overrun tail).</div>
+    <div class="srcline" id="src-eq"><span class="srcnum">6.</span> <b>Equinix</b> &mdash; Form 10-Q (quarterly report), six months ended 30 June 2026, SEC EDGAR, Item 2 MD&amp;A (Management's Discussion and Analysis), Revenue, page 40: largest customer approximately 2% and top 50 approximately 36% of recurring revenue.</div>
+
+    <div class="verif">
+      <div class="vh">Verification notes</div>
+      <div class="flag"><span class="tag">[PRIMARY]</span> &mdash; Customer shares, KPIs, unaudited H1 2026 financials, US$34bn contract value and covenant terms are taken from DayOne's Form F-1 and filed exhibits; the 15 booking customers, Billings above 1 GW and the RM30bn platform from the 14 October issuer release; the additional RM15bn facility components from the 13 October UOB announcement; Equinix concentration figures from its Form 10-Q.</div>
+      <div class="flag"><span class="tag">[REPORTED]</span> &mdash; The approximate US$3.67bn equivalent for the RM15bn facility comes from a secondary report (The Tech Capital), not from the lenders or the issuer.</div>
+      <div class="flag"><span class="tag">[UNAUDITED]</span> &mdash; All H1 2026 figures (revenue, cash flows, borrowings, electricity cost, Malaysia share and customer shares) are from unaudited interim statements as of 30 June 2026.</div>
+      <div class="flag"><span class="tag">[DIRECTIONAL]</span> &mdash; The 10% and 25% sensitivities are static arithmetic illustrations on the unaudited H1 2026 revenue base, not forecasts of default, EBITDA, credit loss or equity value.</div>
+      <div class="flag"><span class="tag">[HOUSE VIEW]</span> &mdash; The six underwriting gates and the Investment Lens traits are the author's analytical framing, not issuer disclosures.</div>
+      <div class="flag" style="margin-top:12px;"><b>Research discipline.</b> The largest DayOne customer remains anonymous because the F-1 does not name it. H1 financial figures are unaudited; operating and financing facts have different measurement dates. Arranged facility size is not debt already drawn. Selected filed Johor financing agreements disclose borrower entities and certain loan provisions, but these sources do not establish current drawdowns, live hedge positions, customer-level service-fee margins or project-level equity returns.</div>
+    </div>
+  </div>
+      <div class="disc">
+        <b>Editorial note:</b> This publication is provided for informational and educational purposes only. It reflects the author's analysis of publicly available information as of the publication date and should not be construed as investment, legal, accounting, or financial advice. Opinions are the author's own and may change as further disclosures become available.<br>
+        <i>No investment advice intended or implied.</i>
+      </div>
+    </div>
+    <div class="tablewrap">
+    <table class="ht" style="margin-top:20px">
+      <tr><th>Acronym</th><th>Full name</th></tr>
+<tr><td>Backlog</td><td>DayOne's measure of committed capacity not yet income-generating.</td></tr>
+<tr><td>Billings</td><td>DayOne's measure of committed capacity already income-generating.</td></tr>
+<tr><td>Bookings</td><td>Legally committed capacity; Billings plus Backlog.</td></tr>
+<tr><td>Capex</td><td>Capital expenditure</td></tr>
+<tr><td>EBITDA</td><td>Earnings before interest, taxes, depreciation and amortisation</td></tr>
+<tr><td>EDGAR</td><td>Electronic Data Gathering, Analysis and Retrieval</td></tr>
+<tr><td>F-1</td><td>Form F-1</td></tr>
+<tr><td>FY2025</td><td>Financial year 2025</td></tr>
+<tr><td>GW</td><td>Gigawatt</td></tr>
+<tr><td>H1</td><td>First half</td></tr>
+<tr><td>IPO</td><td>Initial public offering</td></tr>
+<tr><td>IT</td><td>Information technology</td></tr>
+<tr><td>KPI</td><td>Key performance indicator</td></tr>
+<tr><td>MD&amp;A</td><td>Management's Discussion and Analysis</td></tr>
+<tr><td>Murabahah</td><td>Islamic cost-plus financing</td></tr>
+<tr><td>MW</td><td>Megawatt</td></tr>
+<tr><td>RM</td><td>Malaysian ringgit</td></tr>
+<tr><td>SEC</td><td>Securities and Exchange Commission</td></tr>
+<tr><td>SLA</td><td>Service-level agreement</td></tr>
+<tr><td>Take-or-pay</td><td>A contract under which the customer pays for committed capacity whether or not it uses it.</td></tr>
+<tr><td>UOB</td><td>United Overseas Bank</td></tr>
+<tr><td>10-Q</td><td>Form 10-Q</td></tr>
+    </table>
+    </div>
+    <div class="signoff">The Uptime Brief · Where uptime meets capital allocation · Published weekly</div>
+  </article>
+</section>
+
+<section class="tabpanel" id="t4">
+  <div class="panel-head"><h2>Comments — posting sequence</h2></div>
+  <div class="commentblock">
+    <h3>Comment 1 — First comment (post live)</h3>
+    <div class="panel-head" style="margin-bottom:6px"><span></span><button class="copybtn" onclick="copyIt('raw-c1', this)">Copy</button></div>
+    <div class="copybox" id="raw-c1">𝗧𝗵𝗲 𝗨𝗽𝘁𝗶𝗺𝗲 𝗕𝗿𝗶𝗲𝗳 — 𝗘𝗱𝗶𝘁𝗶𝗼𝗻 𝟮𝟳 · 𝗙𝘂𝗹𝗹 𝗯𝗿𝗲𝗮𝗸𝗱𝗼𝘄𝗻 𝗵𝗲𝗿𝗲:
+
+👉 [NEWSLETTER LINK — paste live URL after publishing]
+
+Subscribe: https://lnkd.in/gaiMidys
+
+Covers:
+→ Why a contract can be 99.3% pre-committed while one customer still drives 69.2% of revenue — and which two 1,328 MW figures look identical but aren't.
+→ How US$512.0m of unaudited revenue sits beside roughly US$14.0m of operating cash flow — and what an arranged US$7.2bn financing platform does and doesn't tell you.
+→ Why Equinix's roughly 2% largest customer is a contrast in customer architecture, not a ranking — and what it still shows about concentration.
+→ How six underwriting gates separate contracted growth from cash an equity investor can actually receive.
+
+――――――――――――――――――――――――――――
+𝗦𝗼𝘂𝗿𝗰𝗲𝘀 𝗿𝗲𝗳𝗲𝗿𝗲𝗻𝗰𝗲𝗱:
+· DayOne — Form F-1 and Exhibits 10.8 / 10.11
+· DayOne — 14 October 2026 issuer announcement
+· UOB — 13 October 2026 consortium announcement
+· The Tech Capital — 15 October 2026
+· Equinix — Form 10-Q, 30 June 2026
+
+#TheUptimeBrief #DataCenter #InfrastructureFinance #APAC #ProjectFinance</div>
+  </div>
+  <div class="commentblock">
+    <h3>Comment 2 — Thread continuity</h3>
+    <div class="panel-head" style="margin-bottom:6px"><span></span><button class="copybtn" onclick="copyIt('raw-c2', this)">Copy</button></div>
+    <div class="copybox" id="raw-c2">Edition 26 asked how a customer-concentrated operator turns contracted growth into resilient cash flow for its own investors. Edition 27 picks that up.
+
+E26 showed that tenant credit is one input into a transaction-specific assessment — not a single screening test. E27 asks the operator-side version: when one customer accounts for 69.2% of revenue, what has to hold between the contract and the return to equity?
+
+The answer isn't a valuation discount applied automatically, or a pass because the contracts are long. It's six gates — obligor, contract, delivery, collections and margin, financing, and equity residual — each testable against the filing.</div>
+  </div>
+  <div class="commentblock">
+    <h3>Comment 3 — Glossary</h3>
+    <div class="panel-head" style="margin-bottom:6px"><span></span><button class="copybtn" onclick="copyIt('raw-c3', this)">Copy</button></div>
+    <div class="copybox" id="raw-c3">Glossary — terms used in this edition's post and newsletter:
+
+APAC — Asia-Pacific — the region this newsletter tracks.
+Backlog — DayOne's measure of committed capacity not yet income-generating.
+Billings — DayOne's measure of committed capacity already income-generating.
+Bookings — legally committed capacity; Billings plus Backlog.
+Capex — Capital expenditure — spending on building or upgrading physical assets.
+EBITDA — Earnings before interest, taxes, depreciation and amortisation — a proxy for operating earnings before financing and non-cash charges.
+EDGAR — Electronic Data Gathering, Analysis and Retrieval — the SEC's public filing database.
+F-1 — Form F-1 — a US registration statement for certain foreign private issuers planning a listing.
+FY2025 — Financial year 2025 — the company's 2025 reporting year.
+GW — Gigawatt — 1,000 megawatts.
+H1 — First half — the six months to 30 June.
+IPO — Initial public offering — a company's first sale of shares to public investors.
+IT — Information technology — here, the electrical load available to customer equipment.
+KPI — Key performance indicator — an operating metric the company reports regularly.
+MD&amp;A — Management's Discussion and Analysis — the narrative section of a US periodic filing.
+Murabahah — Islamic cost-plus financing — a Shariah-compliant structure in which the financier sells an asset at a disclosed mark-up.
+MW — Megawatt — the standard unit of data-centre power capacity.
+RM — Malaysian ringgit — Malaysia's currency.
+SEC — Securities and Exchange Commission — the US securities regulator.
+SLA — Service-level agreement — the contract terms setting availability and performance commitments.
+Take-or-pay — a contract under which the customer pays for committed capacity whether or not it uses it.
+UOB — United Overseas Bank — a Singapore-based bank in the Johor lender consortium.
+10-Q — Form 10-Q — a US quarterly report filed with the SEC.</div>
+  </div>
+</section>
+
+<section class="tabpanel" id="t5">
+  <div class="panel-head">
+    <h2>Pipeline &amp; Handoff</h2>
+    <button class="copybtn" onclick="copyIt('raw-t5', this)">Copy</button>
+  </div>
+  <div class="note">Internal editorial operating layer — never copy into reader-facing outputs (Tabs 1–4).</div>
+  <div class="copybox" id="raw-t5">𝗡𝗲𝘅𝘁 𝗘𝗱𝗶𝘁𝗶𝗼𝗻
+Working title: TBD — NOT pre-committed.
+Status: Next edition is NOT adjudicated. Reconcile with the author before drafting; do not treat Edition 27's closing question as an automatic "Edition 28".
+Closest bridge from E27's own closing question: "what price should investors pay for the uncertainty that remains?" — a valuation / price-discovery angle that needs a primary anchor (DayOne's IPO terms) before it can be built into a core question.
+Alternative live candidates already on record: Who Bears Delivery Risk? (BUILDING → HIGH) and The Neocloud Refinancing Wall (BUILDING) — see Subsequent Pipeline.
+
+――――――――――――――――――――
+
+𝗗𝗿𝗮𝗳𝘁𝗶𝗻𝗴 𝗣𝗿𝗼𝗺𝗽𝘁  (copy-paste starter for the next session)
+
+Start the next edition of The Uptime Brief. Edition 27, "The Concentration Behind the Contract," closed by asking which of a handful of large customer commitments become durable cash for an operator's investors, and what price investors should pay for the uncertainty that remains. Before drafting, (1) reconcile the topic with the author — do not assume a follow-up on DayOne is the next edition; (2) check SEC EDGAR for any DayOne F-1/A, pricing or 424B prospectus; (3) fact-check every figure against primary filings. Do not re-derive Edition 27's six underwriting gates or Edition 26's four clocks — reference by name only.
+
+――――――――――――――――――――
+
+𝗦𝘂𝗯𝘀𝗲𝗾𝘂𝗲𝗻𝘁 𝗣𝗶𝗽𝗲𝗹𝗶𝗻𝗲
+
+· DayOne IPO pricing / valuation follow-up — EVENT-GATED. Why not now: no F-1/A, pricing or prospectus terms public as of the last EDGAR check; activate only once terms are disclosed.
+· Who Bears Delivery Risk? — HIGH (with Oracle Project Jupiter as live case). Why not now: key contract terms (force majeure, rent deferral, long-stop dates) are not yet in primary documents; keep Jupiter separate from counterparty-credit editions.
+· The Neocloud Refinancing Wall — BUILDING. Why not now: CoreWeave covenant and refinancing-term evidence incomplete.
+· AirTrunk REIT (confidential SGX filing) — EVENT-GATED. Why not now: prospectus not public; do not cite terms.
+· Operator-level concentration beyond DayOne — INCUBATE. Why not now: needs a second anchor to generalise past one operator.
+· Pipeline file note: edition-pipeline.md was last run 2 October 2026 and predates E26–E27 — reconcile before relying on its ordering.
+
+――――――――――――――――――――
+
+𝗘𝘃𝗶𝗱𝗲𝗻𝗰𝗲 𝗚𝗮𝘁𝗲
+
+Before publishing E27 (Ctrl-F against primary documents — not yet independently verified in this workflow):
+· Verified directly on 16 October 2026: customer shares (69.2% / 15.1%), KPIs, US$512.0m revenue, US$14.0m operating cash flow, US$4.48bn investing outflow, US$4.49bn financing inflow, US$11.4bn cost to complete, local-affiliate counterparties, early-termination wording, Exhibit 10.8 distribution tests (1.2× / &lt;5.2×) and parent undertaking, 14 October release and UOB announcement.
+· Confirmed by an independent reviewer (locators given; Ctrl-F to double-check before posting): FY2025 top-two 81.6% and H1 2026 top-two 84.3% as disclosed; "substantially all" of ~2.3 GW Bookings under take-or-pay (F-1 Business); SLA risk-factor right to terminate without penalty if committed power availability falls below a minimum for a continuous period; electricity cost US$203.1m (MD&amp;A, Cost of Revenue, p.80); ~US$34bn remaining contract value (Business, Visible, De-risked Growth Profile); Equinix ~2% / ~36% (10-Q Item 2, Revenue, p.40).
+· Deliberately omitted: the 31 December 2026 FSCR test start date (not needed for the argument; not located in the exhibit text available to the drafting tool); Exhibit 10.11 repayment schedule.
+· Re-check EDGAR for any DayOne F-1/A immediately before posting.
+
+――――――――――――――――――――
+
+𝗕𝗼𝘂𝗻𝗱𝗮𝗿𝘆 / 𝗱𝗼-𝗻𝗼𝘁-𝗿𝗲𝘂𝘀𝗲 𝗻𝗼𝘁𝗲𝘀
+
+· Do not name DayOne's largest customer — the F-1 does not.
+· Do not mention AirTrunk in E27 material; EVENT-GATED.
+· Do not use the Exhibit 10.11 repayment schedule — not fully verified; deliberately left out of E27.
+· US$3.67bn is a secondary-source (The Tech Capital) equivalent; US$7.2bn is the issuer's 14 October figure — arranged facilities, not drawn debt.
+· E27-native: six underwriting gates; Bookings / Billings / Backlog / Pre-commitment 99.3% distinction. E26-native: four clocks; River Bend / Beacon Point comparison. Reference by name only.
+· All H1 2026 figures must carry "unaudited". No draft-only verification flags in _final / _web.
+· No public "Edition 28" commitment in any reader-facing output.
+
+――――――――――――――――――――
+
+𝗣𝗿𝗼𝗺𝗼𝘁𝗶𝗼𝗻 𝗥𝘂𝗹𝗲
+
+Promote a candidate to the next edition only after the author reconciles scope and the evidence gate is met with primary sources.
+
+Last verified: 16 October 2026.</div>
+</section>
+
+<script>
+function qsa(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
+qsa('.tabbtn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    qsa('.tabbtn').forEach(function(b){b.classList.remove('active');});
+    qsa('.tabpanel').forEach(function(p){p.classList.remove('active');});
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+function copyIt(id, btn){
+  var el = document.getElementById(id);
+  var text = el.innerText;
+  function flash(){
+    var orig = btn.textContent;
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(function(){btn.textContent = orig; btn.classList.remove('copied');}, 1600);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(flash).catch(function(){
+      fallbackCopy(text); flash();
+    });
+  } else {
+    fallbackCopy(text); flash();
+  }
+}
+function fallbackCopy(text){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+}
+function updateCounter(){
+  var raw = document.getElementById('raw-t1').innerText.replace(/\n$/,'');
+  var n = Array.from(raw).length;
+  var c = document.getElementById('charcount');
+  c.textContent = n.toLocaleString() + ' / 3,000 characters (codepoints)';
+  c.classList.toggle('over', n > 3000);
+}
+updateCounter();
+
+</script>
+</body>
+</html>
