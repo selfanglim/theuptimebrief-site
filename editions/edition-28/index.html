@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>The Cost of Confidence — The Uptime Brief, Edition 28</title>
+<meta name="description" content="When Indonesia's equity-market credibility question collides with infrastructure bankability: the MSCI consultation, the IHSG's weekly move, and what a frozen DSCR model actually shows. By Sel Fang, Lim.">
+<link rel="canonical" href="https://theuptimebrief.com/editions/edition-28">
+<meta property="og:title" content="The Cost of Confidence — The Uptime Brief, Edition 28">
+<meta property="og:description" content="An equity-market repricing in Indonesian risk assets is measurable. Whether it changes project-loan terms for data-centre infrastructure is a different, harder question. By Sel Fang, Lim.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theuptimebrief.com/editions/edition-28">
+<meta property="og:site_name" content="The Uptime Brief">
+<meta property="og:image" content="https://theuptimebrief.com/assets/og-edition28.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAG0AbADASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAIDAQYEBQcICf/EAF0QAAEDAgMCCAoDDAUIBwkBAAEAAgMEBQYREiEHMTJRcYGRkpIIFCI0QUJTYWKxFWPSFhcjN1JWdJOho8HRV3WVsrMmVXKDlKLC4SQzNkNFVIIYJSg1OGeEpcPT/8QAGgEBAQADAQEAAAAAAAAAAAAAAAECAwQFBv/EADcRAAIBAgQDBgYCAQQCAwAAAAABAgMRBBIhQTFRYRMUcZHR8AWBobHB4SIyUgYjQvEVJDNysv/aAAwDAQACEQMRAD8A+y0REARVyzBjtDQXyH1W/wAeZR0VD975RGOZgzPaf5K2JcuRU7Dnnm7ybD66bvJoLsuRU7D66bvJsPrpu8mguy5FQ2AnPOabj/KWdh9dN3ksLsuRU7D66bvJsPrpu8mw+um7yaC7LkVOw+um7ybD66bvJoLsuRU7D66bvJsPrpu8mguy5FTsPrpu8mw+um7yaC7LkVOw+um7ybD66bvJoLsuRU7D66bvJsPrpu8mguy5FQ6DJpO2m4vykbBm0HbTcX5SWF2Xoqdh9dN3k2H103eTQXZcip2H103eTYfXTd5NBdlyKnYfXTd5Nh9dN3k0F2XIqdh9dN3k2H103eTQXZcioEB1OG2m3fEs7D66bvJYXZcip2H103eTYfXTd5NBdlyKnYfXTd5Nh9dN3k0F2XIqdh9dN3k2H103eTQXZcip2H103eWHQEZZTTcf5SWF2Xoqdh9dN3k2H103eTQXZcip2H103eTYc083eTQXZcip0VDN7JRIOZ4yPaP5KUUwe7Q4Fkg9V38OdLC5YiIoUKqoe5oDI8to/c3PiHOVaqYPLmllPPob0Dj/bn2Koj5GfwNLC58kjWNG98j3AdZK4/0vav850X69v8ANdLwr/i6vf6MfmFpWA+DHCt3whbLnWxVZqKiAPkLZyBnmeILqp0abpdrOTWtuHQ4a2IrRrKjSinpfV23tyZ6f9LWr/OdF+vb/NW01dRVLzHTVlPM8DMtjkDiBz7lo/3oMGewrf8AaSu5wngWwYYuMlfao6hs0kJhcZJS4aSQeLpaFzjUF/VmynUxbklOCS8X6GzoiLWdpFnrdKkos9bpUkYQREQBERAEREAUXctvWpKLuW3rQEkREAREQBERAEREBFvLd1KSi3lu6lJAEREAREQBERAFF/q9Kkov9XpRBkkREBx6muoqaQR1NZTwvIzDZJQ0kc+RKq+lrV/nOi/Xt/mujxdgPD+KLlHcLtHUOnjhELTHKWjSC4jd0uK6gcEGDPYVv+0lb1GjlV5O/h+ziqTxak1CCa8X6G6fS1q/znRfr2/zVtNXUVS8x01ZTzPAzLY5A4gc+5aP96DBnsK3/aCu5wngWwYYuMlfao6hs0kJhcZJS4aSQeLpaFzjUF/VmynUxbklOCS8X6GzoiLWdpFnrdKkos9bpUkYQREQBERAEREAUXctvWpKLuW3rQEkREAREQBERAEREBh3JPQjeSOhHck9CN5I6EBlERAEREAREQBERARby3dSkot5bupSQBERAEREAREQBRf6vSpKL/V6UQZJERAEREAREQFNb5s/q+auVNb5s/q+auV2JuFTRebM6/mrlTRebM6/mmw3LkRFChERAEREBFnrdKkos9bpUkYQREQBERAEREAUXctvWpKLuW3rQEkREAREQBERAEREBh3JPQjeSOhHck9CN5I6EBlERAEREAREQBERARby3dSkot5bupSQBERAEREAREQBRf6vSpKL/V6UQZJERAEREAREQFNb5s/q+auVNb5s/q+auV2JuFTRebM6/mrlTRebM6/mmw3LkRFChERAEREBFnrdKkos9bpUkYQREQBERAEREAUXctvWpKLuW3rQEkREAREQBERAEREBh3JPQjeSOhHck9CN5I6EBlERAEREAREQBERARby3dSkot5bupSQBERAEREAREQBRf6vSpKL/V6UQZJERAEREAREQFNb5s/q+auVNb5s/q+auV2JuFTRebM6/mrlTRebM6/mmw3LkRFChERAEREBFnrdKkos9bpUkYQREQBERAEREAUXctvWpKLuW3rQEkREAREQBERAEREBh3JPQjeSOhHck9CN5I6EBlERAEREAREQBERARby3dSkot5bupSQBERAEREAREQBRf6vSpKL/V6UQZJERAEREAREQFNb5s/q+auVNb5s/q+auV2JuFTRebM6/mrlTRebM6/mmw3LkRFChERAEREBFnrdKkos9bpUkYRxJbnbYrgy3S3GkZWyDNlO6ZokcPc3PM8R7FGqu9ppWRvqbnRQMleWRukna0PcDkWjM7yDuyXQ4kfNHjW1MptQmqqKoge4DPR5UZLjzZDM9IA9KqwHBnTupCD4taq2pYwu35vMjsjmeZjv973Lp7GORTfvicnbydR00vej+zNktt0o7jJVR0r5S+ll2UzXwvjLXZZ5eUBnuIOY3bwuYtFwnNW/TUVUy4F1Pc3VVdLTbJmQjDmsjOrLVnll6cshxek8jCVzvF5mjuFRWupKOrgldHTuMGe5wDXRBoc4ho5ReeM8kBWph7NtPRe/wAMlPFZkk1q/wBdeqNyRaRTXG+27CU2Jay7Or4/FnOgppKWOPe6T8G9zm5ZnSRmNw6F3eE33Rwqxc610zg5hZFKYdtCC3frEQ0jM7wM3bvSfRhOg4pu60NkMQptKzV9fep3ii7lt61qN5u1wpK69x09xLg0U8FJHIyP8HUSkjJu4EjItOTs/T0JiSruEV+nhhxBNQ0tNbHVU34KE6XZ5NILmE79Ls88/RlkrHDydtfv09SSxUUno9PDm+vQ3BcaCvpZq+ooIpdVRTBjpmaT5IcCW78sjnkeJaqGXC8XvDgq62emmhofHqiCNkeQkya0bnNJGep4499W7I70qa67tw5e6qK71BkjrnQ0Mhii1bi1gYRoyI1kjizyHH6VVh9r6/u3IxeK4u2i9L8zc0WiVdZiCGtrImYglkENbS00Y8ViAfI/SZG8nPQGu4uUPyiuXcLtd6rE9TRUNT4lS0E0EckjzCIn69LnB+rN+ZBDWhobvzzd6A7tLmvdvUd7jyfLbr16G4IunxnPVUuHamehq5KaqbpELmNY7N7nBrWkOBBBJHv94WuVdZiCGtrImYglkENbS00Y8ViAfI/SZG8nPQGu4uUPyisadBzV019enTqZ1cSqcrNN+XXr0N7RafcLtd6rE9TRUNT4lS0E0EckjzCIn69LnB+rN+ZBDWhobvzzd6Atd2u9zxE6RlT4pb4a6Sl2chhDJgwOGTeOQyZjVxtAaOIq93la91wuTvUc2VJ8be+ht7uSehG8kdC0m1itht1+vVPdDNVVlTJDStqTExrix2zYAdI8rMEAE5bxu3krvcG1FTU2uV9VVVdRI2ofHlVQxsli0nIsds/IdkQfKHHmpOjlTd+BaeIztK1r6ndItWorhca65eOtucNPSx3CWkdRPDBraxruLyS4yEjVkHABvoPp4Nku11uV3ss5vBay4MmqpKFkUeiOBoyYMy0vz1EZnVvOeQCvd5a68P36E71HTR6+HTXj18ehu64zK+kfc5La2XOqjibM9mk7mOJAOeWXGDuzzWnR3K8tqttHfJahjr34lBTPhh/CRggSai1oPk5PIIIyA355rk3GuuMdqxVMLrUbOnk2VG/RGHRv0AloOnIjU4N3gndx+lXuzva/u/gY97TV0n9OTfM3FcO7XOjtcMc1a+RkckjYg5sL3gOcchnpByzO7M7lrErqiyQ0OHo7xJSQUtvfVVFW6OLaBjMgGNBboAzO8lpOQ5zmpQy1tda8K0lwqDUVNXK2rqHua1hLWNMnE0AbnaAiobt6fjX0DxLd4pWf0vp16m4qqrnjpaaSol17ONpc7RG57shzNaCT1BdbiuvqaGhgZRvZHUVlVHSxyvbqbGXne7L05AHIc+S19txr24axHM67yXBrKh1HRSSMjadWTWcbGtB8txHF6FjToOaTM6mIUG49DYqW/wBrnnomRTyuNxj2lKfF5A2QAZ8otyByGeRyK7Vam7Z0d/DI49cNktBeGNO/U7cAP/TEe1VWi7XRldSSVNea5tTbH19RAyNgbT8ksDCAHZHNzfKJJ05rKVC+sfftGEcQ07T57fL83NxRaVHerpSWSS/T3Kmq2TW3xtlIdLdm9xGnSGgO2YzAJc5xJ5lfa6q4sut3hq8QzVUFFQsdMRDE0RTODnEtyZxBoBAdq49+ajw8km78PH06lWKi2lZ6+HXr0NmuddS22hlrq2XZU8Qze/STlvy4hvPGuQCCARxFaLaYLnbcNWTY3eq8buNZHLI10UJa7aZySA+Rnlp1Hb5vWrI70qa67tw5e6qK71BkjrnQ0Mhii1bi1gYRoyI1kjizyHH6VVh9r6/u3IxeK4u2i9L8zc0WiVdZiCGtrImYglkENbS00Y8ViAfI/SZG8nPQGu4uUPyiuXcLtd6rE9TRUNT4lS0E0EckjzCIn69LnB+rN+ZBDWhobvzzd6A7tLmvdvUd7jyfLbr16G4IunxnPVUuHamehq5KaqbpELmNY7N7nBrWkOBBBJHv94WuVdZiCGtrImYglkENbS00Y8ViAfI/SZG8nPQGu4uUPyisadBzV019enTqZ1cSqcrNN+XXr0N7RafcLtd6rE9TRUNT4lS0E0EckjzCIn69LnB+rN+ZBDWhobvzzd6Atd2u9zxE6RlT4pb4a6Sl2chhDJgwOGTeOQyZjVxtAaOIq93la91wuTvUc2VJ8be+ht7uSehG8kdCiDVitht1+vVPdDNVVlTJDStqTExrix2zYAdI8rMEAE5bxu3krvcG1FTU2uV9VVVdRI2ofHlVQxsli0nIsds/IdkQfKHHmpOjlTd+BaeIztK1r6ndItWorhca65eOtucNPSx3CWkdRPDBraxruLyS4yEjVkHABvoPp4Nku11uV3ss5vBay4MmqpKFkUeiOBoyYMy0vz1EZnVvOeQCvd5a68P36E71HTR6+HTXj18ehu64zK+kfc5La2XOqjibM9mk7mOJAOeWXGDuzzWnR3K8tqttHfJahjr34lBTPhh/CRggSai1oPk5PIIIyA355rk3GuuMdqxVMLrUbOnk2VG/RGHRv0AloOnIjU4N3gndx+lXuzva/u/gY97TV0n9OTfM3FcO7XOjtcMc1a+RkckjYg5sL3gOcchnpByzO7M7lrErqiyQ0OHo7xJSQUtvfVVFW6OLaBjMgGNBboAzO8lpOQ5zmpQy1tda8K0lwqDUVNXK2rqHua1hLWNMnE0AbnaAiobt6fjX0DxLd4pWf0vp16m4qqrnjpaaSol17ONpc7RG57shzNaCT1BdbiuvqaGhgZRvZHUVlVHSxyvbqbGXne7L05AHIc+S19txr24axHM67yXBrKh1HRSSMjadWTWcbGtB8txHF6FjToOaTM6mIUG49DYqW/wBrnnomRTyuNxj2lKfF5A2QAZ8otyByGeRyK7Vam7Z0d/DI49cNktBeGNO/U7cAP/TEe1VWi7XRldSSVNea5tTbH19RAyNgbT8ksDCAHZHNzfKJJ05rKVC+sfftGEcQ07T57fL83NxRaVHerpSWSS/T3Kmq2TW3xtlIdLdm9xGnSGgO2YzAJc5xJ5lfa6q4sut3hq8QzVUFFQsdMRDE0RTODnEtyZxBoBAdq49+ajw8km78PH06lWKi2lZ6+HXr0NmuddS22hlrq2XZU8Qze/STlvy4hvPGuQCCARxFaLaYLnbcNWTY3eq8buNZHLI10UJa7aZySA+Rnlp1HPb5vWrI70qa67tw5e6qK71BkjrnQ0Mhii1bi1gYRoyI1kjizyHH6VVh9r6/u3IxeK4u2i9L8zc0WiVdZiCGtrImYglkENbS00Y8ViAfI/SZG8nPQGu4uUPyiuXcLtd6rE9TRUNT4lS0E0EckjzCIn69LnB+rN+ZBDWhobvzzd6A7tLmvdvUd7jyfLbr16G4IunxnPVUuHamehq5KaqbpELmNY7N7nBrWkOBBBJHv94WuVdZiCGtrImYglkENbS00Y8ViAfI/SZG8nPQGu4uUPyisadBzV019enTqZ1cSqcrNN+XXr0N7RafcLtd6rE9TRUNT4lS0E0EckjzCIn69LnB+rN+ZBDWhobvzzd6Atd2u9zxE6RlT4pb4a6Sl2chhDJgwOGTeOQyZjVxtAaOIq93la91wuTvUc2VJ8be+ht7uSehG8kdCzWatjtht1+vVPdDNVVlTJDStqTExrix2zYAdI8rMEAE5bxu3krvcG1FTU2uV9VVVdRI2ofHlVQxsli0nIsds/IdkQfKHHmpOjlTd+BaeIztK1r6ndItWorhca65eOtucNPSx3CWkdRPDBraxruLyS4yEjVkHABvoPp4Nku11uV3ss5vBay4MmqpKFkUeiOBoyYMy0vz1EZnVvOeQCvd5a68P36E71HTR6+HTXj18ehu64zK+kfc5La2XOqjibM9mk7mOJAOeWXGDuzzWnR3K8tqttHfJahjr34lBTPhh/CRggSai1oPk5PIIIyA355rk3GuuMdqxVMLrUbOnk2VG/RGHRv0AloOnIjU4N3gndx+lXuzva/u/gY97TV0n9OTfM3FcO7XOjtcMc1a+RkckjYg5sL3gOcchnpByzO7M7lrErqiyQ0OHo7xJSQUtvfVVFW6OLaBjMgGNBboAzO8lpOQ5zmpQy1tda8K0lwqDUVNXK2rqHua1hLWNMnE0AbnaAiobt6fjX0DxLd4pWf0vp16m4qqrnjpaaSol17ONpc7RG57shzNaCT1BdbiuvqaGhgZRvZHUVlVHSxyvbqbGXne7L05AHIc+S19txr24axHM67yXBrKh1HRSSMjadWTWcbGtB8txHF6FjToOaTM6mIUG49DYqW/wBrnnomRTyuNxj2lKfF5A2QAZ8otyByGeRyK7Vam7Z0d/DI49cNktBeGNO/U7cAP/TEe1VWi7XRldSSVNea5tTbH19RAyNgbT8ksDCAHZHNzfKJJ05rKVC+sfftGEcQ07T57fL83NxRaVHerpSWSS/T3Kmq2TW3xtlIdLdm9xGnSGgO2YzAJc5xJ5lfa6q4sut3hq8QzVUFFQsdMRDE0RTODnEtyZxBoBAdq49+ajw8km78PH06lWKi2lZ6+HXr0NmuddS22hlrq2XZU8Qze/STlvy4hvPGuQCCARxFaLaYLnbcNWTY3eq8buNZHLI10UJa7aZySA+Rnlp1HPb5vWrI70qa67tw5e6qK71BkjrnQ0Mhii1bi1gYRoyI1kjizyHH6VVh9r6/u3IxeK4u2i9L8zc0WiVdZiCGtrImYglkENbS00Y8ViAfI/SZG8nPQGu4uUPyiuXcLtd6rE9TRUNT4lS0E0EckjzCIn69LnB+rN+ZBDWhobvzzd6A7tLmvdvUd7jyfLbr16G4IunxnPVUuHamehq5KaqbpELmNY7N7nBrWkOBBBJHv94WuVdZiCGtrImYglkENbS00Y8ViAfI/SZG8nPQGu4uUPyisadBzV019enTqZ1cSqcrNN+XXr0N7RafcLtd6rE9TRUNT4lS0E0EckjzCIn69LnB+rN+ZBDWhobvzzd6Atd2u9zxE6RlT4pb4a6Sl2chhDJgwOGTeOQyZjVxtAaOIq93la91wuTvUc2VJ8be+ht7uSehG8kdCiPq9Kitht1+vVPdDNVVlTJDStqTExrix2zYAdI8rMEAE5bxu3krvcG1FTU2uV9VVVdRI2ofHlVQxsli0nIsds/IdkQfKHHmpOjlTd+BaeIztK1r6ndItWorhca65eOtucNPSx3CWkdRPDBraxruLyS4yEjVkHABvoPp4Nku11uV3ss5vBay4MmqpKFkUeiOBoyYMy0vz1EZnVvOeQCvd5a68P36E71HTR6+HTXj18ehu64zK+kfc5La2XOqjibM9mk7mOJAOeWXGDuzzWnR3K8tqttHfJahjr34lBTPhh/CRggSai1oPk5PIIIyA355rk3GuuMdqxVMLrUbOnk2VG/RGHRv0AloOnIjU4N3gndx+lXuzva/u/gY97TV0n9OTfM3FcO7XOjtcMc1a+RkckjYg5sL3gOcchnpByzO7M7lrErqiyQ0OHo7xJSQUtvfVVFW6OLaBjMgGNBboAzO8lpOQ5zmpQy1tda8K0lwqDUVNXK2rqHua1hLWNMnE0AbnaAiobt6fjX0DxLd4pWf0vp16m4qqrnjpaaSol17ONpc7RG57shzNaCT1BdbiuvqaGhgZRvZHUVlVHSxyvbqbGXne7L05AHIc+S19txr24axHM67yXBrKh1HRSSMjadWTWcbGtB8txHF6FjToOaTM6mIUG49DYqW/wBrnnomRTyuNxj2lKfF5A2QAZ8otyByGeRyK7Vam7Z0d/DI49cNktBeGNO/U7cAP/TEe1VWi7XRldSSVNea5tTbH19RAyNgbT8ksDCAHZHNzfKJJ05rKVC+sfftGEcQ07T57fL83NxRaVHerpSWSS/T3Kmq2TW3xtlIdLdm9xGnSGgO2YzAJc5xJ5lfa6q4sut3hq8QzVUFFQsdMRDE0RTODnEtyZxBoBAdq49+ajw8km78PH06lWKi2lZ6+HXr0NmuddS22hlrq2XZU8Qze/STlvy4hvPGuQCCARxFaLaYLnbcNWTY3eq8buNZHLI10UJa7aZySA+Rnlp1HPb5vWrI70qa67tw5e6qK71BkjrnQ0Mhii1bi1gYRoyI1kjizyHH6Q==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#1a4a3a;--green-mid:#2f6b54;--green-pale:#e8f2ee;--gold:#c9a84c;--teal:#3dbf8a;--blue:#4ab8d4;--cream:#f8f6f2;--ink:#1c2420;--muted:#5a6b63;--border:#d7e0da;--dark:#111;}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;font-size:17px;overflow-x:hidden;padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px));}
+  a{color:var(--green-mid);overflow-wrap:anywhere;}
+  nav{position:sticky;top:0;z-index:50;background:var(--green);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;transition:box-shadow .2s;}
+  nav.scrolled{box-shadow:0 2px 14px rgba(0,0,0,.18);}
+  nav .navlinks{display:flex;gap:22px;align-items:center;}
+  nav .navlinks a{color:#fff;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;}
+  nav .navlinks a.cta{background:var(--gold);color:var(--green);padding:8px 16px;border-radius:6px;font-weight:700;}
+  .hero{background:var(--green);color:#fff;text-align:center;padding:40px 24px 54px;}
+  .hero .edlabel{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px;}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:44px;line-height:1.1;margin:6px auto 12px;max-width:760px;}
+  .hero .tagline{font-style:italic;font-size:19px;color:rgba(255,255,255,.85);max-width:640px;margin:0 auto 20px;}
+  .hero .byline{font-family:'DM Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,.7);letter-spacing:.02em;}
+  .hero .ctas{margin-top:24px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .hero .ctas a{font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;}
+  .hero .ctas .primary{background:var(--gold);color:var(--green);padding:11px 22px;border-radius:7px;}
+  .hero .ctas .ghost{color:#fff;padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.4);}
+  .stats{display:flex;gap:16px;max-width:1000px;margin:-28px auto 0;padding:0 24px;flex-wrap:wrap;position:relative;z-index:5;}
+  .stat{flex:1;min-width:210px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;box-shadow:0 4px 18px rgba(26,74,58,.08);}
+  .stat .fig{font-family:'Playfair Display',serif;font-size:27px;color:var(--green);font-weight:700;overflow-wrap:anywhere;}
+  .stat .rule{width:40px;height:2px;background:var(--gold);margin:8px auto;}
+  .stat .lab{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.03em;color:var(--muted);text-transform:uppercase;}
+  .container{max-width:1060px;margin:40px auto 0;padding:0 24px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:44px;}
+  article{min-width:0;}
+  article h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--green);font-weight:700;margin:36px 0 8px;display:flex;align-items:center;gap:12px;}
+  article h2 .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;}
+  article h3{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--green-mid);margin:22px 0 4px;}
+  article p{margin:0 0 15px;}
+  article .lead{font-size:19px;color:var(--ink);}
+  article hr{border:0;border-top:1px solid var(--border);margin:30px 0 0;}
+  .tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:9px;margin:16px 0 20px;background:#fff;}
+  table.deal{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px;}
+  table.deal th{background:var(--green);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;text-align:left;padding:9px 11px;font-size:12.5px;}
+  table.deal td{padding:8px 11px;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.deal tr:nth-child(even) td{background:var(--green-pale);}
+  table.deal td:first-child{font-family:'DM Sans',sans-serif;font-weight:600;color:var(--green);white-space:nowrap;}
+  table.deal td.r,table.deal th.r{text-align:right;white-space:nowrap;}
+  .callout{background:#fff;border:1px solid var(--green-mid);border-left:4px solid var(--gold);border-radius:12px;padding:16px 20px;margin:22px 0;}
+  .callout h4{font-family:'Playfair Display',serif;color:var(--green);font-size:17px;margin:0 0 6px;}
+  .callout p{font-size:15.5px;margin:0;}
+  .lens{background:var(--green-pale);border:1px solid var(--green-mid);border-radius:12px;padding:22px;margin:28px 0;}
+  .lens h3{font-family:'Playfair Display',serif;color:var(--green);font-size:19px;margin:0 0 14px;}
+  .lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .lens-card{background:#fff;border:1px solid var(--border);border-radius:9px;padding:14px;min-width:0;}
+  .lens-card .ct{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;line-height:1.35;}
+  .lens-card .ll{font-family:'DM Sans',sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-mid);font-weight:700;margin-bottom:2px;}
+  .lens-card .lv{font-size:14px;margin-bottom:9px;line-height:1.5;}
+  .lens-card .lv:last-child{margin-bottom:0;}
+  .closing{font-size:20px;color:var(--green);font-weight:600;margin:26px 0 8px;line-height:1.5;}
+  .threadfwd{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:16px;}
+  aside{align-self:start;position:sticky;top:82px;}
+  .side-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;}
+  .side-card h4{font-family:'Playfair Display',serif;color:var(--green);font-size:17px;margin:0 0 8px;}
+  .side-card p{font-size:14px;margin:0 0 10px;color:var(--muted);}
+  .side-card .sub-btn{display:block;text-align:center;background:var(--gold);color:var(--green);font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;padding:11px;border-radius:7px;}
+  .thread-list{list-style:none;margin:0;padding:0;}
+  .thread-list li{padding:9px 0;border-bottom:1px solid var(--border);font-size:13.5px;}
+  .thread-list li:last-child{border-bottom:none;}
+  .thread-list a{text-decoration:none;color:var(--ink);display:block;}
+  .thread-list .te{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.05em;text-transform:uppercase;display:block;}
+  .thread-list .tt{color:var(--green);font-weight:600;}
+  .fullwidth{max-width:1060px;margin:20px auto 0;padding:0 24px;}
+  .srcblock{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:30px;}
+  .srcblock h2{font-family:'Playfair Display',serif;color:var(--green);font-size:22px;margin:0 0 14px;}
+  .srcline{padding:7px 0;border-bottom:1px dotted var(--border);font-size:14px;}
+  .srcline b{color:var(--green);}
+  .srcline b a{color:inherit;text-decoration:underline;text-decoration-color:var(--border);}
+  .srcline b a:hover{text-decoration-color:var(--green);}
+  .srcnum{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;color:var(--teal);margin-right:4px;}
+  .inline-src{font-family:'DM Sans',sans-serif;font-size:0.72em;font-weight:600;color:var(--teal);text-decoration:none;white-space:nowrap;}
+  .inline-src:hover{text-decoration:underline;}
+  .verif{background:#fbf9f4;border:1px solid var(--border);border-radius:9px;padding:16px;margin-top:18px;}
+  .verif .vh{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--green);font-size:13.5px;margin-bottom:8px;}
+  .flag{font-family:'DM Sans',sans-serif;font-size:13px;margin-top:7px;}
+  .flag .tag{font-weight:700;color:var(--green-mid);}
+  table.gloss{width:100%;border-collapse:collapse;margin-top:12px;font-size:13.5px;}
+  table.gloss th{background:var(--green);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;text-align:left;padding:9px 11px;font-size:12.5px;}
+  table.gloss td{padding:8px 11px;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.gloss tr:nth-child(even) td{background:var(--green-pale);}
+  table.gloss td:first-child{font-family:'DM Sans',sans-serif;font-weight:600;color:var(--green);white-space:nowrap;}
+  .signoff-bar{text-align:center;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--muted);margin:34px auto 0;max-width:1060px;padding:20px 24px;border-top:2px solid var(--gold);}
+  footer{background:var(--dark);color:rgba(255,255,255,.7);margin-top:40px;padding:32px 24px;}
+  footer .fwrap{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer .flinks{display:flex;gap:20px;font-family:'DM Sans',sans-serif;font-size:13px;}
+  footer .flinks a{color:rgba(255,255,255,.7);text-decoration:none;}
+  footer .disc{width:100%;border-top:1px solid rgba(255,255,255,.14);padding-top:16px;margin-top:6px;font-family:'DM Sans',sans-serif;font-size:12.5px;line-height:1.6;}
+  footer .disc .note{color:rgba(255,255,255,.78);}
+  footer .disc .note b{color:rgba(255,255,255,.92);}
+  footer .disc .noadv{color:rgba(255,255,255,.65);font-style:italic;margin-top:6px;}
+  footer .copy{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.45);width:100%;text-align:center;margin-top:4px;}
+  @media(max-width:700px){
+    .container{grid-template-columns:minmax(0,1fr);gap:28px;}
+    aside{position:static;}
+    .lens-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:32px;}
+    nav .navlinks a:not(.cta){display:none;}
+    .stats{margin-top:20px;}
+  }
+  @media(max-width:600px){
+    nav{flex-wrap:wrap;height:auto;min-height:56px;padding:10px 16px;}
+    .hero{padding:32px 16px 48px;}
+    .stats,.container,.fullwidth{padding-left:16px;padding-right:16px;}
+    .stat{min-width:0;flex-basis:100%;}
+    .stat .fig{font-size:24px;}
+    article h2{font-size:22px;}
+    .srcblock{padding:18px;}
+    table.gloss thead{display:none;}
+    table.gloss,table.gloss tbody,table.gloss tr,table.gloss td{display:block;width:100%;}
+    table.gloss tr{border-bottom:1px solid var(--border);padding:8px 0;}
+    table.gloss td{border:none;padding:2px 11px;}
+    table.gloss td:first-child{white-space:normal;font-size:14.5px;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" aria-label="The Uptime Brief home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="38" role="img" aria-label="The Uptime Brief">
+  <defs><linearGradient id="ecg-g" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/>
+  </linearGradient></defs>
+  <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+  <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+  <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="#ffffff" letter-spacing="2">THE UPTIME</text>
+  <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+</svg></a>
+  <div class="navlinks">
+    <a href="/#editions">All Editions</a>
+    <a class="cta" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="edlabel">Edition 28 &middot; Weekly &middot; APAC &middot; Infrastructure Finance</div>
+  <h1>The Cost of Confidence</h1>
+  <p class="tagline">When equity-market investability meets infrastructure bankability.</p>
+  <div class="byline">By Sel Fang, Lim &middot; Data centre and infrastructure finance, APAC</div>
+  <div class="ctas">
+    <a class="primary" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe on LinkedIn</a>
+    <a class="ghost" href="/#editions">Read the editions &rarr;</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="fig">+4.90%</div><div class="rule"></div><div class="lab">IHSG weekly gain, 19&ndash;23 October 2026</div></div>
+  <div class="stat"><div class="fig">Rp6.67tn</div><div class="rule"></div><div class="lab">Foreign net equity selling, week of 19&ndash;23 October 2026</div></div>
+  <div class="stat"><div class="fig">+13.19bp</div><div class="rule"></div><div class="lab">5-year sovereign CDS widening (indicative), 15&ndash;23 October 2026</div></div>
+</div>
+
+<div class="container">
+  <article>
+    <p class="lead"><strong>A data centre does not lose a megawatt because an index provider loses confidence. Its tenants and power contracts do not automatically disappear. Yet the price of capital can change before an asset's operating fundamentals do.</strong></p>
+    <p>Edition 27, <em>The Concentration Behind the Contract</em>, closed by asking which commitments underpinning a data-centre development become durable cash for investors &mdash; and what price they should pay for the uncertainty that remains. This edition shifts the question to the market surrounding those contracts: what happens to an infrastructure investment when international investors begin to question the integrity of the country's equity market itself?</p>
+    <p>Power, permits and water may remain binding constraints regardless of where the equity index stands. Indonesia is a useful test of both propositions. The real issue is not whether it will still need data centres. It is whether market-level uncertainty reaches project-level financing, and whether the returns on the next delivered megawatt compensate investors for the risks of getting it operational.</p>
+
+    <h2><span class="n">1</span> The deal</h2>
+    <p>On 15 October 2026, MSCI opened a formal consultation on moving Indonesia directly from Emerging Market to Standalone status, citing opaque shareholding structures, suspected coordinated trading and insufficient evidence of sustained enforcement. MSCI said a Frontier classification would not adequately reflect the depth of its concerns. This is not an implemented downgrade. Responses are due 30 April 2027; the final decision is due on or before 30 June 2027. No effective deletion date has been confirmed. <a class="inline-src" href="#src-1">[1]</a> <a class="inline-src" href="#src-2">[2]</a></p>
+    <p>The initial market response was severe. But what followed complicates a simple flight-from-Indonesia story: the Jakarta Composite Index rose 4.90% in the week of 19&ndash;23 October, while foreign investors sold a reported Rp6.67 trillion net of shares. By 27 October, the IHSG stood at 5,266.13 and USD/IDR near 18,153 on the Indonesian government's market dashboard. These observations cover different instruments and dates; they are not a single causal measurement. <a class="inline-src" href="#src-3">[3]</a> <a class="inline-src" href="#src-4">[4]</a></p>
+    <p>Foreign selling and a rising local index can coexist. Domestic demand, valuation resets and investor rotation matter. So does the difference between a proposal, an index deletion and the outflows that might eventually accompany it.</p>
+    <p>A useful counterpoint came from FTSE Russell, which retained Indonesia's Secondary Emerging Market classification in results published on 6 October from its September annual country-classification review. FTSE and MSCI apply distinct methodologies; neither outcome determines the other's. <a class="inline-src" href="#src-6">[6]</a></p>
+    <p>For funds committed to tracking affected MSCI Emerging Markets benchmarks, an eventual exclusion could require selling or reweighting. But a consultation is not a sale order, and the mechanism does not compel every active fund, infrastructure lender or hyperscaler to withdraw. <a class="inline-src" href="#src-1">[1]</a></p>
+    <p>Nor would an Indonesian deletion automatically send capital to Malaysia or Singapore data-centre assets. Passive index rebalancing, active portfolio allocation and greenfield infrastructure FDI (foreign direct investment) are three different capital decisions. An investor selling Indonesian listed shares can buy securities anywhere permitted by its benchmark; a cloud provider choosing a new campus is deciding on demand, latency, data regulation, power, land, permits and long-term returns.</p>
+    <p>Argentina provides a limited precedent: MSCI moved it directly from Emerging to Standalone in 2021, but that decision centred on capital controls. Indonesia's consultation centres on market transparency and trading integrity. The index mechanism is comparable; the macroeconomic consequences should not be assumed to be. <a class="inline-src" href="#src-2">[2]</a></p>
+    <p>The first investment test is therefore market investability: can institutions gain transparent, liquid exposure to listed equities? The second is project bankability: can lenders rely on enforceable cash flows, sponsor strength, currency matching, permits, delivered utilities and adequate downside protection? One cannot substitute for the other.</p>
+
+    <h2><span class="n">2</span> The engineering read</h2>
+    <p>Consider two Indonesian financing examples announced before the MSCI consultation. DCI Indonesia signed a Rp17 trillion investment-credit agreement with BCA on 30 April 2026, publicly reported on 7 May. BDx announced a US$320 million-equivalent facility from a group of Indonesian banks in April. The DCI amount is expressed in rupiah; BDx's headline amount is in US dollars, but that does not establish the contractual debt currency. BDx has described matching financing obligations with rupiah revenue and expenditure as a risk-management consideration. Neither announcement provides evidence of financing margins changing after MSCI. <a class="inline-src" href="#src-10">[10]</a> <a class="inline-src" href="#src-11">[11]</a></p>
+    <p>This is why debt denomination, not a press-release headline, drives the FX analysis. An operator with IDR revenue and unhedged USD debt must find more rupiah for each fixed dollar of debt service when USD/IDR rises. An operator with IDR revenue and IDR debt has a better currency match, although domestic interest rates and imported equipment costs still matter. USD-linked revenue, hedging and contractual pass-through can change the exposure again.</p>
+    <p>Take a deliberately hypothetical US$100 million project financed with US$60 million debt and US$40 million equity, generating US$13 million equivalent of annual cash available for debt service. Under the frozen E28 model:</p>
+
+    <div class="tablewrap"><table class="deal">
+      <thead><tr><th>Scenario</th><th class="r">All-in rate</th><th class="r">USD/IDR change</th><th class="r">DSCR</th><th class="r">Levered equity IRR (approx.)</th></tr></thead>
+      <tbody>
+        <tr><td>Base case</td><td class="r">7.00%</td><td class="r">Unchanged</td><td class="r">1.52&times;</td><td class="r">~10.4%</td></tr>
+        <tr><td>Combined hypothetical shock</td><td class="r">9.00%</td><td class="r">+10%</td><td class="r">1.26&times;</td><td class="r">~5.2%</td></tr>
+      </tbody>
+    </table></div>
+
+    <p>Illustrative only, not a real Indonesian financing quote or a forecast of any named sponsor. A 10% rise in USD/IDR translates a fixed IDR cash flow into USD at 13 &divide; 1.10, a 9.09% reduction in dollar-equivalent cash flow. The model assumes US$60 million debt amortising over ten annual repayments and US$35 million in terminal equity proceeds; taxes, further capex and hedge costs are excluded.</p>
+    <p>But financing is not the only gate. West Java authorities ordered a temporary stop at BDx's Jatiluhur development over outstanding environmental and building approvals at the beginning of October. In Batam, BP Batam has directed data-centre developers toward independent seawater reverse-osmosis (SWRO) facilities for full operations, with implementation details still project-specific. Neither development was caused by MSCI; nor should household water shortages be attributed to data-centre consumption without evidence. <a class="inline-src" href="#src-12">[12]</a> <a class="inline-src" href="#src-13">[13]</a></p>
+    <p>For an infrastructure investor, the underwriting calculation is therefore not just what capital costs, but how long it takes to start earning cash flow.</p>
+    <p>On 22 October, Danantara officials discussed a Bring Your Own Energy (BYOE) approach for very large data-centre projects &mdash; for example, above 500 MW &mdash; and potential electricity offtake commitments around 10&ndash;15 years. This was a reported investment expectation, not a verified nationwide statutory threshold or signed power purchase agreement (PPA). It does not imply complete independence from PLN or guaranteed uptime. <a class="inline-src" href="#src-14">[14]</a></p>
+    <p>The investment-committee question is who funds the generation and interconnection, who bears delivery risk, and when contracted data-centre revenue can actually begin. A grid connection may require less sponsor equity if capacity exists. A separately financed power producer and long-term PPA may isolate generation capex, but create payment guarantees and completion interfaces. Integrated data-centre-plus-generation ownership may offer more control, but introduces another capital-intensive construction project.</p>
+
+    <h2><span class="n">3</span> The capital allocation read</h2>
+    <p>Some pressure has spread beyond the equity market. Bank Indonesia acknowledged outflows from government securities (SBN) and its rupiah securities (SRBI) around the MSCI warning, while describing the shock as manageable. A single-provider indicative series showed Indonesia's five-year sovereign CDS moving from 93.28 basis points on 15 October to 106.47 on 23 October &mdash; a rise of 13.19 bp. The government dashboard put the ten-year domestic sovereign yield near 7.50% on 27 October; ADB AsianBondsOnline separately reported 7.468% on 26 October. These are two different data series and dated observations, not a matched yield-change calculation. These observations are evidence of market repricing following the announcement, not proof that MSCI alone caused the movements. <a class="inline-src" href="#src-8">[8]</a> <a class="inline-src" href="#src-9">[9]</a> <a class="inline-src" href="#src-4">[4]</a> <a class="inline-src" href="#src-5">[5]</a></p>
+    <p>Bank Indonesia's 21 October decision also resists a simplistic reading. It held the headline BI-Rate at 5.75% and the Lending Facility rate at 6.50%, while raising the Deposit Facility rate to 5.00% and expanding incentives for domestic non-deliverable forwards (DNDF). The central bank cited external uncertainty and currency stability; it did not announce an MSCI-triggered headline rate hike. <a class="inline-src" href="#src-7">[7]</a></p>
+
+    <div class="callout">
+      <h4>E1 vs E2: the critical distinction</h4>
+      <p><strong>E1 &mdash; Market credit:</strong> foreign portfolio withdrawals, FX pressure and movement in sovereign-risk indicators are observable. Their attribution to MSCI versus global yields, the dollar and existing domestic pressures is still incomplete. <strong>E2 &mdash; Funding credit:</strong> a change in data-centre loan margins, leverage limits, tenor, covenants or drawdown conditions has not been demonstrated by a comparable post-15-October transaction in the reviewed evidence. A widening sovereign CDS quotation is not a revised project-finance term sheet.</p>
+    </div>
+
+    <p>The regional comparison is not one-sided. Mirae Asset's September model estimated a 15.1% project IRR for a hypothetical 100MW Batam hyperscale development versus 13.4% for Johor at the same modelled lease rate &mdash; a 170-basis-point difference using the displayed rounded figures. Yet it also estimated 36 months to energise a 100MW project in Indonesia versus 12 months in Malaysia, while reporting a Jakarta colocation vacancy rate of 20.4% and Johor's at 0.7%. These are analyst assumptions and market snapshots, not realised project returns or universal energisation schedules. <a class="inline-src" href="#src-15">[15]</a></p>
+    <p>That tension matters more than calling a predetermined regional winner. A higher modelled IRR can be consumed by delayed revenue, water infrastructure, extra power capex or financing uncertainty. Conversely, a financeable power arrangement that accelerates energisation could justify additional upfront investment.</p>
+    <p>Domestic demand and regulation also anchor investment. GR71/2019 allows private electronic-system operators to process or store data abroad subject to oversight and access conditions, while imposing different requirements on public-sector systems. Banking-specific rules under POJK 11/2022 generally require domestic placement of certain systems unless approval is obtained. This is not a blanket Indonesia-only rule for every cloud customer. <a class="inline-src" href="#src-16">[16]</a> <a class="inline-src" href="#src-17">[17]</a></p>
+    <p>Google, Microsoft and AWS have announced substantial Indonesian cloud infrastructure activity, but announced commitments differ in scope and include operating expenditure, software, AI initiatives and training in some cases. No verified operator announcement in this research establishes that MSCI's proposal has redirected the next hyperscale campus away from Indonesia. Existing commitments may be resilient; discretionary future phases are a different decision.</p>
+
+    <div class="lens">
+      <h3>Portfolio Framework &mdash; Investment Lens</h3>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <div class="ct">Market confidence</div>
+          <div class="lv">Higher sovereign-risk indicators are visible; project-loan repricing remains unverified.</div>
+        </div>
+        <div class="lens-card">
+          <div class="ct">Currency structure</div>
+          <div class="lv">IDR cash flows paired with unhedged USD debt are more vulnerable than matched or hedged facilities.</div>
+        </div>
+        <div class="lens-card">
+          <div class="ct">Delivered capacity</div>
+          <div class="lv">Permits, water and time-to-power determine when contracted revenue actually starts.</div>
+        </div>
+        <div class="lens-card">
+          <div class="ct">Capital allocation</div>
+          <div class="lv">Compare risk-adjusted returns on fully financeable, permitted and energised capacity &mdash; not headline capex per MW or passive equity flows.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2><span class="n">4</span> What this means for the broader market</h2>
+    <p>Indonesia is pursuing reforms, not simply awaiting MSCI's decision. OJK (Otoritas Jasa Keuangan) reiterated its shareholder-disclosure and enforcement agenda on 16 October. <a class="inline-src" href="#src-18">[18]</a></p>
+    <p>Enforcement was not entirely prospective. On 16 October, OJK imposed approximately Rp2.1 trillion in administrative fines on parties involved in DSSA share trading and the BREN and CUAN IPOs. The underlying investigations began before MSCI's 15 October consultation. These sanctions demonstrate actual enforcement activity, but whether they lead to sustained improvements in ownership transparency and market integrity sufficient to satisfy MSCI remains untested. <a class="inline-src" href="#src-19">[19]</a> <a class="inline-src" href="#src-20">[20]</a></p>
+    <p>Separately, IDX (Indonesia Stock Exchange) announced high-shareholding-concentration index exclusions on 22 October for implementation from 2 November. On 26 October, IDX also announced plans to add independent participants to its high-shareholding-concentration committee and strengthen investigations into suspected coordinated trading. On 28 October, IDX leadership said Danantara had proposed taking a stake in the exchange as part of demutualisation. A proposal is not a completed purchase, and an ownership change is not itself proof of stronger trading integrity. OJK's POJK 13/2026, effective 17 September, generally limits a shareholder to 5% of IDX shares; larger holdings require OJK approval, while majority ownership is prohibited outright, including through affiliates. <a class="inline-src" href="#src-21">[21]</a> <a class="inline-src" href="#src-22">[22]</a> <a class="inline-src" href="#src-23">[23]</a></p>
+    <p>My forward tests are simple: does actual enforcement change transparency and market behaviour? Do foreign outflows, FX pressure and sovereign spreads stabilise relative to global drivers? Do new project lenders demand different pricing or covenants? Does a real BYOE project disclose who carries the generation, PPA and energisation risks? And do new hyperscaler site choices demonstrate a changed geographical allocation &mdash; rather than commentators merely predicting one?</p>
+    <p>There are at least two plausible outcomes. Reform could improve market access while well-structured infrastructure projects continue raising capital. Or confidence could stay weak long enough to increase the required return for new, uncommitted projects. Neither outcome is proven today.</p>
+    <p>Market confidence cannot generate megawatts, secure a grid connection or sign a lease. But it can change the price investors demand for turning those physical assets into reliable cash flows. Equally, low-cost capital cannot rescue a project whose permits, water or power fail to arrive on time.</p>
+    <p>The question for the next investment committee is not simply where Southeast Asia's next data centre will be announced. It is where the next megawatt can be delivered, financed and operated at a return that compensates for every risk along the way.</p>
+    <p class="closing">When contracted demand and financing are in place but energisation or commissioning slips, who actually bears the delay &mdash; the developer, power supplier, contractor, lender or tenant?</p>
+    <p class="threadfwd">That is the question I will carry into Edition 29.</p>
+  </article>
+
+  <aside>
+    <div class="side-card">
+      <h4>The Uptime Brief</h4>
+      <p>Where uptime meets capital allocation. Data centre and infrastructure finance, with an APAC focus &mdash; for institutional investors, infrastructure finance professionals, and market operators.</p>
+      <a class="sub-btn" href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe on LinkedIn</a>
+    </div>
+    <div class="side-card">
+      <h4>Edition thread</h4>
+      <ul class="thread-list">
+        <li><a href="/editions/edition-27/"><span class="te">Edition 27</span><span class="tt">The Concentration Behind the Contract</span></a></li>
+        <li><a href="/editions/edition-26/"><span class="te">Edition 26</span><span class="tt">The Credit Behind the Compute</span></a></li>
+        <li><a href="/editions/edition-25/"><span class="te">Edition 25</span><span class="tt">Who Captures the Control Point?</span></a></li>
+        <li><a href="/editions/edition-24/"><span class="te">Edition 24</span><span class="tt">100 MW &ne; 100 MW</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<div class="fullwidth">
+  <div class="srcblock">
+    <h2>Sources &amp; research notes</h2>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:12px;">This edition draws on MSCI and FTSE Russell consultation and classification documentation, Indonesian market and sovereign data, Bank Indonesia and OJK official communications, IDX announcements, and infrastructure finance research. Research cut-off: 28 October 2026, 14:44 SGT. Figures are tiered; sources are flagged by confidence level.</p>
+
+    <div class="srcline" id="src-1"><span class="srcnum">1.</span> <b><a href="https://ir.msci.com/news-releases/news-release-details/msci-launches-consultation-proposal-reclassify-indonesia" target="_blank" rel="noopener">MSCI consultation announcement</a></b> &mdash; MSCI's formal consultation proposing to reclassify Indonesia from Emerging Market to Standalone status, published 15 October 2026.</div>
+    <div class="srcline" id="src-2"><span class="srcnum">2.</span> <b><a href="https://www.msci.com/our-solutions/indexes/market-classification" target="_blank" rel="noopener">MSCI methodology and precedent</a></b> &mdash; MSCI index methodology documentation; Argentina's direct Emerging-to-Standalone reclassification (2021), centred on capital controls rather than market transparency.</div>
+    <div class="srcline" id="src-3"><span class="srcnum">3.</span> <b><a href="https://databoks.katadata.co.id/en/market/statistics/6adeb663b7ef2/foreign-investors-shed-holdings-in-indonesian-banking-stocks-amid-a-rise-in-the-ihsg-october-1923-2026" target="_blank" rel="noopener">IDX / Katadata weekly market data</a></b> &mdash; Indonesia Stock Exchange weekly statistics and Katadata reporting on foreign net selling, week of 19&ndash;23 October 2026.</div>
+    <div class="srcline" id="src-4"><span class="srcnum">4.</span> <b><a href="https://d2.ekon.go.id/pasar" target="_blank" rel="noopener">Indonesian government market dashboard</a></b> &mdash; Official dashboard reporting IHSG level and USD/IDR rate as of 27 October 2026.</div>
+    <div class="srcline" id="src-5"><span class="srcnum">5.</span> <b><a href="https://asianbondsonline.adb.org/indonesia/" target="_blank" rel="noopener">ADB AsianBondsOnline</a></b> &mdash; Ten-year Indonesian sovereign bond yield, reported 26 October 2026.</div>
+    <div class="srcline" id="src-6"><span class="srcnum">6.</span> <b><a href="https://www.lseg.com/en/media-centre/press-releases/ftse-russell/2026/ftse-country-classification-review-september-2026" target="_blank" rel="noopener">FTSE Russell country classification</a></b> &mdash; Annual country classification review (September 2026 cycle), published 6 October 2026, retaining Indonesia's Secondary Emerging Market status.</div>
+    <div class="srcline" id="src-7"><span class="srcnum">7.</span> <b><a href="https://www.bi.go.id/en/publikasi/ruang-media/news-release/Pages/sp_2823326.aspx" target="_blank" rel="noopener">Bank Indonesia monetary policy decision</a></b> &mdash; 21 October 2026 decision: BI-Rate held at 5.75%, Lending Facility held at 6.50%, Deposit Facility raised to 5.00%, with expanded DNDF incentives.</div>
+    <div class="srcline" id="src-8"><span class="srcnum">8.</span> <b><a href="https://finansial.bisnis.com/read/20261024/11/2015364/bi-akui-outflow-pasar-saham-akibat-msci-sudah-merambat-ke-sbn-srbi" target="_blank" rel="noopener">Bank Indonesia commentary</a></b> &mdash; Bisnis.com report (24 October 2026) of Bank Indonesia's acknowledgement that equity-market outflow pressure linked to the MSCI announcement had spread to government securities (SBN) and Bank Indonesia rupiah securities (SRBI), characterised as manageable.</div>
+    <div class="srcline" id="src-9"><span class="srcnum">9.</span> <b><a href="https://www.investing.com/rates-bonds/indonesia-cds-5-years-usd-historical-data" target="_blank" rel="noopener">Indonesia 5-year sovereign CDS</a></b> &mdash; Single-provider indicative historical series; moved from 93.28bp (15 Oct) to 106.47bp (23 Oct), a rise of 13.19bp. Not a Bloomberg-sourced series; provenance is limited to this one indicative provider.</div>
+    <div class="srcline" id="src-10"><span class="srcnum">10.</span> <b><a href="https://www.petromindo.com/news/article/dci-indonesia-secures-rp17-trillion-bca-loan-for-data-center-expansion" target="_blank" rel="noopener">DCI Indonesia financing</a></b> &mdash; Rp17 trillion investment-credit facility from Bank Central Asia (BCA); agreement signed 30 April 2026 and publicly reported 7 May 2026, predating the MSCI consultation.</div>
+    <div class="srcline" id="src-11"><span class="srcnum">11.</span> <b><a href="https://www.proximoinfra.com/news/77248/bdx-closes-320m-indonesia-data-centre-loan" target="_blank" rel="noopener">BDx financing</a></b> &mdash; US$320 million-equivalent facility from a group of Indonesian banks, announced April 2026; BDx has described rupiah revenue/expenditure currency matching as a risk-management consideration.</div>
+    <div class="srcline" id="src-12"><span class="srcnum">12.</span> <b><a href="https://investortrust.id/financial/118195/west-java-freezes-work-on-bdx-640mw-ai-data-center-campus-over-missing-environmental-and-building-permits" target="_blank" rel="noopener">West Java stop-work order</a></b> &mdash; Temporary stop-work order on BDx's Jatiluhur development over outstanding environmental and building approvals, early October 2026.</div>
+    <div class="srcline" id="src-13"><span class="srcnum">13.</span> <b><a href="https://katadata.co.id/digital/teknologi/6ad5ea584115d/bp-batam-wajibkan-pengembang-data-center-bangun-instalasi-air-sendiri" target="_blank" rel="noopener">BP Batam SWRO direction</a></b> &mdash; BP Batam direction to data-centre developers to secure independent seawater reverse-osmosis facilities for full operations; implementation details remain project-specific.</div>
+    <div class="srcline" id="src-14"><span class="srcnum">14.</span> <b><a href="https://teknologi.bisnis.com/read/20261022/101/2014794/danantara-wajibkan-data-center-di-atas-500-mw-bawa-pasokan-energi-sendiri" target="_blank" rel="noopener">Danantara BYOE discussion</a></b> &mdash; Bisnis.com report (22 October 2026) of Danantara officials' remarks on a Bring Your Own Energy approach for very large projects (reportedly above 500 MW) with 10&ndash;15 year offtake commitments. A reported investment expectation, not a confirmed statutory threshold.</div>
+    <div class="srcline" id="src-15"><span class="srcnum">15.</span> <b><a href="https://sekuritas.miraeasset.co.id/news/research/data-centers-neutral-indonesia-s-data-center-cost-edge-meets-a-power-bottleneck" target="_blank" rel="noopener">Mirae Asset sector model</a></b> &mdash; Mirae Asset Sekuritas Indonesia, &ldquo;Data Centers (Neutral): Indonesia's Data Center Cost Edge Meets a Power Bottleneck,&rdquo; analyst Daniel Widjaja, 16 September 2026. Models a hypothetical 100MW Batam hyperscale project IRR of 15.1% versus 13.4% for Johor at a US$150/kW/month lease rate, and separately reports energisation timelines (Indonesia 36 months vs. Malaysia 12 months) and colocation vacancy (Jakarta 20.4%, Johor 0.7%). These are analyst estimates and market snapshots, not realised project returns.</div>
+    <div class="srcline" id="src-16"><span class="srcnum">16.</span> <b><a href="https://jdih.komdigi.go.id/produk_hukum/view/id/695/t/common" target="_blank" rel="noopener">GR71/2019, Articles 20&ndash;21</a></b> &mdash; Government Regulation No. 71 of 2019 on Electronic Systems and Transactions. Article 20 sets domestic data-management, processing and storage requirements for public-sector electronic systems, subject to specified exceptions; Article 21 permits private-sector operators to process and store data inside or outside Indonesia, subject to regulatory oversight, lawful access and sector-specific requirements.</div>
+    <div class="srcline" id="src-17"><span class="srcnum">17.</span> <b><a href="https://ojk.go.id/en/" target="_blank" rel="noopener">POJK 11/2022</a></b> &mdash; OJK regulation on information-technology implementation by commercial banks; generally requires domestic placement of certain banking systems absent approval.</div>
+    <div class="srcline" id="src-18"><span class="srcnum">18.</span> <b><a href="https://ojk.go.id/en/berita-dan-kegiatan/siaran-pers/" target="_blank" rel="noopener">OJK enforcement agenda</a></b> &mdash; OJK public statement reiterating its shareholder-disclosure and market-enforcement agenda, 16 October 2026.</div>
+    <div class="srcline" id="src-19"><span class="srcnum">19.</span> <b><a href="https://ojk.go.id/en/berita-dan-kegiatan/siaran-pers/Pages/OJK-Delivers-Sanction-Letters-to-DSSA-CUAN-BREN.aspx" target="_blank" rel="noopener">OJK administrative fines</a></b> &mdash; Approximately Rp2.1 trillion in administrative fines imposed 16 October 2026 on parties connected to DSSA share trading and the BREN and CUAN IPOs.</div>
+    <div class="srcline" id="src-20"><span class="srcnum">20.</span> <b><a href="https://ojk.go.id/en/berita-dan-kegiatan/siaran-pers/" target="_blank" rel="noopener">OJK investigation timeline</a></b> &mdash; Underlying investigations for the above fines began before MSCI's 15 October consultation, establishing an independent enforcement timeline.</div>
+    <div class="srcline" id="src-21"><span class="srcnum">21.</span> <b><a href="https://www.idx.co.id/en/news/news/" target="_blank" rel="noopener">IDX high-shareholding-concentration exclusions</a></b> &mdash; Announced 22 October 2026, effective from 2 November 2026.</div>
+    <div class="srcline" id="src-22"><span class="srcnum">22.</span> <b><a href="https://www.idx.co.id/en/news/news/" target="_blank" rel="noopener">IDX independent participants and investigations</a></b> &mdash; 26 October 2026 announcement adding independent participants to the high-shareholding-concentration committee and strengthening investigations into suspected coordinated trading.</div>
+    <div class="srcline" id="src-23"><span class="srcnum">23.</span> <b><a href="https://www.ojk.go.id/en/berita-dan-kegiatan/siaran-pers/Pages/OJK-Issues-Regulation-on-Stock-Exchange-Shareholders.aspx" target="_blank" rel="noopener">POJK 13/2026</a></b> &mdash; OJK regulation effective 17 September 2026 limiting IDX shareholders to 5% absent approval, with majority ownership prohibited including through affiliates. Danantara's proposed stake in IDX as part of demutualisation, reported 28 October 2026 by <a href="https://www.reuters.com/world/asia-pacific/danantara-bids-stake-indonesian-stock-exchange-bourse-chief-says-2026-10-28/" target="_blank" rel="noopener">Reuters</a>.</div>
+
+    <div class="verif">
+      <div class="vh">Verification notes</div>
+      <div class="flag"><span class="tag">[PRIMARY]</span> &mdash; The IHSG's 4.90% weekly gain and Rp6.67 trillion in foreign net selling relate to 19&ndash;23 October 2026, confirmed from IDX weekly statistics &mdash; not a single-session rebound. The government dashboard's IHSG and USD/IDR observations are separately dated 27 October 2026. These are separate dated observations, not one causal measurement.</div>
+      <div class="flag"><span class="tag">[INDICATIVE]</span> &mdash; The +13.19bp CDS widening figure is drawn from a single-provider indicative historical series, not a multi-dealer composite such as Bloomberg. It is reported at this confidence tier accordingly.</div>
+      <div class="flag"><span class="tag">[MODELLED]</span> &mdash; The DSCR scenarios (base 1.52&times;/10.4%; combined stress 1.26&times;/5.2%) reflect a US$100m project financed with US$60m debt and US$40m equity, amortising over ten annual repayments. They are illustrative outputs of a frozen model and are not drawn from any specific project, transaction or lender term sheet.</div>
+      <div class="flag"><span class="tag">[UNCONFIRMED / E2]</span> &mdash; No project-loan repricing (E2) for Indonesian data-centre infrastructure has been confirmed in the public record as of the research cut-off (28 October 2026, 14:44 SGT). Any reference to E2 in this edition is framed as a potential transmission, not a confirmed event.</div>
+      <div class="flag"><span class="tag">[CONSULTATION]</span> &mdash; All references to the MSCI process use the terms &ldquo;consultation,&rdquo; &ldquo;proposed,&rdquo; or &ldquo;proposal&rdquo; in line with MSCI's own published language. No index decision has been confirmed. The MSCI consultation (15 October) precedes, and cannot be the cause of, any market movement dated before that day.</div>
+      <div class="flag"><span class="tag">[HOUSE VIEW]</span> &mdash; The E1/E2 analytical framework and the Portfolio Framework / Investment Lens are the author's analytical framing, not conclusions drawn from any specific disclosed transaction.</div>
+      <div class="flag" style="margin-top:12px;"><b>Research discipline.</b> This edition maintains a strict distinction between observed market events (E1) and potential financing-market consequences (E2). The DSCR model is illustrative and frozen; its outputs should not be applied to any specific project without independent modelling of that project's actual loan terms, revenue structure and covenant package. The MSCI consultation status is described as pending as of the research cut-off.</div>
+    </div>
+  </div>
+
+  <div class="srcblock">
+    <h2>Glossary</h2>
+    <table class="gloss">
+      <thead><tr><th>Term</th><th>Full name</th><th>Plain English</th></tr></thead>
+      <tbody>
+        <tr><td>APAC</td><td>Asia-Pacific</td><td>The geographic region covering Asia and the Pacific, used here for infrastructure finance context.</td></tr>
+        <tr><td>ADB</td><td>Asian Development Bank</td><td>Regional development bank; its AsianBondsOnline service publishes sovereign bond yield data used in this edition.</td></tr>
+        <tr><td>AWS</td><td>Amazon Web Services</td><td>Cloud infrastructure provider with announced Indonesian activity.</td></tr>
+        <tr><td>BI</td><td>Bank Indonesia</td><td>Indonesia's central bank, responsible for monetary policy and currency stability.</td></tr>
+        <tr><td>BREN</td><td>&mdash;</td><td>Listed Indonesian company connected to the 16 October OJK enforcement action.</td></tr>
+        <tr><td>BYOE</td><td>Bring Your Own Energy</td><td>A reported investment expectation (not statute) that very large data-centre projects arrange independent power generation rather than relying solely on the national grid.</td></tr>
+        <tr><td>BCA</td><td>Bank Central Asia</td><td>Indonesian bank that provided DCI Indonesia's Rp17 trillion investment-credit facility.</td></tr>
+        <tr><td>BDx</td><td>Big Data Exchange</td><td>Data-centre operator with Indonesian financing and development activity referenced in this edition.</td></tr>
+        <tr><td>Basis point (bp)</td><td>&mdash;</td><td>One-hundredth of one percentage point (0.01%). Used here to measure changes in CDS spreads.</td></tr>
+        <tr><td>CFADS</td><td>Cash flow available for debt service</td><td>The annual cash flow a project generates that is available to pay its lenders.</td></tr>
+        <tr><td>Capex</td><td>Capital expenditure</td><td>Spending on building or upgrading physical assets.</td></tr>
+        <tr><td>CDS</td><td>Credit default swap</td><td>A financial instrument reflecting the market's perceived probability of a sovereign or corporate default. Quoted in basis points; wider = higher perceived risk.</td></tr>
+        <tr><td>CUAN</td><td>&mdash;</td><td>Listed Indonesian company connected to the 16 October OJK enforcement action.</td></tr>
+        <tr><td>Danantara</td><td>&mdash;</td><td>Indonesian state investment entity discussed in relation to BYOE policy and a proposed stake in IDX.</td></tr>
+        <tr><td>DCI</td><td>DCI Indonesia</td><td>Indonesian data-centre operator referenced for its BCA financing facility.</td></tr>
+        <tr><td>DNDF</td><td>Domestic Non-Deliverable Forward</td><td>A rupiah hedging instrument available onshore in Indonesia; Bank Indonesia expanded incentives for its use in its 21 October decision.</td></tr>
+        <tr><td>DSCR</td><td>Debt service coverage ratio</td><td>Annual cash available for debt service divided by annual debt service obligations; a ratio above 1.0&times; means cash flow covers debt payments.</td></tr>
+        <tr><td>DSSA</td><td>&mdash;</td><td>Listed Indonesian company connected to the 16 October OJK enforcement action.</td></tr>
+        <tr><td>E1</td><td>&mdash;</td><td>Market credit: observed equity-market repricing, foreign flows, FX pressure and sovereign-risk indicators. Confirmed in this edition.</td></tr>
+        <tr><td>E2</td><td>&mdash;</td><td>Funding credit: a verified change in project-loan margins, covenants or drawdown conditions for data-centre infrastructure. Not established as of the research cut-off.</td></tr>
+        <tr><td>FDI</td><td>Foreign direct investment</td><td>Capital deployed by foreign investors directly into physical assets, as distinct from portfolio flows into listed securities.</td></tr>
+        <tr><td>FX</td><td>Foreign exchange</td><td>The conversion of one currency into another; used here for IDR/USD currency risk.</td></tr>
+        <tr><td>FTSE</td><td>Financial Times Stock Exchange (FTSE Russell)</td><td>Index provider that runs its own country classification independently of MSCI.</td></tr>
+        <tr><td>GR71/2019</td><td>Government Regulation No. 71 of 2019</td><td>Indonesian regulation on electronic systems and transactions, governing cross-border data processing and storage.</td></tr>
+        <tr><td>IDR</td><td>Indonesian rupiah</td><td>Indonesia's currency; abbreviated as Rp in Indonesian convention.</td></tr>
+        <tr><td>IDX</td><td>Indonesia Stock Exchange</td><td>Indonesia's main securities exchange (Bursa Efek Indonesia).</td></tr>
+        <tr><td>IHSG</td><td>Indeks Harga Saham Gabungan</td><td>The Jakarta Composite Index; Indonesia's benchmark equity index.</td></tr>
+        <tr><td>IRR</td><td>Internal rate of return</td><td>The discount rate at which a project's net present value equals zero; used to compare investment returns across projects.</td></tr>
+        <tr><td>MW</td><td>Megawatt</td><td>The standard unit of data-centre power capacity.</td></tr>
+        <tr><td>MSCI</td><td>Morgan Stanley Capital International</td><td>Publishes the Emerging Markets index tracked by many institutional funds globally.</td></tr>
+        <tr><td>OJK</td><td>Otoritas Jasa Keuangan</td><td>Indonesia's Financial Services Authority, regulating capital markets, banking and non-bank financial institutions.</td></tr>
+        <tr><td>PLN</td><td>Perusahaan Listrik Negara</td><td>Indonesia's state electricity company.</td></tr>
+        <tr><td>POJK</td><td>Peraturan OJK</td><td>An OJK regulation (e.g. POJK 11/2022 on banking IT systems; POJK 13/2026 on IDX shareholding limits).</td></tr>
+        <tr><td>PPA</td><td>Power purchase agreement</td><td>A long-term contract between a power generator and a buyer; central to BYOE risk allocation.</td></tr>
+        <tr><td>Rp</td><td>Rupiah</td><td>Indonesian currency symbol.</td></tr>
+        <tr><td>SBN</td><td>Surat Berharga Negara</td><td>Indonesian government securities.</td></tr>
+        <tr><td>SRBI</td><td>Surat Berharga Rupiah Bank Indonesia</td><td>Bank Indonesia's own rupiah securities.</td></tr>
+        <tr><td>SWRO</td><td>Seawater reverse osmosis</td><td>Desalination technology for producing fresh water from seawater; directed for data-centre use in Batam by BP Batam.</td></tr>
+        <tr><td>USD</td><td>United States dollar</td><td>The dominant currency for infrastructure project loans in APAC.</td></tr>
+        <tr><td>USD/IDR</td><td>&mdash;</td><td>The exchange rate between the US dollar and the Indonesian rupiah.</td></tr>
+        <tr><td>Standalone status</td><td>&mdash;</td><td>MSCI's category for markets that are investable but removed from its standard benchmark indexes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="signoff-bar">The Uptime Brief &middot; Where uptime meets capital allocation &middot; By Sel Fang, Lim &middot; Published weekly &middot; Research cut-off: 28 October 2026, 14:44 SGT</div>
+
+<footer>
+  <div class="fwrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" height="30" role="img" aria-label="The Uptime Brief">
+  <defs><linearGradient id="ecg-gf" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#4ab8d4"/><stop offset="100%" stop-color="#3dbf8a"/>
+  </linearGradient></defs>
+  <polyline points="0,28 28,28 34,28 38,14 44,42 50,8 56,42 60,28 92,28" fill="none" stroke="url(#ecg-gf)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="98" cy="28" r="4" fill="#3dbf8a"/>
+  <line x1="108" y1="42" x2="290" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+  <text x="108" y="34" font-family="DM Sans,sans-serif" font-weight="700" font-size="19" fill="rgba(255,255,255,0.75)" letter-spacing="2">THE UPTIME</text>
+  <text x="115" y="55" font-family="Georgia,Times New Roman,serif" font-style="italic" font-size="15" fill="#3dbf8a" letter-spacing="5">BRIEF</text>
+</svg>
+    <div class="flinks">
+      <a href="/#editions">All Editions</a>
+      <a href="https://www.linkedin.com/newsletters/the-uptime-brief-7452971317190074368/">Subscribe</a>
+      <a href="/">Home</a>
+    </div>
+    <div class="disc">
+      <div class="note"><b>Editorial note:</b> This publication is provided for informational and educational purposes only. It reflects the author's analysis of publicly available information as of the publication date and should not be construed as investment, legal, accounting, or financial advice. Opinions are the author's own and may change as further disclosures become available.</div>
+      <div class="noadv">No investment advice intended or implied.</div>
+    </div>
+    <div class="copy">&copy; 2026 The Uptime Brief. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>8);});
+</script>
+</body>
+</html>
